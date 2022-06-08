@@ -1,29 +1,19 @@
-import './App.css';
-<<<<<<< HEAD
-import Medicinas from './pages/medicinas/Medicinas';
-import Modificacionesmed from './pages/modificacionmed/Modificacionmed';
+import React, { Suspense } from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Login from './pages/login';
+import Medicinas from './pages/medicinas';
 
-function App() {
-    return(
-        <div className='App'>
-            <Medicinas />
-
-        </div>
-    );
-=======
-import Home from './pages/home/Home';
-import Vistauso from './pages/vistauso/Vistauso';
-import Barranav from './components/navegacion/Barranav';
-import Navbar from './components/navegacion/Navbar';
-import Login from './pages/login/Login';
-
-function App() {
+const App = () => {
   return (
-    <div className="App">
-
-    </div>
-  );
->>>>>>> 221b79ea563a2360db18cd800cd9d6826f0781c3
+    <Router>
+      <Suspense fallback={<p>Cargando...</p>}>
+        <Routes>
+          <Route path="/" name='Login' element={ <Login /> } />
+          <Route path="/app" name='medicinas' element={ <Medicinas /> } />
+        </Routes>
+      </Suspense>
+    </Router>
+  )
 }
 
 export default App;
