@@ -12,6 +12,8 @@
     box-shadow: 5px 5px 15px 5px  #047c91;
     transition-duration: 0.0s;
     transform: scale(1.1);
+    padding-left: 55px;
+    padding-right: 55px;
 }
 
 .menu {
