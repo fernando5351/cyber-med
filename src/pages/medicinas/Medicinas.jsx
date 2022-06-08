@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "../../components/navegacion/Navbar";
-import Botones from "../../components/btnmedicinas/Botones";
 import '../../css/medicinas.css';
 
 
@@ -11,7 +10,7 @@ function Medicinas() {
 
             <div className="contenedor-principal">
                 
-                    <Botones />
+                    
             </div>
         </div>
     );
