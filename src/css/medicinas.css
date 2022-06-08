@@ -1,0 +1,35 @@
+.contenedor-Botones {
+    margin-left: 90px;
+
+}
+
+.contenedor-principal {
+    background-color: rgb(253, 253, 253);
+    height: 500px;
+    margin-top: 50px;
+
+}
+
+.button {
+  width: 300px;
+  margin-left: 100px;
+  margin-top: 100px;
+  border-radius: 20px;
+  background-color: rgb(141, 207, 236);
+  height: 100px;
+  padding: 30px;
+  font-size: 25px;
+  color: #3271A5;
+
+  
+}
+
+.contenedor-btn {
+    padding: 0%;
+    margin: 0%;
+}
+
+.contenedor-medicinas {
+    height: 500px;
+}
+
