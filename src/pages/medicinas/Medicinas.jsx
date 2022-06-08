@@ -11,8 +11,8 @@ function Medicinas() {
             <Navbar />
             
             <div className="contenedor-principal">
-            <Barranav />
-                    <BtnMedicina />
+                <Barranav />
+                <BtnMedicina />
             </div>
         </div>
     );
