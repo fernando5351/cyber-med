@@ -1,10 +1,109 @@
-.logo{
-   width: 60px;
-   height: 90%;
-   margin-left: 20px;
-}
-
-.menucont{
-    background-color: rgb(255, 255, 255);
-}
-
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(../img/login/medicines.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .contenedor {
+    padding: 25px;
+    background: #ffff;
+    border-radius: 30px;
+    width: 515px;
+    height: 445.67px;
+    box-shadow: 1px 5px 5px 1px #72c4dd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .title {
+    width: 100%;
+    padding: 4px;
+  }
+  
+  .letter {
+    font-size: 25px;
+  }
+  
+  .login {
+    width: 100%;
+    padding: 4px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  
+  .div {
+    width: 100%;
+    padding: 4px;
+    position: relative;
+  }
+  
+  .mailler {
+    width: 70px;
+    height: 75px;
+    position: absolute;
+    top: 45%;
+    left: 5%;
+    transform: translateY(-50%);
+  }
+  
+  .lock {
+    width: 65px;
+    height: 52px;
+    position: absolute;
+    top: 45%;
+    left: 5%;
+    transform: translateY(-50%);
+  }
+  
+  .reset {
+    text-align: right !important;
+  }
+  
+  .mail,
+  .pass {
+    padding: 4px !important;
+    width: 100% !important;
+    height: 60px !important;
+    border-radius: 30px !important;
+    box-sizing: border-box !important;
+    box-shadow: 0px 2px 6px 4px #72c4dd !important;
+    font-family: 'Noto Serif' !important;
+    font-size: 16px;
+    font-style: normal !important;
+    text-align: left !important;
+    padding-left: 95px !important;
+    color: #2b6696 !important;
+    border: none !important;
+  }
+  
+  ::placeholder {
+    font-family: 'Noto Serif' !important;
+    font-size: 25px;
+    font-style: italic !important;
+    color: #3271A5;
+  }
+  
+  .buton {
+    width: 50%;
+    background: #3271A5;
+    font-size: 25px;
+    color: #ffff;
+    border-radius: 30px;
+    box-shadow: 0px 2px 6px 4px #72c4dd;
+    border: none;
+    height: 60px;
+    opacity: 75%;
+  }

@@ -1,27 +1,26 @@
 import React from "react";
 import Carrito from '../../icon/Home/carrito.png';
-import '../../css/login.css'
+import '../../css/navbar.css'
 
-function Navbar(props) {
+function Navbar() {
     return(
-     <div>
-         <nav>
-           <div class="nav-wrapper  menucont">
+         <nav className='indigo  lighten-5'>
+           <div class="nav-wrapper">
+           <a className='black-text text-darken-4' href="#">
              <img 
-             className="logo"
+             className="logo responsive-img"
              src={Carrito} 
              alt="Logo cybermed" />
-             <ul id="nav-mobile" class="right hide-on-med-and-down">
-               <li><a className='black-text text-darken-4' href="badges.html">INICIO</a></li>
-               <li><a className='black-text text-darken-4' href="collapsible.html">MEDICINAS</a></li>
-               <li><a className='black-text text-darken-4' href="sass.html">CERRAR SESION</a></li>
+             </a>
+             <ul id="nav-mobile" class="right">
+               <li><a className='black-text text-darken-4' href="#">INICIO</a></li>
+               <li><a className='black-text text-darken-4' href="#">MEDICINAS</a></li>
+               <li><a className='black-text text-darken-4' href="#">CERRAR SESION</a></li>
              </ul>
            </div>
          </nav>
-     </div>
     );
 }
 
 export default Navbar;
 
-//<a href="#" class="brand-logo">Logo</a>

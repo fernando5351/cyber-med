@@ -1,0 +1,27 @@
+.Btnn{
+    height: 80px;
+    width: 200px;
+    margin-left: 80px;
+    padding: 10px;
+    background-color: rgb(141, 207, 236);
+    border-style: solid;
+    border-color: rgb(253, 253, 253);
+    border-radius: 20px;
+}
+
+.btn-large{
+    height: 80px;
+    width: 200px;
+    margin-left: 90px;
+    padding: 10px;
+    background-color: rgb(141, 207, 236);
+    border-radius: 20px;
+}
+
+.icono{
+    width: 30%;
+}
+
+.contenedor{
+    margin-top: 50px;
+}
