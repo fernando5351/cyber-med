@@ -7,9 +7,9 @@ function Barranav(props) {
     return(
       <div className='contenedor-barra'>
           <div className='contenedor-btnretro'>
-             <a class="waves-effect waves-light btn-large button">
+             <a class="waves-effect waves-light btn-large buttonB">
              <img
-             className='ico' 
+             className='icoV' 
              src={Retro} 
              alt="retroceder" />
              </a>
@@ -18,9 +18,9 @@ function Barranav(props) {
              <p>{props.Titulo}</p>
           </div>
           <div className='contenedor-btnadd'>
-            <a class="waves-effect waves-light btn-large button">
+            <a class="waves-effect waves-light btn-large buttonB">
                 <img 
-                className="ico"
+                className="icoV"
                 src={Agregar} 
                 alt="Agregar" />
             </a>
