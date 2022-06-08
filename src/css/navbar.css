@@ -1,11 +1,14 @@
 .nav-wrapper{
-    background-color: aliceblue;
+    background-color: rgb(255, 255, 255);
     margin: 0%;
     padding: 0%;
 }
 
-.logo{
-    margin-left: 15px;
-    width: 60px;
+.logo {
+    width: 66px;
+    margin-left: 20px;
 }
 
+.lis {
+    margin-right: 20px;
+}

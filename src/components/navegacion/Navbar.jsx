@@ -8,14 +8,14 @@ function Navbar() {
            <div class="nav-wrapper">
            <a className='black-text text-darken-4' href="#">
              <img 
-             className="logo responsive-img"
+             className="logo"
              src={Carrito} 
              alt="Logo cybermed" />
              </a>
              <ul id="nav-mobile" class="right">
                <li><a className='black-text text-darken-4' href="#">INICIO</a></li>
                <li><a className='black-text text-darken-4' href="#">MEDICINAS</a></li>
-               <li><a className='black-text text-darken-4' href="#">CERRAR SESION</a></li>
+               <li><a className='black-text text-darken-4 lis' href="#">CERRAR SESION</a></li>
              </ul>
            </div>
          </nav>

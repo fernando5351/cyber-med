@@ -1,10 +1,10 @@
 import React from 'react';
-import '../../css/btnhome.css'
+import '../../css/home.css'
 import Lupita from '../../icon/Home/lupa.png'; 
 
 function BtnHome() {
    return(
-       
+      <div className='contenedor-btnhome'>
            <div className='input-fiel col s4  contenedor'>
            <a class='waves-effect waves-light btn-large Btnn'>TIPO</a>
            <a class='waves-effect waves-light btn-large Btnn'>NOMBRE</a>
@@ -17,6 +17,7 @@ function BtnHome() {
            </a>
            </div>
        
+      </div>
    );
 }
 
