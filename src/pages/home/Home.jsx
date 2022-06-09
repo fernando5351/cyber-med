@@ -9,15 +9,15 @@ function Home() {
            <Navbar />
            <BtnHome />
             <div className="row">
-              <table className='centered'>
+              <table className='centered tableM'>
                        <thead>
                          <tr>
-                             <th>Id</th>
-                             <th>Nombre</th>
-                             <th>Tipo</th>
-                             <th>Uso</th>
-                             <th>Precio</th>
-                             <th>Gramos</th>
+                             <th>ID</th>
+                             <th>NOMBRE</th>
+                             <th>TIPO</th>
+                             <th>USO</th>
+                             <th>PRECIO</th>
+                             <th>GRAMOS</th>
                          </tr>
                        </thead>
                        <tbody>

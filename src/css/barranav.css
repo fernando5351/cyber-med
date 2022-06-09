@@ -4,9 +4,9 @@
 }
 
 .buttonB{
-    width: 90px;
-    height: 90px;
-    padding: 10px;
+    width: 80px;
+    height: 80px;
+    padding: 5px;
     background-color: rgb(255, 255, 255);
     border-radius: 50px;
     box-shadow: 5px 5px 15px 5px  #9c9a9a;
@@ -21,15 +21,14 @@
 }
 
 .icoV {
-    width: 100%;
+    width: 95%;
 }
 
 
 .contenedor-barra {
    width: 100%;
    float: left;
-   margin-top: 30px;
-   padding-top: 5px;
+   margin-top: 15px;
    margin-bottom: 5px;
 }
 
@@ -48,7 +47,7 @@
     margin-right: 150px;
 }
 
-p {
-    font-size: 50px;
-    font-family: Noto serif;
+h1 {
+   padding: 0%;
+   margin: 0%;
 }
