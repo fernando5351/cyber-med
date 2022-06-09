@@ -17,18 +17,18 @@
 }
 
 .menu {
-    height: 100px;
+    height: 80px;
 }
 
 .logo {
-    width: 100%;
-    margin: 0%;
+    width: 80%;
 }
 
 .btnmenu {
     background-color: rgb(255, 255, 255);
-    height: 100px;
-    padding: 20px;
+    height: 80px;
+    padding: 10px;
+    float: left;
     font-size: x-large;
 }
 
@@ -38,17 +38,19 @@
     transition-duration: 0.0s;
     box-shadow: 5px 5px 20px 5px #ffffff;
     color: #ffffff;
+    padding-right: 15px;
 }
 
 .btnico {
     background-color: rgb(255, 255, 255);
-    height: 100px;
+    height: 80px;
     width: 100px;
-    padding: 0%;
+    transform: translate(10%);
     font-size: x-large;
 }
 
 .btnico:hover{
+    padding-left: 15px;
     transform: scale(1.1);
     background-color: #ffffff;
     transition-duration: 0.0s;

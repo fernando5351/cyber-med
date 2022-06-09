@@ -15,7 +15,7 @@ function Barranav(props) {
              </a>
           </div>
           <div className='contenedor-titulo'>
-             <p>{props.Titulo}</p>
+             <h1>HOLA MUNDO</h1>
           </div>
           <div className='contenedor-btnadd'>
             <a class="waves-effect waves-light btn-large buttonB">

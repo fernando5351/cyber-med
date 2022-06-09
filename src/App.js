@@ -5,7 +5,8 @@ import Modificacionesmed from './pages/modificacionmed/Modificacionmed';
 function App() {
     return(
         <div className='App'>
-           <Medicinas />
+            <Medicinas />
+           
         </div>
     );
 }
