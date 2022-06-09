@@ -1,8 +1,14 @@
 import React from "react";
 import Carrito from '../../icon/Home/carrito.png';
 import '../../css/navbar.css'
+import { useNavigate } from 'react-router-dom'
 
 function Navbar() {
+  const navigate = useNavigate();
+
+  const logOut  = () => {
+    navigate('/')
+  }
     return(
          <nav className='indigo  lighten-5'>
            <div class="nav-wrapper">
@@ -15,7 +21,7 @@ function Navbar() {
              <ul id="nav-mobile" class="right">
                <li><a className='black-text text-darken-4' href="#">INICIO</a></li>
                <li><a className='black-text text-darken-4' href="#">MEDICINAS</a></li>
-               <li><a className='black-text text-darken-4 lis' href="#">CERRAR SESION</a></li>
+               <li><a className='black-text text-darken-4 lis' onClick={logOut}>CERRAR SESION</a></li>
              </ul>
            </div>
          </nav>
