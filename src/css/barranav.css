@@ -3,76 +3,10 @@
     margin: 0%;
 }
 
-.contenedor-barra{
-    display: flex;
-    align-items: baseline;
-    align-content: space-around;
-    width: 100%;
-    height: 62px;
-}
-
-.retro, .agregar {
-    height: 62px;
-    width: 50%;
-}
-.retro {
-    padding-left: 70px;
-}
-
-.agregar {
-    padding-left: 370px;
-}
-
-.annadir {
-    height: 60px;
-    width: 60px;
-    padding: 10px;
-    background-color: rgb(255, 255, 255);
-    border-radius: 50px;
-    box-shadow: 5px 5px 15px 5px  #9c9a9a;
-}
-
-.atras {
-    height: 60px;
-    width: 60px;
-    background-color: rgb(255, 255, 255);
-    border-radius: 50px;
-    box-shadow: 5px 5px 15px 5px  #9c9a9a;
-}
-
-.atras:hover{
-    transform: scale(1.2);
-    background-color: rgb(255, 255, 255);
-    transition-duration: 0.0s;
-    border-style: solid;
-    border-color: rgba(0,215,255,1);
-}
-
-.annadir:hover{
-    transform: scale(1.2);
-    background-color: rgb(255, 255, 255);
-    transition-duration: 0.0s;
-    border-style: solid;
-    border-color: rgba(0,215,255,1);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .buttonB{
-    width: 90px;
-    height: 90px;
-    padding: 10px;
+.buttonB{
+    width: 80px;
+    height: 80px;
+    padding: 5px;
     background-color: rgb(255, 255, 255);
     border-radius: 50px;
     box-shadow: 5px 5px 15px 5px  #9c9a9a;
@@ -87,15 +21,14 @@
 }
 
 .icoV {
-    width: 100%;
+    width: 95%;
 }
 
 
 .contenedor-barra {
    width: 100%;
    float: left;
-   margin-top: 30px;
-   padding-top: 5px;
+   margin-top: 15px;
    margin-bottom: 5px;
 }
 
@@ -113,8 +46,3 @@
     float: right;
     margin-right: 150px;
 }
-
-p {
-    font-size: 50px;
-    font-family: Noto serif;
-} */
