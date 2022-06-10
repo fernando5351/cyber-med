@@ -3,6 +3,16 @@ import '../../css/barranav.css'
 import Retro from '../../icon/Vista/retroceder.png';
 import Agregar from '../../icon/Vista/agregar.png';
 
+<<<<<<< HEAD
+function Barranav() {
+  return (
+    <div className="contenedor-barra">
+      <div className="retro">
+        <img
+          className='atras'
+          src={Retro}
+          alt='' />
+=======
 function Barranav(props) {
     return(
       <div className='contenedor-barra'>
@@ -25,8 +35,16 @@ function Barranav(props) {
                 alt="Agregar" />
             </a>
           </div>
+>>>>>>> 96ac131965c2a8c87cdc52d5bcda6d40b5ad3907
       </div>
-    );
+      <div className="agregar">
+        <img
+          className='annadir'
+          src={Agregar}
+          alt='' />
+      </div>
+    </div>
+  );
 }
 
 export default Barranav;

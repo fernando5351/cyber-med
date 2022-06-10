@@ -1,25 +1,32 @@
-.contenedor-Botones {
-    margin-left: 90px;
-
-}
-
 .contenedor-principal {
     background-color: rgb(253, 253, 253);
-    height: 500px;
-    margin-top: 50px;
+    margin-top: 90px;
+    margin-bottom: 35px;
+    padding: 9px;
+    width: 100%;
+}
 
+.contenedor-barra {
+    width: 100%;
+}
+
+.contenedor-botones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .buttonMed {
-  width: 300px;
-  margin-left: 110px;
-  margin-top: 50px;
-  border-radius: 20px;
-  border-style: solid;
-  background-color: rgb(141, 207, 236);
-  height: 100px;
-  padding: 30px;
-  font-size: 25px;
+    width: 300px;
+    margin-top: 40px;
+    border-radius: 20px;
+    border-style: solid;
+    background-color: rgb(141, 207, 236);
+    height: 100px;
+    padding: 30px;
+    font-size: 20px;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .buttonMed:hover {
@@ -27,15 +34,3 @@
     background-color: #92c7f3;
     box-shadow: 5px 5px 15px 5px #65d0e6;
 }
-
-.contenedor-btn {
-    padding: 0%;
-    margin: 0%;
-}
-
-.contenedor-medicinas {
-    height: 500px;
-}
-
-
-
