@@ -5,6 +5,7 @@ import Agregar from '../../icon/Vista/agregar.png';
 
 function Barranav() {
   return (
+    // este es el que deben elegir
     <div className="contenedor-barra">
       <div className="retro">
         <img
