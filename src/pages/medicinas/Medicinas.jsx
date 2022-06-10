@@ -1,17 +1,22 @@
 import React from "react";
 import Navbar from "../../components/navegacion/Navbar";
-import Botones from "../../components/btnmedicinas/Botones";
-import '../../css/medicinas.css';
+import BtnMedicina from "../../components/btn/BtnMedicina";
+import Barranav from '../../components/navegacion/Barranav';
+import '../../css/medicinas.css'
 
 
 function Medicinas() {
-    return(
-        <div className="contenedor-medicinas">
+    return (
+        <div>
             <Navbar />
 
             <div className="contenedor-principal">
-                
-                    <Botones />
+                <div>
+                    <Barranav />
+                </div>
+                <div className="contenedor-medicinas">
+                    <BtnMedicina />
+                </div>
             </div>
         </div>
     );

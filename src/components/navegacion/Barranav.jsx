@@ -3,30 +3,23 @@ import '../../css/barranav.css'
 import Retro from '../../icon/Vista/retroceder.png';
 import Agregar from '../../icon/Vista/agregar.png';
 
-function Barranav(props) {
-    return(
-      <div className='contenedor-barra'>
-          <div className='contenedor-btnretro'>
-             <a class="waves-effect waves-light btn-large button">
-             <img
-             className='ico' 
-             src={Retro} 
-             alt="retroceder" />
-             </a>
-          </div>
-          <div className='contenedor-titulo'>
-             <p>{props.Titulo}</p>
-          </div>
-          <div className='contenedor-btnadd'>
-            <a class="waves-effect waves-light btn-large button">
-                <img 
-                className="ico"
-                src={Agregar} 
-                alt="Agregar" />
-            </a>
-          </div>
+function Barranav() {
+  return (
+    <div className="contenedor-barra">
+      <div className="retro">
+        <img
+          className='atras'
+          src={Retro}
+          alt='' />
       </div>
-    );
+      <div className="agregar">
+        <img
+          className='annadir'
+          src={Agregar}
+          alt='' />
+      </div>
+    </div>
+  );
 }
 
 export default Barranav;

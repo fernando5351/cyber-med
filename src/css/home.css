@@ -11,20 +11,19 @@
     margin-left: 80px;
     padding: 10px;
     background-color: rgb(141, 207, 236);
-    border-style: solid;
-    border-color: rgb(253, 253, 253);
     border-radius: 20px;
     font-size: 30px;
+    box-shadow: 5px 5px 15px 5px #ffffff;
 }
 
-.btn-large{
-    height: 80px;
-    width: 200px;
-    margin-left: 90px;
-    padding: 10px;
+.Btnn:hover{
+    transform: scale(1.1);
     background-color: rgb(141, 207, 236);
-    border-radius: 20px;
+    transition-duration: 0.1s;
+    border-style: solid; 
+    border-color: #ffffff;
 }
+
 
 .icono{
     width: 30%;
@@ -34,5 +33,3 @@
     margin-top: 50px;
 }
  
- 
-
