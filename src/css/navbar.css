@@ -44,19 +44,20 @@ body {
     transition-duration: 0.0s;
     box-shadow: 5px 5px 20px 5px #ffffff;
     color: #ffffff;
-    padding-right: 15px;
+    margin-right: 10px;
 }
 
 .btnico {
     background-color: rgb(255, 255, 255);
     height: 80px;
-    width: 100px;
+    width: 90px;
     transform: translate(10%);
     font-size: x-large;
 }
 
 .btnico:hover{
-    padding-left: 15px;
+    height: 70px;
+    width: 90px;
     transform: scale(1.1);
     background-color: #ffffff;
     transition-duration: 0.0s;
