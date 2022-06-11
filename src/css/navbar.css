@@ -9,17 +9,6 @@ body {
     box-shadow: 5px 5px 15px 5px  #047c91;
 }
 
-.nav-wrapper:hover {
-    background-color: rgb(255, 255, 255);
-    margin: 0%;
-    padding: 0%;
-    box-shadow: 5px 5px 15px 5px #047c91;
-    transition-duration: 0.0s;
-    transform: scale(1.1);
-    padding-left: 55px;
-    padding-right: 55px;
-}
-
 .menu {
     height: 80px;
 }
@@ -31,36 +20,30 @@ body {
 .btnmenu {
     background-color: rgb(255, 255, 255);
     height: 80px;
-    padding: 10px;
     float: left;
     font-size: x-large;
 }
 
 .btnmenu:hover{
-    height: 80px;
     transform: scale(1.1);
     background-color: rgb(141, 207, 236);
     transition-duration: 0.0s;
     box-shadow: 5px 5px 20px 5px #ffffff;
     color: #ffffff;
-    margin-right: 10px;
 }
 
 .btnico {
     background-color: rgb(255, 255, 255);
     height: 80px;
-    width: 90px;
+    width: 7%;
     transform: translate(10%);
     font-size: x-large;
 }
 
 .btnico:hover{
-    height: 70px;
-    width: 90px;
     transform: scale(1.1);
     background-color: #ffffff;
     transition-duration: 0.0s;
     box-shadow: 5px 5px 15px 5px #ffffff;
-    margin-left: 10px;
 }
 

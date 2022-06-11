@@ -25,9 +25,9 @@ function Navbar() {
              alt="Logo cybermed" />
              </a>
              <ul id="nav-mobile" class="right">
-               <li><a className='black-text text-darken-4' onClick={home} >INICIO</a></li>
-               <li><a className='black-text text-darken-4' onClick={medicinas} >MEDICINAS</a></li>
-               <li><a className='black-text text-darken-4 lis' onClick={logOut} >CERRAR SESION</a></li>
+               <li><a className='black-text text-darken-4 btnmenu' onClick={home} >INICIO</a></li>
+               <li><a className='black-text text-darken-4 btnmenu' onClick={medicinas} >MEDICINAS</a></li>
+               <li><a className='black-text text-darken-4 btnmenu' onClick={logOut} >CERRAR SESION</a></li>
              </ul>
            </div>
          </nav>
