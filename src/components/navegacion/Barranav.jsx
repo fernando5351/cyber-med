@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import '../../css/barranav.css'
 import Retro from '../../icon/Vista/retroceder.png';
 import Agregar from '../../icon/Vista/agregar.png';
