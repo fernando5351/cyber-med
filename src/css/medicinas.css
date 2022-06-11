@@ -1,25 +1,30 @@
-.contenedor-Botones {
-    margin-left: 90px;
-
-}
-
 .contenedor-principal {
     background-color: rgb(253, 253, 253);
     height: 500px;
     margin-top: 40px;
+}
 
+.contenedor-barra {
+    width: 100%;
+}
+
+.contenedor-botones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .buttonMed {
-  width: 300px;
-  margin-left: 110px;
-  margin-top: 50px;
-  border-radius: 20px;
-  border-style: solid;
-  background-color: rgb(141, 207, 236);
-  height: 100px;
-  padding: 30px;
-  font-size: 25px;
+    width: 300px;
+    margin-top: 40px;
+    border-radius: 20px;
+    border-style: solid;
+    background-color: rgb(141, 207, 236);
+    height: 100px;
+    padding: 30px;
+    font-size: 20px;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .buttonMed:hover {

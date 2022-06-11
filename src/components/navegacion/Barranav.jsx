@@ -2,31 +2,25 @@ import React from "react";
 import '../../css/barranav.css'
 import Retro from '../../icon/Vista/retroceder.png';
 import Agregar from '../../icon/Vista/agregar.png';
+import { useNavigate } from 'react-router-dom';
 
-function Barranav(props) {
+function Barranav() {
     return(
-      <div className='contenedor-barra'>
-          <div className='contenedor-btnretro'>
-             <a class="waves-effect waves-light btn-large buttonB">
-             <img
-             className='icoV' 
-             src={Retro} 
-             alt="retroceder" />
-             </a>
-          </div>
-          <div className='contenedor-titulo'>
-             <h1>{props.titulo}</h1>
-          </div>
-          <div className='contenedor-btnadd'>
-            <a class="waves-effect waves-light btn-large buttonB">
-                <img 
-                className="icoV"
-                src={Agregar} 
-                alt="Agregar" />
-            </a>
-          </div>
+    <div className='contenedor-barra'>
+      <div className='retro'>
+        <img
+          className='atras'
+          src={Retro}
+          alt='' />
       </div>
-    );
+      <div className='agregar'>
+        <img
+          className='annadir'
+          src={Agregar}
+          alt='' />
+      </div>
+    </div>
+  );
 }
 
 export default Barranav;

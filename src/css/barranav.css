@@ -3,16 +3,44 @@
     margin: 0%;
 }
 
-.buttonB{
-    width: 80px;
-    height: 80px;
-    padding: 5px;
+.contenedor-barra{
+    display: flex;
+    align-items: baseline;
+    align-content: space-around;
+    width: 100%;
+    height: 62px;
+}
+
+.retro, .agregar {
+    height: 62px;
+    width: 50%;
+}
+.retro {
+    padding-left: 70px;
+}
+
+.agregar {
+    padding-left: 370px;
+}
+
+.annadir {
+    height: 60px;
+    width: 60px;
+    padding: 10px;
     background-color: rgb(255, 255, 255);
     border-radius: 50px;
     box-shadow: 5px 5px 15px 5px  #9c9a9a;
 }
 
-.buttonB:hover{
+.atras {
+    height: 60px;
+    width: 60px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50px;
+    box-shadow: 5px 5px 15px 5px  #9c9a9a;
+}
+
+.atras:hover{
     transform: scale(1.2);
     background-color: rgb(255, 255, 255);
     transition-duration: 0.0s;
@@ -20,34 +48,10 @@
     border-color: rgba(0,215,255,1);
 }
 
-.icoV {
-    width: 95%;
-}
-
-
-.contenedor-barra {
-   width: 100%;
-   float: left;
-   margin-top: 15px;
-   margin-bottom: 5px;
-}
-
-.contenedor-btnretro {
-    float: left;
-    margin-left: 80px;
-}
-.contenedor-titulo{
-    float: left;
-    margin-left: 225px;
-    margin-right: 225px;
-    margin-top: 10px;
-}
-.contenedor-btnadd{
-    float: right;
-    margin-right: 150px;
-}
-
-h1 {
-   padding: 0%;
-   margin: 0%;
+.annadir:hover{
+    transform: scale(1.2);
+    background-color: rgb(255, 255, 255);
+    transition-duration: 0.0s;
+    border-style: solid;
+    border-color: rgba(0,215,255,1);
 }

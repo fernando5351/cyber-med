@@ -36,4 +36,17 @@
 .tableM{
     font-size: large;
 }
+
+.contenedor-btnhome{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contenedor-home{
+    display: contents;
+    align-items: center;
+    justify-content: center;
+}
  

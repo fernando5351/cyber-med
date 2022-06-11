@@ -1,15 +1,21 @@
-.nav-wrapper{
-    background-color: rgb(255, 255, 255);
-    margin: 0%;
-    padding: 0%;
-    box-shadow: 5px 5px 15px 5px  #047c91;
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(141, 207, 236) !important;
 }
 
-.nav-wrapper:hover{
+.nav-wrapper {
     background-color: rgb(255, 255, 255);
     margin: 0%;
     padding: 0%;
-    box-shadow: 5px 5px 15px 5px  #047c91;
+    box-shadow: 5px 5px 15px 5px #047c91;
+}
+
+.nav-wrapper:hover {
+    background-color: rgb(255, 255, 255);
+    margin: 0%;
+    padding: 0%;
+    box-shadow: 5px 5px 15px 5px #047c91;
     transition-duration: 0.0s;
     transform: scale(1.1);
     padding-left: 55px;
@@ -32,28 +38,28 @@
     font-size: x-large;
 }
 
-.btnmenu:hover{
+.btnmenu:hover {
     transform: scale(1.1);
     background-color: rgb(141, 207, 236);
     transition-duration: 0.0s;
     box-shadow: 5px 5px 20px 5px #ffffff;
     color: #ffffff;
-    padding-right: 15px;
+    margin-right: 10px;
 }
 
 .btnico {
     background-color: rgb(255, 255, 255);
     height: 80px;
-    width: 100px;
+    width: 90px;
     transform: translate(10%);
     font-size: x-large;
 }
 
 .btnico:hover{
-    padding-left: 15px;
+    height: 70px;
+    width: 90px;
     transform: scale(1.1);
     background-color: #ffffff;
     transition-duration: 0.0s;
     box-shadow: 5px 5px 15px 5px #ffffff;
 }
-
