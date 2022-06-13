@@ -1,13 +1,24 @@
 import React from "react";
 import Navbar from '../../components/navegacion/Navbar';
+import '../../css/modificacionmed.css'
 
-function Modificacionesmed() {
+function Modificacionmed() {
     return(
         <div>
             <Navbar />
-            /*esto es un comentario*/
-        </div>
+               <div className='contenedor-modificacion'>
+                <div className='contenedor-img'>
+                </div>
+               <div className='contenedor-dato'>
+                <img src="" alt="" />
+                 </div>
+            </div>
+            <div className='content-info'>
+            <div className='contenedor-info'>
+            </div>
+            </div>
+        </div>  
     );
 }
 
-export default Modificacionesmed;
+export default Modificacionmed;

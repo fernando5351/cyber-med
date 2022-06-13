@@ -1,0 +1,49 @@
+.contenedor-modificacion {
+    width: 100%;
+    height: 210px;
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.contenedor-img {
+    width: 20%;
+    height: 200px;
+    display: flex;
+    margin: 10px;
+    border-radius: 30px;
+    flex-direction: row;
+    background-color: #ffffff;
+}
+
+.contenedor-dato {
+    width: 60%;
+    height: 200px;
+    display: flex;
+    margin: 30px;
+    border-radius: 30px;
+    flex-direction: row;
+    background-color: #ffffff;
+}
+
+.contenedor-info {
+    width: 83%;
+    height: 290px;
+    display: flex;
+    margin: 30px;
+    margin-top: 150px;
+    border-radius: 30px;
+    flex-direction: row;
+    background-color: #ffffff;
+}
+
+.content-info{
+    display: flex;
+    height: 205px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+}
