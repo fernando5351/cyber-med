@@ -1,3 +1,11 @@
+.contenedor-home {
+    background-color: rgb(253, 253, 253);
+    margin-top: 90px;
+    margin-bottom: 35px;
+    padding: 9px;
+    width: 100%;
+}
+
 .row{
     background-color: rgb(255, 255, 255);
     margin-left: 20px;
