@@ -5,7 +5,6 @@ function Modificacionesmed() {
     return(
         <div>
             <Navbar />
-            /*esto es un comentario*/
         </div>
     );
 }
