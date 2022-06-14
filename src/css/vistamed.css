@@ -1,15 +1,17 @@
-.contenedor-principal {
+.contenedor-imagen {
     background-color: rgb(255, 255, 255);
-    width: 100%;
-    margin-top: 40px;
+}
+.contenedor-marca {
+    background-color: rgb(255, 255, 255);
+}
+.contenedor-descrpcion {
+    background-color: rgb(255, 255, 255);
+}
+.Eliminar {
+ 
+}
+.Editar {
+    
 }
 
-.contenedor-btnvistamed{
-    width: 100%;
-    background-color: antiquewhite;
-}
 
-h1{
-    padding: 0%;
-    margin: 0%;
-}
