@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Home from './pages/home'
 import Medicinas from './pages/medicinas';
 import Login from './pages/login';
+import Vistauso from './pages/vistauso/Vistauso';
 
 const App = () => {
   return (

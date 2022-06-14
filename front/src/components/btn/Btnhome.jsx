@@ -7,7 +7,7 @@ function Btnhome() {
     <div className='row content'>
       <form className='col s12 content'>
          <div className='input-field col s3 content'>
-             <select>
+             <select className='selectores'>
                      <option value='' disabled selected>ADMINISTRACION</option>
                      <option value='1'>Option 1</option>
                      <option value='2'>Option 4</option>
