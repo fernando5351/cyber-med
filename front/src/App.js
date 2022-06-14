@@ -1,8 +1,9 @@
 import React, { Suspense } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Login from './pages/login';
 import Home from './pages/home'
 import Medicinas from './pages/medicinas';
-import Login from './pages/login';
+import Agregar from './pages/agregar-tipo'
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
         <Routes>
           <Route path="/" name='Login' element={<Login />} />
           <Route path="/home" name='home' element={<Home />} />
+          <Route path="/medicinas/agregar" element={<Agregar />} />
           <Route path="/medicinas" name='medicinas' element={<Medicinas />} />
         </Routes>
       </Suspense>
