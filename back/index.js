@@ -6,9 +6,9 @@ const app = express()
 app.use(cors())
 
 const credenciales = {
-    host: "",
-    user: "",
-    password: "",
+    host: "localhost",
+    user: "schiffer",
+    password: "Fernando-19@20",
     database: "db_medicines"
 }
 
