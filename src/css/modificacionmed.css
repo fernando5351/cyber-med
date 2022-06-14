@@ -28,6 +28,7 @@
     background-color: #ffffff;
 }
 
+
 .contenedor-info {
     width: 78%;
     height: 290px;
@@ -63,5 +64,26 @@
 .butonmod:hover{
     transform: scale(1.1);
     background-color: #ffffff;
+
+}
+
+form{
+     display: flex;
+     align-items: baseline;
+     flex-wrap: wrap;
+     padding-left: 40px;
+     font-size: larger;
+     font-family: Noto Serif;
+     font-weight: 900;
+     color: rgb(141, 207, 236);
+}
+
+.entrada{
+    margin-left: 20px;
+    width: 450px;
+    border-bottom: 2px solid rgb(141, 207, 236);
+}
+
+.diseño-form{
 
 }

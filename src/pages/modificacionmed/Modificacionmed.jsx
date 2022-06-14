@@ -11,13 +11,28 @@ function Modificacionmed() {
           <div className="contenedor-img">
             <a class="waves-effect waves-light btn butonmod">
               <img className="subiricon" src={imgsubir} alt="" />
-            </a>
+                </a>
+                  </div>
+                    <div className="contenedor-dato">
+                      <form>
+                     <div className="diseño-form">
+                     PRECIO :
+                      <div class="input-field inline">
+                      <input id="first_name" type="text" class="validate entrada" />
+                      </div>
+                     </div>
+                     <div className="diseño-form">
+                     PRECIO :
+                      <div class="input-field inline">
+                      <input id="first_name" type="text" class="validate" />
+                      </div>
+                     </div>
+                      </form>
+                    </div>
+                </div>
+              <div className="content-info">
+            <div className="contenedor-info">
           </div>
-          <div className="contenedor-dato">
-          </div>
-        </div>
-        <div className="content-info">
-          <div className="contenedor-info"></div>
         </div>
       </div>
     );
