@@ -1,65 +1,88 @@
-body {
+body{
     margin: 0;
     padding: 0;
     background-color: rgb(141, 207, 236) !important;
 }
 
-.nav-wrapper {
+.contenedor-nav{
+    width: 100%;
+}
+
+.menu{
+    flex-wrap: wrap;
+    justify-content: space-between;
     background-color: rgb(255, 255, 255);
-    margin: 0%;
-    padding: 0%;
-    box-shadow: 5px 5px 15px 5px #047c91;
+    height: auto;
+    width: 100%;
+    box-shadow: 5px 5px 15px 5px  #047c91;
 }
 
-.nav-wrapper:hover {
-    background-color: rgb(255, 255, 255);
-    margin: 0%;
-    padding: 0%;
-    box-shadow: 5px 5px 15px 5px #047c91;
-    transition-duration: 0.0s;
-    transform: scale(1.1);
-    padding-left: 55px;
-    padding-right: 55px;
+.logo{
+    height: 100%;
 }
 
-.menu {
-    height: 80px;
+.submenu{
+    display: flex;
+    justify-content: space-between;
 }
 
-.logo {
-    width: 80%;
+.listado{
+    display: flex;
+    justify-content: flex-end;
 }
 
-.btnmenu {
-    background-color: rgb(255, 255, 255);
-    height: 80px;
-    padding: 10px;
-    float: left;
-    font-size: x-large;
-}
-
-.btnmenu:hover {
-    transform: scale(1.1);
-    background-color: rgb(141, 207, 236);
-    transition-duration: 0.0s;
-    box-shadow: 5px 5px 20px 5px #ffffff;
-    color: #ffffff;
-    margin-right: 10px;
-}
-
-.btnico {
-    background-color: rgb(255, 255, 255);
-    height: 80px;
-    width: 90px;
+.btnico{
+    height: 90px;
+    justify-content: flex-start;
     transform: translate(10%);
-    font-size: x-large;
+}
+
+
+.btnmenu{
+    height: 90px;
+    font-size: 100%;
+    font-weight: 900;
+    font-family: Noto Serif;
+    padding: 10px;
+}
+
+/*Elemento hover*/
+
+.menu:hover{
+    justify-content: space-between;
+    transform: scale(1.1);
+    background-color: #ffffff;
+    transition-duration: 0.0s;
+    box-shadow: 5px 5px 15px 5px  #047c91;
+}
+
+
+.submenu:hover{
+    display: flex;
+    justify-content: space-between;
+    padding-left:  4%;
+    padding-right: 4%;
+}
+
+.listado:hover{
+    display: flex;
+    justify-content: flex-end;
 }
 
 .btnico:hover{
-    height: 70px;
-    width: 90px;
     transform: scale(1.1);
     background-color: #ffffff;
     transition-duration: 0.0s;
     box-shadow: 5px 5px 15px 5px #ffffff;
 }
+
+
+.btnmenu:hover{
+    transform: scale(1.1);
+    background-color: rgb(141, 207, 236);
+    transition-duration: 0.0s;
+    box-shadow: 5px 5px 20px 5px #ffffff;
+    color: #ffffff;
+}
+
+
