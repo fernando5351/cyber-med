@@ -20,11 +20,39 @@
   justify-content: space-around ;
 }
 
+.select-wrapper{
+  background-color: rgb(141, 207, 236);
+  border-radius: 20px;
+}
 
 input::placeholder {
   color: rgb(0, 0, 0);
   font-size: larger;
 }
+
+
+
+.dropdown-content li>a, .dropdown-content li>span {
+ color: rgb(0, 0, 0);
+ box-shadow: 1px 1px 2px 1px rgb(141, 207, 236);
+ text-align: center;
+ border-radius: 20px;
+ font-family: Noto Serif;
+}
+
+/* EFECTO HOVER */
+
+input[id='Nombrein']:not(.browser-default) {
+ background-color: rgb(141, 207, 236);
+ border-radius: 40px;
+ box-shadow: 5px 5px 15px 5px  #ffffff;
+ padding-bottom: 10px;  
+ color: rgb(0, 0, 0);
+ text-align: center;
+ font-size: larger;
+ font-family: Noto Serif;
+}
+
 
 /* EFECTOS HOVER*/
 
@@ -35,3 +63,4 @@ input::placeholder {
   border-style: solid; 
   border-color: #ffffff;
 }
+
