@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../../components/navegacion/Navbar";
-import '../../css/vistamed.css'
+import '../../css/vistaMed.css'
 
 function Vistamed() {
     return(

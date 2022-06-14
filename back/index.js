@@ -1,0 +1,45 @@
+const express = require('express')
+const cors = require('cors')
+const mysql  = require('mysql2')
+const jwt = require('jsonwebtoken')
+const app = express()
+app.use(cors())
+
+const credenciales = {
+    host: "",
+    user: "",
+    password: "",
+    database: "db_medicines"
+}
+
+app.get('/medicinas', (req, res) => {
+    var connection = mysql.createConnection(credenciales)
+    connection.query('SELECT * from tipo_consumo', (error, resultado) => {
+        if (error) {
+            res.status(500).send(error)
+        } else {
+            res.status(200).send(resultado)
+        }
+    })
+    connection.end()
+})
+
+app.post('/login', (req, res) => {
+    const { email, password } = req.body
+    const values = [ email, password]
+    var conexion = mysql.createConnection(credenciales)
+    conexion.query('SELECT * FROM admin WHERE correo = ? AND contrasennia LIKE ?', values, (err, result) =>{
+        if (err) {
+            res.status(500).send(err)
+        } else {
+            if (result.length > 0) {
+                res.status(200).send(result[0])
+            } else {
+                res.status(400).send('Usuario no existe')
+            }
+        }
+    })
+    conexion.end
+})
+
+app.listen(4000, ()=> console.log('this is a servidor'))
