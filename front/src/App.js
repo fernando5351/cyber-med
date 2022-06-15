@@ -6,13 +6,13 @@ import Home from './pages/home';
 const App = () => {
   return (
     <Router>
-    <Suspense fallback={<p>Cargando...</p>}>
-      <Routes>
-        <Route path="/" name='Home' element={<Modificacionmed />} />
-      </Routes>
-    </Suspense>
-  </Router>
-  );
+      <Suspense fallback={<p>Cargando...</p>}>
+        <Routes>
+          <Route path="/" name='home' element={<Modificacionmed />} />
+        </Routes>
+      </Suspense>
+    </Router>
+  )
 }
 
 export default App;
