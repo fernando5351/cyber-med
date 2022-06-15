@@ -7,22 +7,22 @@ function Btnhome() {
     <div className='row content'>
       <form className='col s12 content'>
          <div className='input-field col s3 content'>
-             <select id='selector'>
-                     <option value='' disabled selected>USO</option>
-                     <option value='1'>Option 1</option>
-                     <option value='2'>Option 2</option>
-                     <option value='3'>Option 3</option>
+             <select class='browser-default' id='selecttype'>
+               <option className='options' value='0' disabled selected>ADMINISTRACION</option>
+               <option className='options' value='1'>Option 1</option>
+               <option className='options' value='2'>Option 2</option>
+               <option className='options' value='3'>Option 3</option>
              </select>
          </div>
          <div className='input-field col s3 content'>
              <input placeholder='NOMBRE' id='Nombrein' type='text' class='validate  entradatext' />             
          </div>
          <div className='input-field col s3 content'>
-         <select id='selector'>
-                     <option value='' disabled selected>USO</option>
-                     <option value='1'>Option 1</option>
-                     <option value='2'>Option 2</option>
-                     <option value='3'>Option 3</option>
+         <select class='browser-default' id='selectuse'>
+               <option className='options' value='' disabled selected>USO</option>
+               <option className='options' value='1'>Option 1</option>
+               <option className='options' value='2'>Option 2</option>
+               <option className='options' value='3'>Option 3</option>
              </select>
          </div>
          <div className='input-field col s3 content'>

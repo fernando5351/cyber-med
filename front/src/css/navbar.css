@@ -34,27 +34,18 @@ body{
 .btnico{
     height: 90px;
     justify-content: flex-start;
-    transform: translate(10%);
 }
 
 
 .btnmenu{
     height: 90px;
-    font-size: 100%;
+    font-size: large;
     font-weight: 900;
     font-family: Noto Serif;
     padding: 10px;
 }
 
 /*Elemento hover*/
-
-.btnico:hover{
-    transform: scale(1.1);
-    background-color: #ffffff;
-    transition-duration: 0.0s;
-    box-shadow: 5px 5px 15px 5px #ffffff;
-}
-
 
 .btnmenu:hover{
     background-color: rgb(141, 207, 236);
