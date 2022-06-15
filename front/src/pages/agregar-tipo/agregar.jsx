@@ -31,11 +31,11 @@ function Mod() {
                 </div>
                 <div className="container-table">
                     <table className='centered'>
-                        <thead className='border-table'>
+                        <thead>
                             <tr className='background'>
-                                <th className='border-table'>ID</th>
+                                <th>ID</th>
                                 <th>NOMBRE</th>
-                                <th className='border-table-rig'>ACCION</th>
+                                <th>ACCION</th>
                             </tr>
                         </thead>
                         <tbody className='table'>

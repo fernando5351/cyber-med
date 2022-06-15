@@ -38,17 +38,3 @@
 .background {
     background: #fff;
 }
-
-.border-table {
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
-}
-
-.border-table-rig {
-    border-top-right-radius: 30px !important;
-    border-bottom-right-radius: 30px;
-}
-
-.background-radius {
-    border-radius: 30px !important;
-}
