@@ -7,20 +7,23 @@ const mod = () => {
         <div className='container-add'>
             <Navbar />
             <div className="container-tab">
+                <div className="container-btn">
+
+                </div>
                 <div className="container-table">
                     <table className='centered'>
-                        <thead id='th'>
-                            <tr>
-                                <th>ID</th>
+                        <thead className='border-table'>
+                            <tr className='background'>
+                                <th className='border-table'>ID</th>
                                 <th>NOMBRE</th>
-                                <th>ACCIONES</th>
+                                <th className='border-table-rig'>ACCION</th>
                             </tr>
                         </thead>
-                        <tbody className='tb'>
-                            <tr>
-                                <td>1</td>
+                        <tbody className='alt'>
+                            <tr className='background'>
+                                <td className='border-table'>1</td>
                                 <td>Intramuscular</td>
-                                <td>eliminar/editar</td>
+                                <td className='border-table-rig'>Eliminar/Editar</td>
                             </tr>
                         </tbody>
                     </table>
