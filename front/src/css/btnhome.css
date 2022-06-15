@@ -1,5 +1,7 @@
 .content{
   background-color: rgb(141, 207, 236);
+  display: flex;
+  justify-content: space-around ;
 }
 
 .Btnn{
@@ -7,7 +9,7 @@
   height: 60px;
   background-color: rgb(141, 207, 236);
   border-radius:40px;
-  box-shadow: 5px 5px 15px 5px #ffffff;
+  box-shadow: 3px 3px 13px 3px #ffffff;
 }
 
 .lupa{
@@ -15,23 +17,106 @@
    height: 100%;
 }
 
-.content{
-  display: flex;
-  justify-content: space-around ;
-}
 
-
-input::placeholder {
-  color: rgb(0, 0, 0);
+#selecttype{
   font-size: larger;
+  font-family: Noto Serif;
+  font-weight: 900;
+  text-align: center;
+  color: #ffffff;
+  height: 60px;
+  width: 90%;
+  background-color: rgb(141, 207, 236);
+  box-shadow: 3px 3px 13px 2px #ffffff;
+  border-radius: 40px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
 }
 
-/* EFECTOS HOVER*/
+#Nombrein {
+  background-color: rgb(141, 207, 236);
+  border-radius: 40px;
+  box-shadow: 3px 3px 13px 4px #ffffff;
+  height: 60px; 
+  width: 90%;
+  text-align: center;
+  font-family: Noto Serif;
+  font-weight: 900;
+  color: #ffffff;
+  font-size: larger;
+ }
+ 
+
+ #Nombrein::placeholder {
+  font-size: large; 
+  color: #ffffff; 
+}
+
+#selectuse{
+  font-size: larger;
+  font-family: Noto Serif;
+  font-weight: 900;
+  text-align: center;
+  color: #ffffff;
+  height: 60px;
+  width: 90%;
+  background-color: rgb(141, 207, 236);
+  box-shadow: 3px 3px 13px 2px #ffffff;
+  border-radius: 40px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
+}
+
+option{
+  font-size: larger;
+  font-weight: 600;
+  display: block;
+  white-space: nowrap;
+  padding: 0px 2px 1px;
+  background-color: #ffffff;
+  color: rgb(141, 207, 236);
+}
+
+/* EFECTO HOVER*/
 
 .Btnn:hover{
   transform: scale(1.1);
   background-color: rgb(141, 207, 236);
-  transition-duration: 0.1s;
+  transition-duration: 0.0s;
   border-style: solid; 
   border-color: #ffffff;
+}
+
+#selecttype:hover{
+  transform: scale(1.1);
+  background-color: rgb(141, 207, 236);
+  transition-duration: 0.0s;
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+
+#Nombrein:hover{
+  transform: scale(1.1);
+  background-color: rgb(141, 207, 236);
+  transition-duration: 0.0s;
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+
+#selectuse:hover{
+  transform: scale(1.1);
+  background-color: rgb(141, 207, 236);
+  transition-duration: 0.0s;  
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
 }

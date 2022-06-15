@@ -40,6 +40,7 @@
     box-shadow: 5px 5px 15px 5px  #9c9a9a;
 }
 
+/* EFECTO HOVER*/
 .atras:hover{
     transform: scale(1.2);
     background-color: rgb(255, 255, 255);
