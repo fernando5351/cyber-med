@@ -9,6 +9,10 @@ function Barranav() {
   const Add = () => {
     Navigate('/medicinas/agregar')
   }
+  const home = ()=>{
+    Navigate('/home')
+  }
+  
   return (
     // este es el que deben elegir
     <div className="contenedor-barra">
@@ -16,7 +20,8 @@ function Barranav() {
         <img
           className='atras'
           src={Retro}
-          alt='' />
+          alt='' 
+          onClick={home} />
       </div>
       <div className="agregar">
         <img
