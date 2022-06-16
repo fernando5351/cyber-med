@@ -71,7 +71,7 @@
   -o-border-radius: 40px;
 }
 
-option{
+#options{
   font-size: larger;
   font-weight: 600;
   display: block;
@@ -82,7 +82,6 @@ option{
 }
 
 /* EFECTO HOVER*/
-
 .Btnn:hover{
   transform: scale(1.1);
   background-color: rgb(141, 207, 236);

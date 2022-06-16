@@ -8,10 +8,10 @@ function Btnhome() {
       <form className='col s12 content'>
          <div className='input-field col s3 content'>
              <select class='browser-default' id='selecttype'>
-               <option className='options' value='0' disabled selected>ADMINISTRACION</option>
-               <option className='options' value='1'>Option 1</option>
-               <option className='options' value='2'>Option 2</option>
-               <option className='options' value='3'>Option 3</option>
+               <option id='options' value='0' disabled selected>ADMINISTRACION</option>
+               <option id='options' value='1'>Option 1</option>
+               <option id='options' value='2'>Option 2</option>
+               <option id='options' value='3'>Option 3</option>
              </select>
          </div>
          <div className='input-field col s3 content'>
@@ -19,10 +19,10 @@ function Btnhome() {
          </div>
          <div className='input-field col s3 content'>
          <select class='browser-default' id='selectuse'>
-               <option className='options' value='' disabled selected>USO</option>
-               <option className='options' value='1'>Option 1</option>
-               <option className='options' value='2'>Option 2</option>
-               <option className='options' value='3'>Option 3</option>
+               <option id='options' value='' disabled selected>USO</option>
+               <option id='options' value='1'>Option 1</option>
+               <option id='options' value='2'>Option 2</option>
+               <option id='options' value='3'>Option 3</option>
              </select>
          </div>
          <div className='input-field col s3 content'>
@@ -43,6 +43,3 @@ function Btnhome() {
 }
 
 export default Btnhome;
-
-
-
