@@ -7,10 +7,11 @@
 }
 
 .row{
+    width: 100%;
     background-color: rgb(255, 255, 255);
-    margin-left: 20px;
-    margin-right: 20px;
     margin-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .Btnn{
@@ -43,7 +44,9 @@
 
 .tableM{
     font-size: large;
+    font-weight: 900;
     font-family: Noto Serif;
+    color: rgb(141, 207, 236);
 }
 
 .contenedor-btnhome{
