@@ -14,12 +14,15 @@ function Formuso() {
             </div>
             <div class="input-field col s12">
     <select>
-      <option value="" disabled selected>ESTADO</option>
+      <option value="" disabled selected></option>
       <option value="1">Habilitado</option>
       <option value="2">Inhabilitado</option>
     </select>
+    <label for="last_name">Estado</label>
   </div>
 <div className="Botones">
+<button  type="" name="guardar" className="buton1">GUARDAR</button>
+<button  type="" name="eliminar" className="buton2">ELIMINAR</button>
 </div>
         </div>
           </div>
