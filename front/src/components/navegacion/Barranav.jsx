@@ -4,7 +4,7 @@ import Retro from '../../icon/Vista/retroceder.png';
 import Agregar from '../../icon/Vista/agregar.png';
 import { useNavigate } from "react-router-dom";
 
-function Barranav() {
+function Barranav(props) {
   const Navigate = useNavigate()
   const Add = () => {
     Navigate('/medicinas/agregar')
@@ -22,6 +22,9 @@ function Barranav() {
           src={Retro}
           alt='' 
           onClick={home} />
+      </div>
+      <div className='titulo-cont'> 
+        <p id="titulo">{props.titulocont}</p>
       </div>
       <div className="agregar">
         <img

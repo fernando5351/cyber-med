@@ -1,0 +1,25 @@
+.contenedor-main-tabla {
+    background-color: rgb(253, 253, 253);
+    margin-bottom: 35px;
+    padding: 9px;
+    width: 100%;
+    display: contents;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor-btn{
+    margin-top: 4%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.contenedor-tabla{
+    margin-top: 5%;
+}
+
+.contenedor-tablaH{
+    margin-top: 4%;   
+}
+
+ 

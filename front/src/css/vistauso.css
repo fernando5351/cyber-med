@@ -1,15 +1,5 @@
-.contenedor-principal {
+.contenedor-de-vista{
     background-color: rgb(255, 255, 255);
-    width: 100%;
-    margin-top: 40px;
-}
-
-.contenedor-btnvistauso{
-    width: 100%;
-    background-color: antiquewhite;
-}
-
-h1{
-    padding: 0%;
-    margin: 0%;
+    margin-top: 5%;
+    padding-top: 2%;
 }

@@ -1,9 +1,8 @@
 import React from "react";
 import Navbar from "../../components/navegacion/Navbar";
+import Barranav from "../../components/navegacion/Barranav";
 import BtnMedicina from "../../components/btn/BtnMedicina";
-import Barranav from '../../components/navegacion/Barranav';
 import '../../css/medicinas.css'
-
 
 function Medicinas() {
     return (
@@ -12,7 +11,9 @@ function Medicinas() {
 
             <div className="contenedor-principal">
                 <div>
-                    <Barranav />
+                    <Barranav 
+                    titulocont='CLASIFICACION'
+                    />
                 </div>
                 <div className="contenedor-medicinas">
                     <BtnMedicina />
