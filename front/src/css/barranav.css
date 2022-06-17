@@ -25,25 +25,20 @@
     margin-top: 1%;
 }
 
-<<<<<<< HEAD
-.annadir {
+.annadir, .atras {
     height: 60px;
     width: 60px;
     margin: 5px;
     padding: 10px;
     background-color: rgb(255, 255, 255);
     border-radius: 50px;
-=======
-.annadir, .atras{
-    height: 100%;
-    border-radius: 40px;
->>>>>>> 06617f029b0def002e915857ad3bd9853802cb87
     box-shadow: 5px 5px 15px 5px  #9c9a9a;
     -webkit-border-radius: 40px;
     -moz-border-radius: 40px;
     -ms-border-radius: 40px;
     -o-border-radius: 40px;
 }
+
 
 .annadir:hover{
     transform: scale(1.2);
