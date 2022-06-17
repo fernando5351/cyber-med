@@ -2,15 +2,8 @@ import React from "react";
 import Navbar from "../../components/navegacion/Navbar";
 import '../../css/home.css'
 import Btnhome from '../../components/btn/Btnhome'
-import axios from 'axios'
 
 function Home() {
-    const loadData = () => {
-        axios.get('http://localhost:4000/home/table')
-            .then(result => {
-                setConsumo(result.data)
-            })
-    }
     return(
       <div className="contenedor-home">
            <Navbar />

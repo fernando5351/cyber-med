@@ -26,6 +26,7 @@
 .annadir {
     height: 60px;
     width: 60px;
+    margin: 5px;
     padding: 10px;
     background-color: rgb(255, 255, 255);
     border-radius: 50px;

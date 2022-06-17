@@ -7,6 +7,11 @@
     flex-direction: column;
 }
 
+.tbl {
+    border-radius: 30px;
+    overflow: hidden;
+}
+
 .container-tab {
     display: flex;
     justify-content: center;
@@ -27,6 +32,17 @@
 .container-table {
     width: 70%;
     height: 80%;
+    margin-bottom: 25px;
+}
+
+thead {
+    width: 500px;
+    overflow-x: auto;
+}
+ 
+tbody {
+    width: 500px;
+    overflow-x: auto;
 }
 
 .table {

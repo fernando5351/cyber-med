@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import Navbar from '../../components/navegacion/Navbar'
 import Agregar from '../../icon/Vista/agregar.png'
 import '../../css/Add-medicines.css'
+import Edit from '../../icon/addMed/editar.png'
+import Delete from '../../icon/addMed/eliminar.png'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
@@ -30,7 +32,7 @@ function Mod() {
                         onClick={add} />
                 </div>
                 <div className="container-table">
-                    <table className='centered'>
+                    <table className='centered tbl'>
                         <thead>
                             <tr className='background'>
                                 <th>ID</th>
@@ -45,7 +47,18 @@ function Mod() {
                                         <tr className='background'>
                                             <td>{consumo.id}</td>
                                             <td>{consumo.tipo_consumo}</td>
-                                            <td></td>
+                                            <td>
+                                                <img
+                                                className='annadir'
+                                                src={Edit}
+                                                alt=''
+                                                onClick={add} />
+                                                <img
+                                                className='annadir'
+                                                src={Delete}
+                                                alt=''
+                                                onClick={add} />
+                                            </td>
                                         </tr>
                                     ))
                                 }
