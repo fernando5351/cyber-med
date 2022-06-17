@@ -7,6 +7,7 @@ import Medicinas from './pages/medicinas';
 import Formuso from './components/formtipouso/formtipouso';
 import Agregar from './pages/agregar-tipo'
 import Vistauso from './pages/vistauso/Vistauso';
+import Modificacionmed from './pages/modificacionmed/Modificacionmed';
 
 const App = () => {
   return (
