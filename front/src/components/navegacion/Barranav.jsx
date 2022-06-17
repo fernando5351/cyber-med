@@ -4,11 +4,15 @@ import Retro from '../../icon/Vista/retroceder.png';
 import Agregar from '../../icon/Vista/agregar.png';
 import { useNavigate } from "react-router-dom";
 
-function Barranav() {
+function Barranav(props) {
   const Navigate = useNavigate()
   const Add = () => {
     Navigate('/medicinas/agregar')
   }
+  const home = ()=>{
+    Navigate('/home')
+  }
+  
   return (
     // este es el que deben elegir
     <div className="contenedor-barra">
@@ -16,7 +20,11 @@ function Barranav() {
         <img
           className='atras'
           src={Retro}
-          alt='' />
+          alt='' 
+          onClick={home} />
+      </div>
+      <div className='titulo-cont'> 
+        <p id="titulo">{props.titulocont}</p>
       </div>
       <div className="agregar">
         <img

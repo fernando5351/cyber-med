@@ -5,48 +5,34 @@
 
 .contenedor-barra{
     display: flex;
-    align-items: baseline;
-    align-content: space-around;
+    justify-content: space-around;
+    height: 70px;
     width: 100%;
-    height: 62px;
 }
 
-.retro, .agregar {
-    height: 62px;
-    width: 50%;
-}
-.retro {
-    padding-left: 70px;
-}
-
-.agregar {
-    padding-left: 370px;
+.retro, .agregar, .titulo-cont{
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
 }
 
-.annadir {
-    height: 60px;
-    width: 60px;
-    padding: 10px;
-    background-color: rgb(255, 255, 255);
-    border-radius: 50px;
+#titulo{
+    position: fixed;
+    font-size: xx-large;
+    font-family: Noto Serif;
+    font-weight: 900;
+    margin-top: 1%;
+}
+
+.annadir, .atras{
+    height: 100%;
+    border-radius: 40px;
     box-shadow: 5px 5px 15px 5px  #9c9a9a;
-}
-
-.atras {
-    height: 60px;
-    width: 60px;
-    background-color: rgb(255, 255, 255);
-    border-radius: 50px;
-    box-shadow: 5px 5px 15px 5px  #9c9a9a;
-}
-
-/* EFECTO HOVER*/
-.atras:hover{
-    transform: scale(1.2);
-    background-color: rgb(255, 255, 255);
-    transition-duration: 0.0s;
-    border-style: solid;
-    border-color: rgba(0,215,255,1);
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
 }
 
 .annadir:hover{
@@ -54,5 +40,13 @@
     background-color: rgb(255, 255, 255);
     transition-duration: 0.0s;
     border-style: solid;
-    border-color: rgba(0,215,255,1);
+    border-color: rgb(141, 207, 236);
+}
+
+.atras:hover{
+    transform: scale(1.2);
+    background-color: rgb(255, 255, 255);
+    transition-duration: 0.0s;
+    border-style: solid;
+    border-color: rgb(141, 207, 236);
 }

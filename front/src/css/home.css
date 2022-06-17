@@ -7,11 +7,10 @@
 }
 
 .row{
-    width: 100%;
     background-color: rgb(255, 255, 255);
     margin-top: 50px;
-    display: flex;
-    justify-content: space-evenly;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
 .Btnn{
