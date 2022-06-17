@@ -4,9 +4,9 @@ import '../../css/btnhome.css'
 
 function Btnhome() {
   return (
-    <div className='row content'>
-      <form className='col s12 content'>
-         <div className='input-field col s3 content'>
+    <div className='row' id='contentmain'>
+      <form className='col s12' id='content'>
+         <div className='input-field col s3' id='content'>
              <select class='browser-default' id='selecttype'>
                <option id='options' value='0' disabled selected>ADMINISTRACION</option>
                <option id='options' value='1'>Option 1</option>

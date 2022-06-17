@@ -1,17 +1,30 @@
-.content{
+#contentmain{
   background-color: rgb(141, 207, 236);
   display: flex;
   justify-content: space-around ;
+  margin-top: 1%;
+}
+
+#content{
+  background-color: rgb(141, 207, 236);
+  display: flex;
+  justify-content: space-evenly ;
 }
 
 .Btnn{
   width: 100px;
+  padding: 10px;
   height: 60px;
   background-color: rgb(141, 207, 236);
   border-radius:40px;
-  box-shadow: 3px 3px 13px 3px #ffffff;
+  box-shadow: 5px 5px 15px 5px #ffffff;
+  margin-left: 25%;
+  margin-right: 25%;
 }
 
+.icono{
+  width: 30%;
+}
 .lupa{
    width: 60%;
    height: 100%;

@@ -7,8 +7,8 @@ app.use(cors())
 
 const credenciales = {
     host: "localhost",
-    user: "josue",
-    password: "Josue-17@19",
+    user: "Xoxo503",
+    password: "Hernandez503jr",
     database: "db_medicines"
 }
 
