@@ -14,7 +14,7 @@ function Home() {
                          <tr>
                              <th>ID</th>
                              <th>NOMBRE</th>
-                             <th>TIPO</th>
+                             <th>ADMINISTRACION</th>
                              <th>USO</th>
                              <th>PRECIO</th>
                              <th>GRAMOS</th>
