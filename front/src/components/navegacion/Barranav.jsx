@@ -9,6 +9,10 @@ function Barranav(props) {
   const Add = () => {
     Navigate('/medicinas/agregar')
   }
+  const home = ()=>{
+    Navigate('/home')
+  }
+  
   return (
     // este es el que deben elegir
     <div className="contenedor-barra">
@@ -16,7 +20,8 @@ function Barranav(props) {
         <img
           className='atras'
           src={Retro}
-          alt='' />
+          alt='' 
+          onClick={home} />
       </div>
       <div className='titulo-cont'> 
         <p id="titulo">{props.titulocont}</p>
