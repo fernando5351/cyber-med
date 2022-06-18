@@ -1,0 +1,53 @@
+.contenedor-principal{
+    background-color: #FFFFFF;
+    height: 450px; 
+    width: 80px;
+    text-align: center; 
+    color: #848691;
+    border-radius: 30px;
+}
+.buton1{
+    background: #3271A5;
+    font-size: 20px;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 30px;
+    width: 10%;
+    height: 40px;
+    margin: 1%;
+
+}
+.buton2{
+    color: #3271A5;
+    font-size: 20px;
+    background: #FFFFFF;
+    border-width: 1%;
+    border-style: solid;
+    border-color: #3271A5;
+    border-radius: 30px;
+    width: 10%;
+    height: 40px;
+    margin-bottom: 5%;
+   
+}
+.buton2:hover{
+    background-color: #D1E9FB;
+}
+.buton1:hover{
+    background-color: #7FB5E1;
+}
+.buton1:active{
+    background-color: #7FB5E1;
+}
+.buton2:active{
+    background-color: #D1E9FB;
+}
+.Entrada-texto{
+    display:inline-block;
+    margin: 5%;
+}
+.select{
+    display: inline-block;
+    margin: 5%;
+}
+    
