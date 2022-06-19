@@ -47,19 +47,19 @@ function Modificacionmed() {
             </div>
 
             <select multiple>
-            <option value="" disabled selected>USO :</option>
-            <option value="1">Option 1</option>
-            <option value="2">Option 2</option>
-            <option value="3">Option 3</option>
-          </select>
+              <option value="" disabled selected>USO :</option>
+              <option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+            </select>
 
             <select class="browser-default" id="select-diseno">
-            <option value="" disabled selected>ADMINISTRACION :</option>
-            <option id="diseño-text" value="1">Option 1</option>
-            <option id="diseño-text" value="2">Option 2</option>
-            <option id="diseño-text" value="3">Option 3</option>
-          </select>
-          <div id="diseno-info">
+              <option value="" disabled selected>ADMINISTRACION :</option>
+              <option id="diseño-text" value="1">Option 1</option>
+              <option id="diseño-text" value="2">Option 2</option>
+              <option id="diseño-text" value="3">Option 3</option>
+            </select>
+            <div id="diseno-info">
               CANTIDAD :
               <div className="input-field inline">
                 <input id="texto-info" type="text" className="validate" />
