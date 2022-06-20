@@ -54,10 +54,10 @@ function Modificacionmed() {
           </select>
 
             <select class="browser-default" id="select-diseno">
-            <option value="" disabled selected>ADMINISTRACION :</option>
-            <option id="diseño-text" value="1">Option 1</option>
-            <option id="diseño-text" value="2">Option 2</option>
-            <option id="diseño-text" value="3">Option 3</option>
+            <option id="diseno-text" value="" disabled selected>ADMINISTRACION :</option>
+            <option id="diseno-text" value="1">Option 1</option>
+            <option id="diseno-text" value="2">Option 2</option>
+            <option id="diseno-text" value="3">Option 3</option>
           </select>
           <div id="diseno-info">
               CANTIDAD :

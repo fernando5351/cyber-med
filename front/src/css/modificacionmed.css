@@ -132,14 +132,24 @@ input[id='texto-info']:not(.browser-default){
 
 #select-diseno{
     width: 400px;
-    font-family: Noto serif;
-    color: rgb(141, 207, 236);
+    margin-top: 5%;
     border-left: none;
     border-right: none;
     border-top: none;
-    margin-top: 5%;
+    font-family: Noto serif;
+    color: rgb(141, 207, 236);
     border-bottom: 2px solid rgb(141, 207, 236);
 }
 
-
+#diseno-text{
+    font-size: larger;
+    font-weight: 600;
+    display: block;
+    white-space: nowrap;
+    padding: 0px 2px 1px;
+    color: rgb(141, 207, 236);
+    background-color: #ffffff;
+  }
+  
+  
 
