@@ -130,6 +130,9 @@ input[id='texto-info']:not(.browser-default){
     border-right: none;
 }
 
+#select-mult {
+    background: #077803 !important;
+}
 #select-diseno{
     width: 400px;
     font-family: Noto serif;
