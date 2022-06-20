@@ -1,0 +1,102 @@
+.content-uso {
+    width: 100%;
+    height: 100vh;
+}
+
+.container-uso {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 83%;
+}
+
+.contenedor-principal-uso {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #FFFFFF;
+    height: 350px;
+    width: 80%;
+    text-align: center;
+    color: #848691;
+    border-radius: 30px;
+ }
+
+.texto-uso {
+    width: 100%;
+    text-align: center;
+}
+
+.contenedor-form-uso {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+}
+
+.entrada-texto {
+    width: 45%;
+    margin: 10px;
+}
+
+.select {
+    width: 45%;
+    margin: 10px;
+}
+
+.botones {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.buton1 {
+    background: #3271A5;
+    font-size: 20px;
+    color: #FFFFFF;
+    border: 1%;
+    border-style: solid;
+    border-color: #3271A5;
+    border-radius: 30px;
+    width: 25%;
+    height: 40px;
+    margin: 1%;
+
+}
+
+.buton2 {
+    background: #FFFFFF;
+    font-size: 20px;
+    color: #3271A5;
+    border: 1%;
+    border-style: solid;
+    border-color: #3271A5;
+    border-radius: 30px;
+    width: 25%;
+    height: 40px;
+    margin: 1%;
+}
+
+.buton2:hover {
+    background: #3271A5;
+    color: #FFFFFF;
+}
+
+.buton1:hover {
+    background: #FFFFFF;
+    color: #3271A5;
+}
+
+.buton1:active {
+    background-color: #7FB5E1;
+}
+
+.buton2:active {
+    background-color: #D1E9FB;
+}
