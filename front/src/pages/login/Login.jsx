@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import lock from '../../icon/Login/password.png';
 import mail from '../../icon/Login/email.png';
-import '../../css/login.css'
+import styles from  '../../css/login.module.css'
 import { useNavigate } from 'react-router-dom'
 
 function Login() {
@@ -22,29 +22,29 @@ function Login() {
   }
 
   return (
-    <body className='body'>
-      <div className="login">
-        <div className="contenedor-login">
-          <div className="title">
-            <p className="center letter">¡Ingresa a tu cuenta!</p>
+    <body className={styles.body}>
+      <div className={styles.login}>
+        <div className={styles.contenedorLogin}>
+          <div className={styles.title}>
+            <p className={styles.letter}>¡Ingresa a tu cuenta!</p>
           </div>
-          <form className="login">
-            <div className="div">
+          <form className={styles.login}>
+            <div className={styles.div}>
               <img
-                className='mailler'
+                className={styles.mailler}
                 src={mail}
                 alt='' />
-              <input type="text" name='email' value={body.email} onChange={change} placeholder='Correo' className="mail" />
+              <input type="text" name='email' value={body.email} onChange={change} placeholder='Correo' className={styles.mail} />
             </div>
-            <div className="div">
+            <div className={styles.div}>
               <img
-                className='lock'
+                className={styles.lock}
                 src={lock}
                 alt='' />
-              <input type="password" name='password' value={body.password} onChange={change} placeholder='Contraseña' className="pass" />
+              <input type="password" name='password' value={body.password} onChange={change} placeholder='Contraseña' className={styles.pass} />
             </div>
             <p></p>
-            <button onClick={() => onSubmit()} type="submit" name="enviar" className="buton">INGRESAR</button>
+            <button onClick={() => onSubmit()} type="submit" name="enviar" className={styles.buton}>INGRESAR</button>
           </form>
         </div>
       </div>

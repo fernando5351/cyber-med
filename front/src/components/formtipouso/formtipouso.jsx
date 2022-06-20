@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../../components/navegacion/Navbar";
 import '../../css/formtipouso.css'
 
 function Formuso() {
+   const [body, setBody] = useState({ uso:'', estado: ''});
+
+   const change = (event) => {
+    console.log(event.target.value)
+    setBody ({
+      ...body,
+      [event.target.name]: event.target.value
+    })
+   }
   return (
     <div className="content-uso">
       <Navbar />
@@ -14,13 +23,13 @@ function Formuso() {
           <form className="contenedor-form-uso">
             <div className="entrada-texto">
               <div class="input-field col s6">
-                <input id="last_name" type="text" />
+                <input id="last_name" name="uso" value={body.uso} onChange={change} type="text" />
                 <label for="last_name">Tipo de Uso</label>
               </div>
             </div>
             <div className="select">
               <div class="input-field col s12">
-                <select className="selection">
+                <select name="estado" value={body.estado} onChange={change} className="selection">
                   <option value="" disabled selected>ESTADO</option>
                   <option value="1">Habilitado</option>
                   <option value="0">Inhabilitado</option>
