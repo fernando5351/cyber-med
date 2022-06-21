@@ -7,6 +7,7 @@ import Formuso from './components/formtipouso/formtipouso';
 import Agregar from './pages/agregar-tipo'
 import Vistauso from './pages/vistauso/Vistauso';
 import Modificacionmed from './pages/modificacionmed/Modificacionmed';
+import Proveedor from './pages/proveedor/Proveedor';
 
 const App = () => {
   return (
