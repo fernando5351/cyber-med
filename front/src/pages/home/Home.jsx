@@ -2,6 +2,7 @@ import Navbar from "../../components/navegacion/Navbar";
 import '../../css/contenttabla.css'
 import Btnhome from '../../components/btn/Btnhome'
 import TableHome from "../../components/table/Tablehome";
+import Tableproveedor from "../../components/table/Tableproveedor";
 
 
 function Home() {
