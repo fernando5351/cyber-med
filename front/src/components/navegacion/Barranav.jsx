@@ -1,8 +1,8 @@
-import React from "react";
-import '../../css/barranav.css'
-import Retro from '../../icon/Vista/retroceder.png';
+import React from 'react';
+import Barra from '../../css/barranav.module.css'
+import Retro from  '../../icon/Vista/retroceder.png';
 import Agregar from '../../icon/Vista/agregar.png';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 function Barranav(props) {
   const Navigate = useNavigate()
@@ -15,22 +15,22 @@ function Barranav(props) {
   
   return (
     // este es el que deben elegir
-    <div className="contenedor-barra">
-      <div className="retro">
+    <div className={Barra.contenedorBarra}>
+      <div className={Barra.retro}>
         <img
-          className='atras'
+          className={Barra.atras}
           src={Retro}
-          alt='' 
+          alt='retroceder' 
           onClick={home} />
       </div>
-      <div className='titulo-cont'> 
-        <p id="titulo">{props.titulocont}</p>
+      <div className={Barra.tituloCont}> 
+        <p id={Barra.titulo}>{props.titulocont}</p>
       </div>
-      <div className="agregar">
+      <div className={Barra.agregar}>
         <img
-          className='annadir'
+          className={Barra.annadir}
           src={Agregar}
-          alt='' 
+          alt='agregar'
           onClick={Add}/>
       </div>
     </div>

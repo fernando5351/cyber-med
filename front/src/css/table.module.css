@@ -1,0 +1,36 @@
+.row{
+ background-color: aliceblue;   
+ font-family: Noto Serif;
+ margin-left: 15px;
+ margin-right: 15px;
+ display: flex;
+ flex-direction: row;
+ margin-bottom: 15px;
+}
+
+.tableM{
+    width: 100%;    
+    text-align: center;
+    color: rgb(5, 46, 64);
+    border-collapse: collapse;
+}
+
+.cabeza{
+    font-size: larger;
+    width: 100%;
+    font-weight: 500;
+}
+thead{
+    background-color: rgb(255, 255, 255);
+    border-bottom: solid 15px rgb(141, 207, 236);
+}
+
+.contenido{
+    width: 100%;
+    font-size: medium;
+    font-weight: 500;
+}
+
+th, td{
+    padding: 15px;
+}
