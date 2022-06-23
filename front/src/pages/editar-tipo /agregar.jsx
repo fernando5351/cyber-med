@@ -21,9 +21,6 @@ function Mod() {
     const add = () => {
         navigate('/medicinas/agregar/categoria')
     }
-    const edit = () => {
-        navigate('/medicinas/editar/categoria')
-    }
     return (
         <div className={Add.containerAdd}>
             <Navbar />
@@ -53,16 +50,15 @@ function Mod() {
                                             <td>{consumo.tipo_consumo}</td>
                                             <td>
                                                 <img
-                                                    className={barraNav.annadir}
-                                                    src={Edit}
-                                                    alt=''
-                                                    onClick={edit} />
+                                                className={barraNav.annadir}
+                                                src={Edit}
+                                                alt=''
+                                                onClick={add} />
                                                 <img
-                                                    className={barraNav.annadir}
-                                                    src={Delete}
-                                                    alt=''
-                                                    // onClick={#}
-                                                    />
+                                                className={barraNav.annadir}
+                                                src={Delete}
+                                                alt=''
+                                                onClick={add} />
                                             </td>
                                         </tr>
                                     ))
