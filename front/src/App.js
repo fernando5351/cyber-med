@@ -7,7 +7,7 @@ import Formuso from './components/forms/formtipouso';
 import Agregar from './pages/agregar-tipo'
 import Vistauso from './pages/vistauso/Vistauso';
 import Modificacionmed from './pages/modificacionmed/Modificacionmed';
-import Proveedor from './pages/proveedor/Proveedor';
+import Empresa from './pages/empresa/Empresa';
 
 const App = () => {
   return (
@@ -16,6 +16,7 @@ const App = () => {
         <Routes>
           <Route path="/" name='Login' element={<Login />} />
           <Route path="/home" name='Home' element={<Home />} />
+          <Route path="/empresa" name='Empresa' element={<Empresa />} />
           <Route path="/medicinas" name='medicinas' element={<Medicinas />} />
           <Route path="/medicinas/agregar" name='agregarTipo' element={<Agregar />} />
           <Route path="/medicinas/agregar/categoria" name='Home' element={<Formuso />} />
