@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import '../../css/medicinas.css';
+import btnmedicinas from '../../css/medicinas.module.css';
 import axios from 'axios'
 
 function BtnMedicina() {
@@ -13,10 +13,10 @@ function BtnMedicina() {
     useEffect(loadData, [])
     return (
         <>
-            <div className='contenedor-botones'>
+            <div className={btnmedicinas.contenedorBotones}>
                 {
                     consumo.map((consumo) => (
-                        <a className="waves-effect waves-light btn buttonMed">{ consumo.tipo_consumo }</a>
+                        <a className={btnmedicinas.buttonMed}>{ consumo.tipo_consumo }</a>
                     ))
                 }
             </div>

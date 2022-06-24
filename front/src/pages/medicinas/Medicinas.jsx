@@ -2,20 +2,20 @@ import React from "react";
 import Navbar from "../../components/navegacion/Navbar";
 import Barranav from "../../components/navegacion/Barranav";
 import BtnMedicina from "../../components/btn/BtnMedicina";
-import '../../css/medicinas.css'
+import btnmedicinas from '../../css/medicinas.module.css'
 
 function Medicinas() {
     return (
         <div>
             <Navbar />
 
-            <div className="contenedor-principal">
+            <div className={btnmedicinas.contenedorPrincipal}>
                 <div>
                     <Barranav 
                     titulocont='CLASIFICACION'
                     />
                 </div>
-                <div className="contenedor-medicinas">
+                <div className={btnmedicinas.contenedorMedicinas}>
                     <BtnMedicina />
                 </div>
             </div>
