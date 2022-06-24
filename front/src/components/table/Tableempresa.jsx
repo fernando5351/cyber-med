@@ -24,6 +24,7 @@ function Tableempresa() {
                        <th>TELEFONO</th>
                        <th>LOTE</th>
                        <th>ACTIVO</th>
+                       {/* ad */}
                    </tr>
                  </thead>
                  <tbody className={tabla.contenido}>
