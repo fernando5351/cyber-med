@@ -1,0 +1,36 @@
+.contenedorPrincipal {
+    background-color: rgb(253, 253, 253);
+    margin-top: 90px;
+    margin-bottom: 35px;
+    padding: 9px;
+    width: 100%;
+}
+
+.contenedor-barra {
+    width: 100%;
+}
+
+.contenedorBotones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.buttonMed {
+    width: 300px;
+    margin-top: 40px;
+    border-radius: 20px;
+    border-style: solid;
+    background-color: rgb(141, 207, 236);
+    height: 100px;
+    padding: 30px;
+    font-size: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.buttonMed:hover {
+    transform: scale(1.1);
+    background-color: #92c7f3;
+    box-shadow: 5px 5px 15px 5px #65d0e6;
+}
