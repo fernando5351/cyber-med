@@ -19,7 +19,7 @@ const App = () => {
           <Route path="/medicinas" name='medicinas' element={<Medicinas />} />
           <Route path="/medicinas/agregar" name='agregarTipo' element={<Agregar />} />
           <Route path="/medicinas/agregar/categoria" name='Home' element={<Formuso />} />
-          <Route path="/vistauso" name='Home' element={<Vistauso />} />
+          <Route path="/modificacionmed" name='Home' element={<Modificacionmed />} />
         </Routes>
       </Suspense>
     </Router>

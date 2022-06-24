@@ -6,7 +6,8 @@ import imgsubir from "../../icon/Create/subir.png";
 function Modificacionmed() {
   return (
     <div>
-      <Navbar />
+      /*Diego lo toco solo cambio nombre */
+      {/* <Navbar />
       <div className="contenedor-modificacion">
         <div className="contenedor-img">
           <a class="waves-effect waves-light btn butonmod">
@@ -15,23 +16,17 @@ function Modificacionmed() {
         </div>
         <div className="contenedor-dato">
           <form id="form-modific">
-            <div id="diseno-dato">
-              PRECIO :
-              <div className="input-field inline">
-                <input id="entradatext" type="text" className="validate" />
-              </div>
+            <div id="contentPr">
+            <label id="tex">PRECIO :</label>
+             <input id="enter" type="text" />
             </div>
-            <div className="col s12" id="diseno-dato">
-              GRAMO :
-              <div className="input-field inline">
-                <input id="entradatext" type="text" className="validate" />
-              </div>
+            <div id="contentPr">
+            <label id="tex">GRAMO :</label>
+             <input id="enter" type="text" />
             </div>
-            <div id="diseno-dato">
-              MARCA :
-              <div className="input-field inline">
-                <input id="entradatext" type="text" className="validate" />
-              </div>
+            <div id="contentPr">
+            <label id="tex">MARCA :</label>
+             <input id="enter" type="text" />
             </div>
           </form>
         </div>
@@ -39,35 +34,10 @@ function Modificacionmed() {
       <div className="content-info">
         <div className="contenedor-info">
           <form id="form-info">
-            <div id="diseno-info">
-              DESCRIPCION :
-              <div className="input-field inline">
-                <input id="texto-info" type="text" className="validate" />
-              </div>
-            </div>
-
-            <select multiple id="select-diseno">
-              <option value="" disabled selected>USO :</option>
-              <option value="1">Option 1</option>
-              <option value="2">Option 2</option>
-              <option value="3">Option 3</option>
-            </select>
-
-            <select class="browser-default" id="select-diseno">
-              <option value="" disabled selected>ADMINISTRACION :</option>
-              <option id="diseño-text" value="1">Option 1</option>
-              <option id="diseño-text" value="2">Option 2</option>
-              <option id="diseño-text" value="3">Option 3</option>
-            </select>
-            <div id="diseno-info">
-              CANTIDAD :
-              <div className="input-field inline">
-                <input id="texto-info" type="text" className="validate" />
-              </div>
-            </div>
+             
           </form>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
