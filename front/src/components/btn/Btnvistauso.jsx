@@ -1,20 +1,22 @@
 import React from 'react'
-import '../../css/btnvistauso.css'
+import Btnview from '../../css/vistauso.module.css'
 import med from '../../img/login/medicines.jpg'
 
 function Btnvistauso() {
   return (
-        <div class='contenedor-productos' >
-            <div class='subcontenedor-productos'>
-                <div class='card'>
-                  <div class='card-content'>
+        <div class={Btnview.contenedorPro} >
+            <div class={Btnview.subcontenedorPro}>
+                <div class={Btnview.card}>
+                  <div class={Btnview.cardContent}>
                       <img 
-                       className='img-producto'
+                       className={Btnview.imgPro}
                        src={med} 
                        alt='' />
                   </div>
-                  <div class='card-action' id='content-btnver'>
-                      <a id='btn-vermas' href='#'>VER MAS</a>
+                  <div className={Btnview.contentBtn}>
+                      <a className={Btnview.btnVerM} href='#'>
+                        VER MÁS
+                      </a>
                   </div>
                 </div>
             </div>                  

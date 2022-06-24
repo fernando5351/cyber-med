@@ -3,14 +3,14 @@
     margin: 0%;
 }
 
-.contenedor-barra{
+.contenedorBarra{
     display: flex;
     justify-content: space-around;
     height: 70px;
     width: 100%;
 }
 
-.retro, .agregar, .titulo-cont{
+.retro, .agregar, .tituloCont{
     display: flex;
     justify-content: space-around;
     height: 100%;
@@ -18,14 +18,14 @@
 }
 
 #titulo{
-    position: fixed;
     font-size: xx-large;
     font-family: Noto Serif;
     font-weight: 900;
-    margin-top: 1%;
+    margin-top: 2%;
 }
 
 .annadir, .atras {
+    cursor: pointer;
     height: 60px;
     width: 60px;
     margin: 5px;

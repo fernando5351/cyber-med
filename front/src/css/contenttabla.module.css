@@ -1,4 +1,4 @@
-.contenedor-main-tabla {
+.contenedorMT{
     background-color: rgb(253, 253, 253);
     margin-bottom: 35px;
     padding: 9px;
@@ -8,17 +8,17 @@
     justify-content: center;
 }
 
-.contenedor-btn{
+.contenedorBtn{
     margin-top: 4%;
     margin-left: 2%;
     margin-right: 2%;
 }
 
-.contenedor-tabla{
+.contenedorT{
     margin-top: 5%;
 }
 
-.contenedor-tablaH{
+.contenedorTH{
     margin-top: 4%;   
 }
 

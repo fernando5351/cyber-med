@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'; 
-import '../../css/table.css';
+import tabla from '../../css/table.module.css';
 import axios from 'axios';
 
 function TableHome(){
@@ -12,9 +12,9 @@ function TableHome(){
   }
   useEffect(loadData,[])
     return(
-         <div className='row' id='rowt'>
-           <table className='centered' id='tableM'>
-                    <thead>
+         <div className={tabla.row} >
+           <table className={tabla.tableM}>
+                    <thead className={tabla.cabeza}>
                       <tr>
                           <th>ID</th>
                           <th>NOMBRE</th>
@@ -25,17 +25,18 @@ function TableHome(){
                           <th>CADUCIDAD</th>
                       </tr>
                     </thead>
-                    <tbody id='tbodycontent'>
+                    <tbody className={tabla.contenido}>
                                         <>
                                            {
                                              productos.map((productos) => (
-                                               <tr className='home'>
+                                               <tr className={tabla.td}>
                                                  <td>{productos.id}</td>
                                                  <td>{productos.nombre}</td>
                                                  <td>{productos.tipo_consumo}</td>
                                                  <td>{productos.tipo_uso}</td>
                                                  <td>{productos.precios}</td>
                                                  <td>{productos.cant_gramos}</td>
+                                                 <td>30/16/2090</td>
                                                </tr>
                                              ))
                                            }

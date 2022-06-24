@@ -1,44 +1,38 @@
 import React from 'react';
 import Lupita from '../../icon/Home/lupa.png';
-import '../../css/btnhome.css'
+import BtnHome from '../../css/btnhome.module.css'
 
 function Btnhome() {
   return (
-    <div className='row' id='contentmain'>
-      <form className='col s12' id='content'>
-         <div className='input-field col s3' id='content'>
-             <select class='browser-default' id='selecttype'>
-               <option id='options' value='0' disabled selected>ADMINISTRACION</option>
-               <option id='options' value='1'>Option 1</option>
-               <option id='options' value='2'>Option 2</option>
-               <option id='options' value='3'>Option 3</option>
+      <form className={BtnHome.contentMain}>
+         <div className={BtnHome.content}>
+             <select  className={BtnHome.selecttype}>
+               <option className={BtnHome.options} value='0' disabled selected>ADMINISTRACION</option>
+               <option className={BtnHome.options} value='1'>Option 1</option>
+               <option className={BtnHome.options} value='2'>Option 2</option>
+               <option className={BtnHome.options} value='3'>Option 3</option>
              </select>
          </div>
-         <div className='input-field col s3 content'>
-             <input placeholder='NOMBRE' id='Nombrein' type='text' class='validate  entradatext' />             
+         <div className={BtnHome.content}>
+             <input placeholder='Nombre' className={BtnHome.nombreIn} type='text' />             
          </div>
-         <div className='input-field col s3 content'>
-         <select class='browser-default' id='selectuse'>
-               <option id='options' value='' disabled selected>USO</option>
-               <option id='options' value='1'>Option 1</option>
-               <option id='options' value='2'>Option 2</option>
-               <option id='options' value='3'>Option 3</option>
+         <div className={BtnHome.content}>
+         <select class={BtnHome.selectuse}>
+               <option className={BtnHome.options} value='0' disabled selected>USO</option>
+               <option className={BtnHome.options} value='1'>Option 1</option>
+               <option className={BtnHome.options} value='2'>Option 2</option>
+               <option className={BtnHome.options} value='3'>Option 3</option>
              </select>
          </div>
-         <div className='input-field col s3 content'>
-             <a class='waves-effect waves-light btn-large Btnn'>
+         <div className={BtnHome.content}>
+             <a className={BtnHome.Btnn}>
                <img 
-               className='lupa'
+               className={BtnHome.lupa}
                src={Lupita} 
                alt='' />
              </a>
          </div>
       </form>
-    </div>
-    
-            
-
-    
   )
 }
 

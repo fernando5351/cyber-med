@@ -20,13 +20,16 @@
     width: 300px;
     margin-top: 40px;
     border-radius: 20px;
-    border-style: solid;
+    border: 3px solid #fff;
     background-color: rgb(141, 207, 236);
     height: 100px;
     padding: 30px;
-    font-size: 20px;
+    font-size: 25px;
     text-align: center;
+    text-decoration: none;
     box-sizing: border-box;
+    color: #fff;
+    box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.1);
 }
 
 .buttonMed:hover {
