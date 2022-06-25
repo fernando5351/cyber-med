@@ -12,7 +12,7 @@ function Formuso() {
       <div className={Form.containerUso}>
         <div className={Form.contenedorPrincipalUso}>
           {/* estructura del formulario, dentro de aca debe estar los demas componentes */}
-          <Header form='Agregar '/>
+          <Header form='Agregar ' />
           <Body />
           <Footer />
         </div>

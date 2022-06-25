@@ -8,7 +8,7 @@ const body = () => {
                 <div className={Form.formInput}>
                     <input type="text" className={Form.input} placeholder="Nombre de la medicina" />
                 </div>
-                <div className={Form.formInput}>
+                <div multiple className={Form.formInput}>
                     <select name="" id="" className={`${Form.input} ${Form.select}`}>
                         <option value="" disabled selected>ESTADO</option>
                         <option value="o">Inhabilitado</option>
