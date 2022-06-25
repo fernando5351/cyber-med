@@ -1,0 +1,111 @@
+.multiSelector{
+    width: 500px;
+    height: 60px;
+    margin-top: -100px;
+    margin-left: 5%;
+    display: flex;
+}
+
+.inputField{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.contentselect{
+    width: 100%;
+}
+
+.inputSelector{
+    width: 80%;
+    margin-left: 5%;
+    cursor: pointer;
+    height: 20px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 2px solid rgb(141, 207, 236);
+}
+
+#colorLetra{
+    width: 10%;
+    font-size: larger;
+    font-weight: 600;
+    font-family: Noto serif;
+    color: rgb(141, 207, 236);
+}
+
+.downArrow{
+    width: 15%;
+    cursor: pointer;
+    transition: 0.2s linear;
+    color: rgb(141, 207, 236);
+}
+
+/* lista despegable */
+
+.lista, #fila {
+    display: flex;
+    width: 90%;
+    margin-left: 8%;
+    justify-content: baseline;
+    align-items: center;
+}
+
+.lista{
+    display: none;
+}
+
+#fila{
+    cursor: pointer;
+    border: none;
+    border-bottom: 2px solid rgb(141, 207, 236);
+}
+
+#fila:hover{
+    transition: all .2s;
+    background-color: rgb(238, 245, 247);
+}
+
+.titulo{
+    width: 90%;
+    margin-left: 15%;
+    font-size: 23px;
+    font-family: Noto serif;
+    color: rgb(141, 207, 236);
+}
+
+#estiloChecke{
+    -webkit-appearance: none;
+    outline: none;
+    transition: all .3s;
+}
+
+#estiloChecke::before{
+    content: '';
+    width: 15px;
+    height: 15px;
+    margin-top: -8px;
+    margin-left: 15px;
+    transition: all 0.2s;
+    position: absolute;
+    box-sizing: border-box;
+    border: 2px solid rgb(141, 207, 236);
+}
+
+#estiloChecke:checked::before{
+    border-top: none;
+    border-left: none;
+    transform: rotate(35deg) translate(5px, -8px);
+    border-color: rgb(13, 255, 5);
+}
+
+/* Animacion */
+
+.show{
+    display: block;
+}
+
+.rotate180{
+    transform: rotate(-60deg);
+}

@@ -69,6 +69,8 @@
 
 }
 
+
+
 #color{
     width: 30%;
     font-size: larger;
@@ -85,39 +87,39 @@
     border-right: none;
     border-top: none;
     border-bottom: 2px solid rgb(141, 207, 236);
-
+    outline: none;
 }
 
 #formEstilo{
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .caja{
     width: 100%;
-    height: 30%;
+    height: 50px;
     margin-top: 30px;
     margin-left: 5%;
-    margin-bottom: 5%;
-    align-items: baseline;
 }
 
 #estiloColor{
     width: 30%;
     font-size: larger;
     font-weight: 600;
-    margin-right: 5%;
     font-family: Noto serif;
     color: rgb(141, 207, 236);
 }
 
 #colorInfo{
     width: 60%;
+    margin-left: 3%;
     border-top: none;
     border-left: none;
     border-right: none;
     border-bottom: 2px solid rgb(141, 207, 236);
 
 }
+

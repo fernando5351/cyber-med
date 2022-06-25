@@ -9,6 +9,7 @@ import Vistauso from './pages/vistauso/Vistauso';
 import Modificacionmed from './pages/modificacionmed/Modificacionmed';
 import Proveedor from './pages/proveedor/Proveedor';
 
+
 const App = () => {
   return (
     <Router>
@@ -20,11 +21,7 @@ const App = () => {
           <Route path="/medicinas" name='medicinas' element={<Medicinas />} />
           <Route path="/medicinas/agregar" name='agregarTipo' element={<Agregar />} />
           <Route path="/medicinas/agregar/categoria" name='Home' element={<Formuso />} />
-<<<<<<< HEAD
-          <Route path="/modificacionmed" name='Home' element={<Modificacionmed />} />
-=======
           <Route path="/vistauso" name='Home' element={<Vistauso />} />
->>>>>>> abygail
         </Routes>
       </Suspense>
     </Router>
