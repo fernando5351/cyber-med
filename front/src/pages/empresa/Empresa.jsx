@@ -1,16 +1,16 @@
 import React from "react";
 import ContTa from '../../css/contenttabla.module.css'
 import Navbar from "../../components/navegacion/Navbar";
-import Tableproveedor from "../../components/table/Tableproveedor";
+import Tableempresa from "../../components/table/Tableempresa";
 
-function Proveedor(){
+function Empresa(){
     return(
       <div className={ContTa.contenedorMT}>
         <Navbar />
         <div className={ContTa.contenedorT}>
-        <Tableproveedor />
+        <Tableempresa />
         </div>
       </div>
     );
 }
-export default Proveedor;
+export default Empresa;
