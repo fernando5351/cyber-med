@@ -8,6 +8,8 @@ import Agregar from './pages/agregar-tipo'
 import Vistauso from './pages/vistauso/Vistauso';
 import Modificacionmed from './pages/modificacionmed/Modificacionmed';
 import Empresa from './pages/empresa/Empresa';
+import Create from './pages/create/Create';
+import VistaProducto from './pages/vistamed/VistaProducto';
 
 
 const App = () => {
@@ -23,6 +25,9 @@ const App = () => {
           <Route path="/medicinas/agregar/categoria" name='Home' element={<Formuso />} />
           <Route path="/medicinas/editar/categoria" name='Home' element={<Formuso />} />
           <Route path="/vistauso" name='Home' element={<Vistauso />} />
+          <Route path="/Create" name='create' element={<Create />} />
+          <Route path="/VistaProducto" name='vistaProducto' element={<VistaProducto />} />
+
         </Routes>
       </Suspense>
     </Router>

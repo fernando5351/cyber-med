@@ -6,9 +6,12 @@ function Modificacionmed() {
   return (
     <div>
       <Navbar />
-      <VistaMedy />
+      <VistaMedy 
+      cancel='CANCELAR'
+      save='GUARDAR'
+      />
     </div>
   );
-}
+};
 
 export default Modificacionmed;

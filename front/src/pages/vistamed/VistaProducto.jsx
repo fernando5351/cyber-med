@@ -1,17 +1,17 @@
 import React from 'react'
-import VistaMedy from "../../components/vistamed/VistaMed";
+import VistaMedy from '../../components/vistamed/VistaMed';
 import Navbar from '../../components/navegacion/Navbar';
 
-const Create = () => {
+const VistaProducto = () => {
   return (
     <div>
         <Navbar />
         <VistaMedy 
-        cancel='CANCELAR'
-        save='ACTUALIZAR'
+        cancel='ELIMINAR'
+        save='EDITAR'
         />
     </div>
   )
 }
 
-export default Create;
+export default VistaProducto;
