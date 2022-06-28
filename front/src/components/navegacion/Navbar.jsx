@@ -24,6 +24,16 @@ function Navbar() {
         </a>
         <ul className={Nav.menu}>
           <li>
+            <a className={Nav.btnmenu} onClick={home}>
+              INICIO
+            </a>
+          </li>
+          <li>
+            <a className={Nav.btnmenu} onClick={medicinas}>
+              MEDICINAS
+            </a>
+          </li>
+          <li>
             <a className={Nav.btnmenu}>AÑADIR</a>
             <ul className={Nav.submenu}>
               <li>
@@ -36,16 +46,6 @@ function Navbar() {
                 <a className={Nav.subtnmenu}>MEDICAMENTO</a>
               </li>
             </ul>
-          </li>
-          <li>
-            <a className={Nav.btnmenu} onClick={home}>
-              INICIO
-            </a>
-          </li>
-          <li>
-            <a className={Nav.btnmenu} onClick={medicinas}>
-              MEDICINAS
-            </a>
           </li>
           <li>
             <a className={Nav.btnmenu} onClick={logOut}>
