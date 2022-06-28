@@ -17,7 +17,7 @@ function Barranav(props) {
           className={Barra.atras}
           src={Retro}
           alt='retroceder' 
-          onClick={home} />
+          />
       </div>
       <div className={Barra.tituloCont}> 
         <p id={Barra.titulo}>{props.titulocont}</p>

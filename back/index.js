@@ -42,8 +42,13 @@ app.get("/empresa", (req, res) => {
 =======
     host: "localhost",
 <<<<<<< HEAD
+<<<<<<< HEAD
     user: "Xoxo503",
     password: "Hernandez503jr",
+=======
+    user: "schiffer",
+    password: "Fernando-19@20",
+>>>>>>> parent of 037a39c (conexion a bases de datos a vista home)
 =======
     user: "schiffer",
     password: "Fernando-19@20",
@@ -82,6 +87,7 @@ app.post('/login', (req, res) => {
 })
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 2ebbc68 (se conrcto la base de datos con la  tabla de la vista empresa)
 
 // app.post('/login', (req, res) => {
@@ -103,6 +109,9 @@ app.post('/login', (req, res) => {
 // })
 
 app.listen(4000, () => console.log("this is a servidor"));
+=======
+app.listen(4000, ()=> console.log('this is a servidor'))
+>>>>>>> parent of 037a39c (conexion a bases de datos a vista home)
 =======
 app.listen(4000, ()=> console.log('this is a servidor'))
 >>>>>>> parent of 037a39c (conexion a bases de datos a vista home)
