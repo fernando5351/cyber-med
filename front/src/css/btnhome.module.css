@@ -1,18 +1,17 @@
-.contentMain{
+.contentMain {
   margin: 0%;
   padding: 0%;
   display: flex;
   justify-content: space-evenly;
   width: 100%;
-
 }
 
-.content{
+.content {
   justify-content: space-evenly;
 }
 
 .selecttype,
-.selectuse{
+.selectuse {
   background-color: rgb(141, 207, 236);
   width: 190px;
   height: 90px;
@@ -23,96 +22,56 @@
   color: rgb(255, 255, 255);
   border: 7px solid rgb(255, 255, 255);
   border-radius: 40px;
-  -webkit-border-radius: 40px;
-  -moz-border-radius: 40px;
-  -ms-border-radius: 40px;
-  -o-border-radius: 40px;
   cursor: pointer;
 }
 
-.options{
+.options {
   background-color: rgb(255, 255, 255);
   color: rgb(141, 207, 236);
   font-size: larger;
   font-weight: 600;
 }
 
-.nombreIn{
+.nombreIn {
   background-color: rgb(141, 207, 236);
   width: 170px;
-  height: 80px;
+  height: 90px;
   text-align: center;
   font-family: Noto Serif;
   color: rgb(255, 255, 255);
   font-size: larger;
   border: 7px solid rgb(255, 255, 255);
   border-radius: 40px;
-  -webkit-border-radius: 40px;
-  -moz-border-radius: 40px;
-  -ms-border-radius: 40px;
-  -o-border-radius: 40px;
 }
 
-.nombreIn::placeholder{
+.nombreIn::placeholder {
   color: rgb(255, 255, 255);
   font-size: larger;
 }
 
-.Btnn .lupa{
+.Btnn .lupa {
   width: 80px;
   cursor: pointer;
 }
 
 /*EFECTOS HOVER*/
 
-.Btnn .lupa:hover{
+.Btnn .lupa:hover {
   transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  -o-transform: scale(1.1);
-  transition: 0.0s;
-  -webkit-transition: 0.0s;
-  -moz-transition: 0.0s;
-  -ms-transition: 0.0s;
-  -o-transition: 0.0s;
+  transition: 0s;
 }
 
-.selecttype:hover{
+.selecttype:hover {
   transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  -o-transform: scale(1.1);
-  transition: 0.0s;
-  -webkit-transition: 0.0s;
-  -moz-transition: 0.0s;
-  -ms-transition: 0.0s;
-  -o-transition: 0.0s;
+  transition: 0s;
 }
 
-.nombreIn:hover{
+.nombreIn:hover {
   transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  -o-transform: scale(1.1);
-  transition: 0.0s;
-  -webkit-transition: 0.0s;
-  -moz-transition: 0.0s;
-  -ms-transition: 0.0s;
-  -o-transition: 0.0s;
+  transition: 0s;
 }
 
-.selectuse:hover{
+.selectuse:hover {
   transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  -o-transform: scale(1.1);
-  transition: 0.0s;
-  -webkit-transition: 0.0s;
-  -moz-transition: 0.0s;
-  -ms-transition: 0.0s;
-  -o-transition: 0.0s;
+  transition: 0s;
 }
