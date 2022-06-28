@@ -44,10 +44,7 @@
   font-size: larger;
   border: 7px solid rgb(255, 255, 255);
   border-radius: 40px;
-<<<<<<< HEAD
   outline: none;
-=======
->>>>>>> diego
 }
 
 .nombreIn::placeholder {
