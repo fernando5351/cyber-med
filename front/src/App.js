@@ -10,6 +10,7 @@ import Modificacionmed from "./pages/modificacionmed/Modificacionmed";
 import Empresa from "./pages/empresa/Empresa";
 import Create from "./pages/create/Create";
 import VistaProducto from "./pages/vistamed/VistaProducto";
+import Tableempresa from "./components/table/Tableempresa";
 
 const App = () => {
   return (

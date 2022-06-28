@@ -61,20 +61,20 @@
 
 .Btnn .lupa:hover {
   transform: scale(1.1);
-  transition: 0s;
+  transition: 0.3s;
 }
 
 .selecttype:hover {
   transform: scale(1.1);
-  transition: 0s;
+  transition: 0.3s;
 }
 
 .nombreIn:hover {
   transform: scale(1.1);
-  transition: 0s;
+  transition: 0.3s;
 }
 
 .selectuse:hover {
   transform: scale(1.1);
-  transition: 0s;
+  transition: 0.3s;
 }

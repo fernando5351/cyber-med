@@ -5,19 +5,11 @@ const app = express();
 app.use(cors());
 
 const credenciales = {
-<<<<<<< HEAD
   host: "localhost",
   user: "Xoxo503",
   password: "Hernandez503jr",
   database: "db_medicines",
 };
-=======
-    host: "localhost",
-    user: "Xoxo503",
-    password: "Hernandez503jr",
-    database: "db_medicines"
-}
->>>>>>> a088ab2f4f985414623d21963dc2ca3c71a349ee
 
 app.get("/medicinas", (req, res) => {
   var connection = mysql.createConnection(credenciales);
@@ -31,12 +23,11 @@ app.get("/medicinas", (req, res) => {
   connection.end();
 });
 
-<<<<<<< HEAD
-app.get("/productos", (req, res) => {
+app.get("/empresa", (req, res) => {
   var connection = mysql.createConnection(credenciales);
   // En esta linea establecemos la conexion de la tabla productos, de la tabla tipo consumo, y de la tabla tipo medicamentos para que se muestten en el home
   connection.query(
-    "select productos.id, productos.nombre, productos.descripcion, productos.precios, productos.cant_gramos, tipo_consumo.tipo_consumo, tipo_medicamento.tipo_uso from productos,tipo_consumo,tipo_medicamento where tipo_consumo.id=productos.id_tipo_uso and tipo_medicamento.id=id_tipo_uso;",
+    "SELECT  empresa.id, empresa.nombre_empresa, empresa.direccion, empresa.email,empresa.telefono, empresa.lote,empresa.activo, productos.nombre FROM empresa,productos WHERE productos.id=empresa.id_producto;",
     (error, resultado) => {
       if (error) {
         res.status(500).send(error);
@@ -47,21 +38,6 @@ app.get("/productos", (req, res) => {
   );
   connection.end();
 });
-=======
-app.get('/empresa',(req,res)=>{
-    var connection = mysql.createConnection(credenciales)
-    // En esta linea establecemos la conexion de la tabla productos, de la tabla tipo consumo, y de la tabla tipo medicamentos para que se muestten en el home 
-    connection.query('SELECT  empresa.id, empresa.nombre_empresa, empresa.direccion, empresa.email,empresa.telefono, empresa.lote,empresa.activo, productos.nombre FROM empresa,productos WHERE productos.id=empresa.id_producto;', (error, resultado)=>{
-        if (error) {
-            res.status(500).send(error)
-        }else{
-            res.status(200).send(resultado)
-        }
-    })
-    connection.end()
-})
-
->>>>>>> a088ab2f4f985414623d21963dc2ca3c71a349ee
 
 // app.post('/login', (req, res) => {
 //     const { email, password } = req.body
