@@ -79,10 +79,6 @@ app.post('/eliminar/medicinas', (res, req) => {
 //     conexion.end
 // })
 
-<<<<<<< HEAD
-app.listen(4000, () => console.log("this is a servidor"));
-=======
 app.listen(4000, () => {
     console.log('this is a servidor')
 })
->>>>>>> fernando
