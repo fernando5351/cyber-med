@@ -1,8 +1,15 @@
 import vistamed from './css.module.css'
+import select from './select.module.css'
 import Navbar from '../../components/navegacion/Navbar'
 import imgsubir from '../../icon/Create/subir.png'
-
+import Select from 'react-select'
 function VistaMedy() {
+
+    const options = [
+        { value: 'chocolate', label: 'Chocolate' },
+        { value: 'strawberry', label: 'Strawberry' },
+        { value: 'vanilla', label: 'Vanilla' }
+    ]
     return (
         <div>
             <Navbar />
@@ -35,19 +42,27 @@ function VistaMedy() {
                 <div className={vistamed.contentInfo}>
                     <div className={vistamed.Info}>
                         <form id={vistamed.formEstilo}>
-                            <div className={vistamed.caja}>
-                                <label id={vistamed.estiloColor}>DESCRIPCION :</label>
-                                <input id={vistamed.colorInfo} type="text" />
+                            <div className={vistamed.containerFormMed}>
+                                <div className={vistamed.caja}>
+                                    <label id={vistamed.estiloColor}>DESCRIPCION :</label>
+                                    <input id={vistamed.colorInfo} type="text" />
+                                </div>
+                                <div className={select.Caja}>
+                                    <div className={select.estilo}>
+                                        <Select className={select.Select} isMulti options={options} />
+                                    </div>
+                                    <div className={select.estilo}>
+                                        <Select options={options} className={select.options} />
+                                    </div>
+                                </div>
+                                <div className={`${vistamed.caja} ${vistamed.estiloBottom}`}>
+                                    <label id={vistamed.estiloColor}>CANTIDAD :</label>
+                                    <input id={vistamed.colorInfo} type="text" />
+                                </div>
                             </div>
-                            <div className={vistamed.multiSelector}>
-                                <select name="language" class="custom-select" multiple>
-                                    <option value="html">HTML</option>
-                                    <option value="css">CSS</option>
-                                    <option value="javascript">JavaScript</option>
-                                    <option value="python">Python</option>
-                                    <option value="sql">SQL</option>
-                                    <option value="kotlin">Kotlin</option>
-                                </select>
+                            <div className={vistamed.containerFormBtn}>
+                                <button className={vistamed.btnForm}>hola</button>
+                                <button className={vistamed.btnForm}>hola</button>
                             </div>
                         </form>
                     </div>

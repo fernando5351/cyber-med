@@ -9,7 +9,11 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 function Mod() {
+
+    //estado para la tabla
     const [consumo, setConsumo] = useState([])
+
+    //con esto carga los datos de la tabla
     const loadData = () => {
         axios.get('http://localhost:4000/medicinas')
             .then(result => {
@@ -17,13 +21,30 @@ function Mod() {
             })
     }
     useEffect(loadData, [])
+
+    //variable para la navegaciond de rutas
     const navigate = useNavigate();
+
+    //ruta para agregar un nuevo medicamento, esto lleva al formulario tipo consumo
     const add = () => {
         navigate('/medicinas/agregar/categoria')
     }
+    
+    //ruta para editar un medicamento, esto lleva al formulario tipo consumo
     const edit = () => {
         navigate('/medicinas/editar/categoria')
     }
+
+    //se efectua el delete del tipo de consumo
+    const onDelete = async (id) => {
+        try {
+            const { data } = await axios.post('http://localhost:4000/eliminar/medicinas', { id: id })
+            console.log(data.message)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     return (
         <div className={Add.containerAdd}>
             <Navbar />
@@ -61,8 +82,8 @@ function Mod() {
                                                     className={barraNav.annadir}
                                                     src={Delete}
                                                     alt=''
-                                                    // onClick={#}
-                                                    />
+                                                    onClick={() => onDelete(`${consumo.id}`)}
+                                                />
                                             </td>
                                         </tr>
                                     ))
