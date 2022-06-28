@@ -63,7 +63,7 @@
     background-color: #ffffff;
 }
 
-.diseno-dato{
+/*.diseno-dato{
      display: flex;
      align-items: baseline;
      flex-direction: column;
@@ -146,3 +146,50 @@ input[id='texto-info']:not(.browser-default){
 .padre{
     margin-bottom: 100px;
 }
+
+*/
+
+
+
+/* Hecho por diego */
+
+/* #form-modific{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#contentPr{
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    height: 30%;
+    width: 100%;
+}
+
+#tex{
+    width: 30%;
+    color: aqua;
+    font-size: larger;
+    font-weight: 600;
+    margin-right: 5%;
+}
+
+#enter{
+    border-top:none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 3px solid aqua;
+    width: 60%;
+}
+
+#enter:focus{
+    border-top: none;
+    border-right:none ;
+    border-left: none;
+    border-bottom: 3px solid aqua;
+}
+
+
+ */

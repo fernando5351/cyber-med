@@ -1,3 +1,4 @@
+<<<<<<< HEAD:front/src/css/Add-medicines.module.css
 .containerAdd {
     width: 100%;
     display: flex;
@@ -5,11 +6,21 @@
     align-items: center;
     height: 100%;
     flex-direction: column;
+=======
+.container-add {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+>>>>>>> diego:front/src/css/Add-medicines.css
 }
 .annadir {
     margin-top: 15px;
 }
 .tbl {
+<<<<<<< HEAD:front/src/css/Add-medicines.module.css
     border-radius: 30px;
     margin-top: 15px;
     width: 100%;
@@ -44,3 +55,51 @@
     background: #fff;
     border-bottom: 1px solid #000;
 }
+=======
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.container-tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 90%;
+}
+
+.container-btn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 70%;
+  height: 20%;
+}
+
+.container-table {
+  width: 70%;
+  height: 80%;
+  margin-bottom: 25px;
+}
+
+thead {
+  width: 500px;
+  overflow-x: auto;
+}
+
+tbody {
+  width: 500px;
+  overflow-x: auto;
+}
+
+.table {
+  border-collapse: collapse;
+  border-top-left-radius: 30px;
+  overflow: hidden;
+}
+
+.background {
+  background: #fff;
+}
+>>>>>>> diego:front/src/css/Add-medicines.css

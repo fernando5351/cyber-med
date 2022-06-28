@@ -1,52 +1,63 @@
+<<<<<<< HEAD
 .contenedorBarra{
     display: flex;
     justify-content: space-around;
     height: 70px;
     width: 100%;
+=======
+* {
+  padding: 0%;
+  margin: 0%;
 }
 
-.retro, .agregar, .tituloCont{
-    display: flex;
-    justify-content: space-around;
-    height: 100%;
-    width: 100%;
+.contenedorBarra {
+  display: flex;
+  justify-content: space-around;
+  height: 70px;
+  width: 100%;
+>>>>>>> diego
 }
 
-#titulo{
-    font-size: xx-large;
-    font-family: Noto Serif;
-    font-weight: 900;
-    margin-top: 2%;
+.retro,
+.agregar,
+.tituloCont {
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+  width: 100%;
 }
 
-.annadir, .atras {
-    cursor: pointer;
-    height: 60px;
-    width: 60px;
-    margin: 5px;
-    padding: 10px;
-    background-color: rgb(255, 255, 255);
-    border-radius: 50px;
-    box-shadow: 5px 5px 15px 5px  #9c9a9a;
-    -webkit-border-radius: 40px;
-    -moz-border-radius: 40px;
-    -ms-border-radius: 40px;
-    -o-border-radius: 40px;
+#titulo {
+  font-size: xx-large;
+  font-family: Noto Serif;
+  font-weight: 900;
+  margin-top: 2%;
 }
 
-
-.annadir:hover{
-    transform: scale(1.2);
-    background-color: rgb(255, 255, 255);
-    transition-duration: 0.0s;
-    border-style: solid;
-    border-color: rgb(141, 207, 236);
+.annadir,
+.atras {
+  cursor: pointer;
+  height: 60px;
+  width: 60px;
+  margin: 5px;
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50px;
+  box-shadow: 5px 5px 15px 5px #9c9a9a;
 }
 
-.atras:hover{
-    transform: scale(1.2);
-    background-color: rgb(255, 255, 255);
-    transition-duration: 0.0s;
-    border-style: solid;
-    border-color: rgb(141, 207, 236);
+.annadir:hover {
+  transform: scale(1.2);
+  background-color: rgb(255, 255, 255);
+  transition-duration: 0s;
+  border-style: solid;
+  border-color: rgb(141, 207, 236);
+}
+
+.atras:hover {
+  transform: scale(1.2);
+  background-color: rgb(255, 255, 255);
+  transition-duration: 0s;
+  border-style: solid;
+  border-color: rgb(141, 207, 236);
 }
