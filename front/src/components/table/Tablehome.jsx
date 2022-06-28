@@ -5,7 +5,7 @@ import axios from "axios";
 function TableHome() {
   const [productos, SetProductos] = useState([]);
   const loadData = () => {
-    axios.get("http://localhost:4000/productos").then((result) => {
+    axios.get("http://localhost:4000/empresa").then((result) => {
       SetProductos(result.data);
     });
   };
