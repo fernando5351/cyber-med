@@ -4,7 +4,6 @@ import Login from './pages/login';
 import Home from './pages/home';
 import Medicinas from './pages/medicinas';
 import Formuso from './components/forms/formtipouso';
-import Aby from './pages/aby/med';
 import Agregar from './pages/agregar-tipo'
 import Vistauso from './pages/vistauso/Vistauso';
 import Modificacionmed from './pages/modificacionmed/Modificacionmed';
@@ -17,7 +16,6 @@ const App = () => {
         <Routes>
           <Route path="/" name='Login' element={<Login />} />
           <Route path="/home" name='Home' element={<Home />} />
-          <Route path="/aby" name='Home' element={<Aby />} />
           <Route path="/medicinas" name='medicinas' element={<Medicinas />} />
           <Route path="/medicinas/agregar" name='agregarTipo' element={<Agregar />} />
           <Route path="/medicinas/agregar/categoria" name='Home' element={<Formuso />} />
