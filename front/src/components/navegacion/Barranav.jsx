@@ -9,10 +9,6 @@ function Barranav(props) {
   const Add = () => {
     Navigate('/medicinas/agregar')
   }
-  const home = ()=>{
-    Navigate('/home')
-  }
-  
   return (
     // este es el que deben elegir
     <div className={Barra.contenedorBarra}>
