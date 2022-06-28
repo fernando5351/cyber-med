@@ -5,6 +5,7 @@ const app = express();
 app.use(cors());
 
 const credenciales = {
+<<<<<<< HEAD
   host: "localhost",
   user: "schiffer",
   password: "Fernando-19@20",
@@ -38,6 +39,39 @@ app.get("/empresa", (req, res) => {
   );
   connection.end();
 });
+=======
+    host: "localhost",
+    user: "Xoxo503",
+    password: "Hernandez503jr",
+    database: "db_medicines"
+}
+
+app.get('/medicinas', (req, res) => {
+    var connection = mysql.createConnection(credenciales)
+    connection.query('SELECT * from tipo_consumo', (error, resultado) => {
+        if (error) {
+            res.status(500).send(error)
+        } else {
+            res.status(200).send(resultado)
+        }
+    })
+    connection.end()
+})
+
+app.get('/productos',(req,res)=>{
+    var connection = mysql.createConnection(credenciales)
+    // En esta linea establecemos la conexion de la tabla productos, de la tabla tipo consumo, y de la tabla tipo medicamentos para que se muestten en el home 
+    connection.query('select productos.id, productos.nombre, productos.descripcion, productos.precios, productos.cant_gramos, tipo_consumo.tipo_consumo, tipo_medicamento.tipo_uso from productos,tipo_consumo,tipo_medicamento where tipo_consumo.id=productos.id_tipo_uso and tipo_medicamento.id=id_tipo_uso;', (error, resultado)=>{
+        if (error) {
+            res.status(500).send(error)
+        }else{
+            res.status(200).send(resultado)
+        }
+    })
+    connection.end()
+})
+
+>>>>>>> parent of 2ebbc68 (se conrcto la base de datos con la  tabla de la vista empresa)
 
 // app.post('/login', (req, res) => {
 //     const { email, password } = req.body
