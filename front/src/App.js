@@ -8,11 +8,13 @@ import Vistauso from './pages/vistauso/Vistauso';
 import Modificacionmed from './pages/modificacionmed/Modificacionmed';
 import Proveedor from './pages/proveedor/Proveedor';
 
+
 const App = () => {
   return (
     <Router>
       <Suspense fallback={<p>Cargando...</p>}>
         <Routes>
+        
           <Route path="/" name='Login' element={<Login />} />
           <Route path="/home" name='Home' element={<Home />} />
           <Route path="/medicinas" name='medicinas' element={<Medicinas />} />
