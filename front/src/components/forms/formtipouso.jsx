@@ -18,37 +18,6 @@ function Formuso() {
     })
   }
 
-  useEffect(() => {
-    const getConsumo = () => {
-      fetch('http://localhost:4000/add/consumo')
-        .then(res => res.json)
-        .then(res => console.log(res))
-    }
-    getConsumo()
-  },[])
-
-  const submit = () => {
-    if (tipo_consumo.tipo === '' || tipo_consumo.estado === '') {
-      alert("Todos los campos son obligatorios")
-      return
-    } else {
-      //consulta
-      const requestInit = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(tipo_consumo)
-      }
-      fetch('http://localhost:4000/add/consumo', requestInit)
-        .then(res => res.json)
-        .then(res => console.log(res))
-
-        //reiniciando el estado del libro
-      setTipouso({
-        tipo_consumo: '',
-        estado: 0
-      })
-    }
-  }
   return (
     <div className={Form.contentUso}>
       <Navbar />
@@ -58,7 +27,7 @@ function Formuso() {
             <h1>Agregar Tipo de Uso</h1>
           </div>
           <div className={Form.body}>
-            <form action={submit} className={Form.Form}>
+            <form  className={Form.Form}>
               <div className={Form.formInput}>
                 <input type="text" name="tipo" className={Form.input} placeholder="Nombre de la medicina"
                   onChange={change} value={tipo_consumo.tipo}
@@ -66,9 +35,9 @@ function Formuso() {
               </div>
               <div multiple className={Form.formInput}>
                 <select name="estado" onChange={change} value={tipo_consumo.estado} className={`${Form.input} ${Form.select}`}>
-                  <option value="" defaultValue={}>ESTADO</option>
-                  <option value="o">Inhabilitado</option>
-                  <option value="1">Habilitado</option>
+                  <option value="" defaultValue="">ESTADO</option>
+                  <option defaultValue="o">Inhabilitado</option>
+                  <option defaultValue="1">Habilitado</option>
                 </select>
               </div>
               <div className={Form.botones}>

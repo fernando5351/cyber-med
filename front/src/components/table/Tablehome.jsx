@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react'; 
 import tabla from '../../css/table.module.css';
-import axios from 'axios';
 
 function TableHome(){
-    const [productos, SetProductos]= useState([])
-  const loadData = () =>{
-    axios.get('http://localhost:4000/productos')
-          .then(result =>{
-            SetProductos(result.data)
-          })
-  }
-  useEffect(loadData,[])
+  const [productos, setConsumo] = useState([])
+    useEffect(() => {
+        api()
+    }, [])
+
+    const api = async () => {
+        const data = await fetch('http://localhost:4000/home')
+        const dataJson = await data.json()
+        setConsumo(dataJson)
+    }
     return(
          <div className={tabla.row} >
            <table className={tabla.tableM}>

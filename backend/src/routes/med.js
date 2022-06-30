@@ -14,6 +14,17 @@ router.get('/agregar/uso', (req, res) => {
     });
 });
 
+//trayendo los datos de la tabla
+router.get('/home', (req, res) => {
+    connection.query('select productos.id, productos.nombre, productos.descripcion, productos.precios, productos.cant_gramos, tipo_consumo.tipo_consumo, tipo_medicamento.tipo_uso from productos,tipo_consumo,tipo_medicamento where tipo_consumo.id=productos.id_tipo_uso and tipo_medicamento.id=id_tipo_uso;', (err, rows, fields) => {
+        if (!err) {
+            res.json(rows);
+        } else {
+            console.log(err);
+        }
+    });
+});
+
 router.get('/:id', (req, res) => {
     const { id } = req.params;
     connection.query('SELECT * FROM tipo_consumo WHERE id = ?', [id],
