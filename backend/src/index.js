@@ -11,6 +11,8 @@ app.use(express.json());
 
 // Routes
 app.use(require('./routes/med'));
+app.use(require('./routes/productos'));
+app.use(require('./routes/empresas'));
 
 //stating the server
 app.listen(app.get('port'), () =>{
