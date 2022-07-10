@@ -1,160 +1,159 @@
 .contentPrincipal {
-    margin-top: 3%;
-    width: 100%;
-    height: 720px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
+  margin-top: 3%;
+  width: 100%;
+  height: 720px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
-.contentModificacion{
-    width: 90%;
-    height: 310px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-flow: row;
-}
-
-.Img{
-    width: 25%;
-    height: 300px;
-    display: flex;
-    border-radius: 30px;
-    flex-direction: row;
-    background-color: #ffffff;
+.contentModificacion {
+  width: 90%;
+  height: 310px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-flow: row;
 }
 
-.butonmed, .subiricon{
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
+.Img {
+  width: 25%;
+  height: 300px;
+  display: flex;
+  border-radius: 30px;
+  flex-direction: row;
+  background-color: #ffffff;
 }
 
-.Dato{
-    width: 50%;
-    height: 300px;
-    display: flex;
-    border-radius: 30px;
-    background-color: #ffffff;
+.butonmed,
+.subiricon {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
 }
 
-.contentInfo{
-    display: flex;
-    height: 350px;
-    width: 90%;
-    align-items: center;
-    justify-content: center;
+.Dato {
+  width: 50%;
+  height: 300px;
+  display: flex;
+  border-radius: 30px;
+  background-color: #ffffff;
 }
 
-.Info{
-    width: 85%;
-    height: 315px;
-    display: flex;
-    border-radius: 30px;
-    flex-direction: row;
-    background-color: #ffffff;  
+.contentInfo {
+  display: flex;
+  height: 350px;
+  width: 90%;
+  align-items: center;
+  justify-content: center;
 }
 
-#estiloForm{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+.Info {
+  width: 85%;
+  height: 315px;
+  display: flex;
+  border-radius: 30px;
+  flex-direction: row;
+  background-color: #ffffff;
 }
 
-.contenedorLinea{
-    width: 100%;
-    height: 30%;
-    margin-top: 5%;
-    margin-left: 5%;
-    margin-bottom: 5%;
-    align-items: baseline;
-
+#estiloForm {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-#color{
-    width: 30%;
-    font-size: larger;
-    font-weight: 600;
-    margin-right: 5%;
-    font-family: Noto serif;
-    color: rgb(141, 207, 236);
-    
+.contenedorLinea {
+  width: 100%;
+  height: 5%;
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-bottom: 5%;
+  align-items: baseline;
 }
 
-#estilo{
-    width: 60%;
-    border-left: none;
-    border-right: none;
-    border-top: none;
-    border-bottom: 2px solid rgb(141, 207, 236);
-    outline: none;
+#color {
+  width: 30%;
+  font-size: larger;
+  font-weight: 600;
+  margin-right: 5%;
+  font-family: Noto serif;
+  color: rgb(141, 207, 236);
 }
 
-#formEstilo{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
-    border-radius: 30px;
+#estilo {
+  width: 60%;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: 2px solid rgb(141, 207, 236);
+  outline: none;
 }
 
-.containerFormMed{
-    width: 80%;
-    height: 75%;
+#formEstilo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  border-radius: 30px;
 }
 
-.estiloBottom{
-    margin-top: 20px;
+.containerFormMed {
+  width: 80%;
+  height: 75%;
 }
 
-.containerFormBtn{
-    width: 20%;
-    height: 75%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-end;
-    align-content: flex-end;
-    justify-content: center;
+.estiloBottom {
+  margin-top: 20px;
 }
 
-.btnForm{
-    margin: 5px;
-    width: 90%;
-    height: 40px;
-    border-radius: 30px;
-    cursor: pointer;
-    border: none;
-    background-color:rgb(141, 207, 236);
-    color: #ffffff;
+.containerFormBtn {
+  width: 20%;
+  height: 75%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  align-content: flex-end;
+  justify-content: center;
 }
 
-.caja{
-    width: 100%;
-    display: flex;
-    /* height: 50px; */
-    margin-left: 5%;
-    margin-top: 10px;
+.btnForm {
+  margin: 5px;
+  width: 90%;
+  height: 40px;
+  border-radius: 30px;
+  cursor: pointer;
+  border: none;
+  background-color: rgb(141, 207, 236);
+  color: #ffffff;
 }
 
-#estiloColor{
-    width: 170px;
-    font-size: larger;
-    font-weight: 600;
-    font-family: Noto serif;
-    color: rgb(141, 207, 236);
+.caja {
+  width: 100%;
+  display: flex;
+  /* height: 50px; */
+  margin-left: 5%;
+  margin-top: 10px;
 }
 
-#colorInfo{
-    width: 50%;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 2px solid rgb(141, 207, 236);
+#estiloColor {
+  width: 170px;
+  font-size: larger;
+  font-weight: 600;
+  font-family: Noto serif;
+  color: rgb(141, 207, 236);
+}
+
+#colorInfo {
+  width: 50%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid rgb(141, 207, 236);
 }
