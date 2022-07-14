@@ -1,4 +1,5 @@
 const express = require('express');
+const { query } = require('../database.js');
 const router = express.Router();
 const connection = require('../database.js');
 
@@ -40,12 +41,14 @@ router.get('/:id', (req, res) => {
 
 // Crear un nuevo uso
 router.post('/add/consumo', (req, res) => {
-    const { id, tipo_consumo, estado } = req.body;
-    console.log(id, tipo_consumo, estado);
-    connection.query("INSERT INTO tipo_consumo(id, tipo_consumo, estado) values (?, ?, ?);", [id, tipo_consumo, estado], (err, rows, fields) => {
+    const { id, tipo_consumo } = req.body;
+    console.log(id, tipo_consumo);
+    var query = "INSERT INTO tipo_consumo(id, tipo_consumo) values (?, ?);";
+    connection.query( query, [id, tipo_consumo], (err, rows, fields) => {
         if (!err) {
             res.json({ status: 'tipo de consumo agregado' });
             console.log(`tipo de medicina agregado con exito`);
+            console.log(query);
         } else {
             console.log(err);
         }
