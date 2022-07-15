@@ -1,7 +1,7 @@
 const express = require('express');
-const { query } = require('../database.js');
+const { query } = require('../../v1/src/database.js');
 const router = express.Router();
-const connection = require('../database.js');
+const connection = require('../../v1/src/database.js');
 
 
 //trayendo los datos de la tabla

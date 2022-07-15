@@ -17,7 +17,7 @@ async function getProduct (req, res) {
 async function createImage (req, res) {
     const { file } = req
     if (file) {
-        let url = `${('port')}/images/${file.filename}`;
+        let url = `${port}/images/${file.filename}`;
         let query = `INSERT INTO productos(img_url) VALUES (${connection.escape(url)})`;
 
         const result = await factory(query);
