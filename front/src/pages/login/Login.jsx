@@ -35,17 +35,17 @@ function Login() {
                 className={styles.mailler}
                 src={mail}
                 alt='' />
-              <input type="text" name='email'  placeholder='Correo'  />
+              <input type="text" name='email'  placeholder='Correo' className={styles.mail} />
             </div>
             <div className={styles.div}>
               <img
                 className={styles.lock}
                 src={lock}
                 alt='' />
-              <input type="password" name='password'  placeholder='Contraseña' />
+              <input type="password" name='password'  placeholder='Contraseña' className={styles.pass}/>
             </div>
             <p></p>
-            <button  type="submit" onClick={onSubmit} name="enviar" >INGRESAR</button>
+            <button  type="submit" onClick={onSubmit} name="enviar" className={styles.buton}>INGRESAR</button>
           </form>
         </div>
       </div>

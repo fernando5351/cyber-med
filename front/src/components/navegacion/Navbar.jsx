@@ -14,7 +14,10 @@ function Navbar() {
   };
   const medicinas = () => {
     navigate("/medicinas");
-  };
+  }
+  const empresa = () => {
+    navigate ("/empresa")
+  }
 
   return (
     <div className={Nav.contenedorNav}>
@@ -26,6 +29,11 @@ function Navbar() {
           <li>
             <a className={Nav.btnmenu} onClick={home}>
               INICIO
+            </a>
+          </li>
+          <li>
+            <a className={Nav.btnmenu} onClick={empresa} >
+              PROVEEDORES
             </a>
           </li>
           <li>
@@ -52,6 +60,7 @@ function Navbar() {
               CERRAR SESION
             </a>
           </li>
+      
         </ul>
       </nav>
     </div>
