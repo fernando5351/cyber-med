@@ -23,7 +23,7 @@ function Login() {
   }
 
   return (
-    <body className={styles.body}>
+    <div className={styles.body}>
       <div className={styles.login}>
         <div className={styles.contenedorLogin}>
           <div className={styles.title}>
@@ -49,7 +49,7 @@ function Login() {
           </form>
         </div>
       </div>
-    </body>
+    </div>
   );
 }
 

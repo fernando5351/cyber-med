@@ -1,6 +1,7 @@
 const express = require('express');
+const { query } = require('../../v1/src/database.js');
 const router = express.Router();
-const connection = require('../database.js');
+const connection = require('../../v1/src/database.js');
 
 
 
@@ -15,6 +16,19 @@ router.get('/productos', (req,res)=>{
     });
 });
 
+<<<<<<< HEAD
+=======
+//trayendo los datos de la tabla
+router.get('/home', (req, res) => {
+    connection.query('select productos.id, productos.nombre, productos.descripcion, productos.precios, productos.cant_gramos, tipo_consumo.tipo_consumo, tipo_medicamento.tipo_uso from productos,tipo_consumo,tipo_medicamento where tipo_consumo.id=productos.id_tipo_uso and tipo_medicamento.id=id_tipo_uso;', (err, rows, fields) => {
+        if (!err) {
+            res.json(rows);
+        } else {
+            console.log(err);
+        }
+    });
+});
+>>>>>>> 04bbf98194057f5e045f36554d552f46dbea6ead
 
 router.get('/:id', (req, res) => {
     const { id } = req.params;
@@ -32,10 +46,16 @@ router.get('/:id', (req, res) => {
 router.post('/add/consumo', (req, res) => {
     const { id, tipo_consumo } = req.body;
     console.log(id, tipo_consumo);
+<<<<<<< HEAD
     connection.query("INSERT INTO tipo_consumo(id, tipo_consumo) values (?, ?);", [id, tipo_consumo], (err, rows, fields) => {
+=======
+    var query = "INSERT INTO tipo_consumo(id, tipo_consumo) values (?, ?);";
+    connection.query( query, [id, tipo_consumo], (err, rows, fields) => {
+>>>>>>> 04bbf98194057f5e045f36554d552f46dbea6ead
         if (!err) {
             res.json({ status: 'tipo de consumo agregado' });
             console.log(`tipo de medicina agregado con exito`);
+            console.log(query);
         } else {
             console.log(err);
         }
