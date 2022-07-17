@@ -1,13 +1,14 @@
 const router = require('express').Router();
 
+//requerimientos para las imagenes
 const storage = require('../../config/multer')
 const multer = require('multer')
 const upload = multer({storage})
 
-const { getProducts, getProduct, createImage } = require('../controllers/productsController')
+const { getProducts, postProduct, createImage } = require('../controllers/productsController')
 
 router.get('/view/products', getProducts);
-router.get('/view/products/:id', getProduct);
-router.post('/create/img', upload.single('file'), createImage);
+router.get('/create/products', upload.single('file'), postProduct);
+router.post('/crear', upload.single('file'), createImage);
 
 module.exports = router

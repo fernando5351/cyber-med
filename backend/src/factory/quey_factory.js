@@ -7,7 +7,6 @@ async function factory(sql) {
         let sql_query = sql;
         const res = await query(sql_query);
         return res
-        console.log(query);
     } catch (err) {
         console.log(`There was an error ${err}`);
         return err;

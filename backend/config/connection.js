@@ -10,6 +10,6 @@ const objectConnection = {
     database: mysql_data.mysql.database
 }
 
-const connection = mysql.createConnection(objectConnection);
+const connection = mysql.createConnection(objectConnection)
 
-module.exports = connection
+module.exports = connection;
