@@ -48,7 +48,7 @@ router.post('/add/consumo', (req, res) => {
         if (!err) {
             res.json({ status: 'tipo de consumo agregado' });
             console.log(`tipo de medicina agregado con exito`);
-            console.log(query);
+            console.log(query)
         } else {
             console.log(err);
         }
