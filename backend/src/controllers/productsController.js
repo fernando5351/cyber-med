@@ -33,12 +33,12 @@ async function postProduct (req, res){
     }
 }
 
-async function editProducts (res, req) {
+async function editProducts (req, res) {
     const { file, body } = req;
     const { id } = req.params;
     console.log(id)
         let url = `${port}/images/${file.filename}`;
-        let query = `UPDATE productos SET nombre="${connection.escape(body.nombre)}", descripcion="${connection.escape(body.descripcion)}", id_tipo_uso=${connection.escape(body.id_tipo_uso)}, id_tipo_consumo=${connection.escape(body.id_tipo_consumo)}, cant_gramos=${connection.escape(body.cant_gramos)}, marca="${connection.escape(body.marca)}", precios="${connection.escape(body.precios)}", id_lote=${connection.escape(body.id_lote)}, img_url=${connection.escape(url)}, cantidad_medicamento=${connection.escape(body.cantidad_medicamento)} where id = ${parseInt(id)};`;
+        let query = `UPDATE productos SET nombre=${connection.escape(body.nombre)}, descripcion=${connection.escape(body.descripcion)}, id_tipo_uso=${connection.escape(body.id_tipo_uso)}, id_tipo_consumo=${connection.escape(body.id_tipo_consumo)}, cant_gramos=${connection.escape(body.cant_gramos)}, marca=${connection.escape(body.marca)}, precios=${connection.escape(body.precios)}, id_lote=${connection.escape(body.id_lote)}, img_url=${connection.escape(url)}, cantidad_medicamento=${connection.escape(body.cantidad_medicamento)} where id = ${parseInt(id)};`;
         const updateData = await factory(query);
 
         console.log(query)
