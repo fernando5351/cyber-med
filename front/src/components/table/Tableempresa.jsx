@@ -5,7 +5,7 @@ import axios from "axios";
 function Tableempresa() {
   const [empresa, SetEmpresa] = useState([]);
   const loadData = () => {
-    axios.get("http://localhost:4000/table/empresas").then((result) => {
+    axios.get("http://localhost:4000/empresa").then((result) => {
       SetEmpresa(result.data);
     });
   };
