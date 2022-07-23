@@ -68,6 +68,10 @@ function VistaMedy(props) {
                   <label id={vistamed.estiloColor}>CANTIDAD :</label>
                   <input id={vistamed.colorInfo} type="text" />
                 </div>
+                <div className={`${vistamed.caja} ${vistamed.estiloBottom}`}>
+                  <label id={vistamed.estiloColor}>LOTE :</label>
+                  <input id={vistamed.colorInfo} type="text" />
+                </div>
               </div>
               <div className={vistamed.containerFormBtn}>
                 <button className={vistamed.btnForm}>{props.cancel}</button>
