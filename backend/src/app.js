@@ -17,6 +17,7 @@ app.use(json());
 
 //routes
 app.use(require('./routes/productos'));
+app.use(require('./routes/tags'));
 
 //public files
 app.use(express.static(path.join(__dirname, '../public')));
