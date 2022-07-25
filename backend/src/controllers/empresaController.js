@@ -4,6 +4,8 @@ const por = require ('../app');
 async function getEmpresa (req,res){
     let query = 'SELECT  empresa.id , empresa.nombre_empresa, empresa.direccion, empresa.telefono, empresa.email,empresa.lote,empresa.activo, productos.nombre from empresa,productos where productos.id=empresa.id_producto';
     const response = await factory(query);
+
+    console.log(query)
     res.json({response});
 }
 
