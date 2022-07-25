@@ -7,6 +7,4 @@ async function getTags (req, res) {
     res.json({ status: getTags })
 }
 
-module.exports = {
-    getTags
-}
+module.exports = getTags
