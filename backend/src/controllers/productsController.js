@@ -47,6 +47,10 @@ async function editProducts (req, res) {
 
 async function delProducts (req, res) {
     const { id } = req.params;
+
+    let query = `SELECT img_url FROM productos WHERE id LIKE ${id}`;
+    const response = await factory(query)
+
     let sql = `DELETE FROM productos WHERE id LIKE ${id}`;
     const delData = await factory(sql);
 
