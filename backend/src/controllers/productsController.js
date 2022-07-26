@@ -1,4 +1,6 @@
 const { factory, connection } = require('../factory/quey_factory');
+const path = require('path');
+const fs = require('fs')
 const port = `http://localhost:4000`;
 
 async function getProducts (req, res) {
@@ -47,11 +49,39 @@ async function editProducts (req, res) {
 
 async function delProducts (req, res) {
     const { id } = req.params;
+
+    //query para obtener el nombre de la imagen
+    let query = `SELECT img_url FROM productos WHERE id LIKE ${id}`;
+    const response = await factory(query)
+
+    //guardamos en una variable el valor de el json
+    var variable = response;
+
+    //desestructuramos lo que obtenemos del json
+    let url = variable[0].img_url.split('/');
+
+    //obtenemos el nombre de la img
+    let dir = url[4];
+
+    //eliminamos el registro
     let sql = `DELETE FROM productos WHERE id LIKE ${id}`;
     const delData = await factory(sql);
 
-    res.json({ delData })
-    console.log(sql);
+    res.json({delData });
+    console.log(sql)
+
+    //ruta donde se hubica la imagen
+    let route = path.join(__dirname, `../../public/images/${dir}`)
+
+    //eliminamos la imagen por el metodo file system
+    try {
+        console.log(response)
+        fs.unlinkSync(route)
+        console.log(` file removed ${dir}`)
+        //file removed
+      } catch(err) {
+        console.error(err)
+      }
 }
 
 module.exports = {

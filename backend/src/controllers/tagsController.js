@@ -4,7 +4,7 @@ async function getTags (req, res) {
     let quey = `SELECT * FROM tipo_consumo`;
     const getTags = await factory(quey);
 
-    res.json({ status: getTags })
+    res.json({ getTags })
 }
 
 module.exports = getTags
