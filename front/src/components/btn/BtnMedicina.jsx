@@ -6,7 +6,7 @@ function BtnMedicina() {
     const [body, setBody] = useState([])
 
     const fetchAPI = async () => {
-        const data = await fetch(`${API}/view/ags-products`)
+        const data = await fetch(`${API}/view/tags-products`)
         const dataJson = await data.json()
         console.log(dataJson)
         setBody(dataJson)
