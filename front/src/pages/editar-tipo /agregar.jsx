@@ -6,17 +6,22 @@ import Add from '../../css/Add-medicines.module.css'
 import Edit from '../../icon/addMed/editar.png'
 import Delete from '../../icon/addMed/eliminar.png'
 import { useNavigate } from 'react-router-dom'
-import axios from 'axios'
+const API = "http://localhost:4000";
 
 function Mod() {
-    const [consumo, setConsumo] = useState([])
-    const loadData = () => {
-        axios.get('http://localhost:4000/medicinas')
-            .then(result => {
-                setConsumo(result.data)
-            })
+    const [body, setBody] = useState([])
+
+    const fetchAPI = async () => {
+        const data = await fetch(`${API}/view/tags-products`)
+        const dataJson = await data.json()
+        console.log(dataJson)
+        setBody(dataJson)
     }
-    useEffect(loadData, [])
+
+    useEffect(() => {
+        fetchAPI()
+    }, [])
+
     const navigate = useNavigate();
     const add = () => {
         navigate('/medicinas/agregar/categoria')
@@ -44,21 +49,21 @@ function Mod() {
                         <tbody>
                             <>
                                 {
-                                    consumo.map((consumo) => (
-                                        <tr className={Add.background}>
-                                            <td>{consumo.id}</td>
-                                            <td>{consumo.tipo_consumo}</td>
+                                    body.map((tags, index) => (
+                                        <tr key={tags.id} className={Add.background}>
+                                            <td>{tags.id}</td>
+                                            <td>{tags.tipo_consumo}</td>
                                             <td>
                                                 <img
-                                                className={barraNav.annadir}
-                                                src={Edit}
-                                                alt=''
-                                                onClick={add} />
+                                                    className={barraNav.annadir}
+                                                    src={Edit}
+                                                    alt=''
+                                                    onClick={add} />
                                                 <img
-                                                className={barraNav.annadir}
-                                                src={Delete}
-                                                alt=''
-                                                onClick={add} />
+                                                    className={barraNav.annadir}
+                                                    src={Delete}
+                                                    alt=''
+                                                    onClick={add} />
                                             </td>
                                         </tr>
                                     ))
