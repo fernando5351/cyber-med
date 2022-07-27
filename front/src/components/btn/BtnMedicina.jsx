@@ -1,26 +1,31 @@
 import React, { useState, useEffect } from "react";
 import med from '../../css/medicinas.module.css';
-import axios from 'axios'
+const API = "http://localhost:4000";
 
 function BtnMedicina() {
-    const [consumo, setConsumo] = useState([])
-    const loadData = () => {
-        axios.get('http://localhost:4000/medicinas')
-            .then(result => {
-                setConsumo(result.data)
-            })
+    const [body, setBody] = useState([])
+
+    const fetchAPI = async () => {
+        const data = await fetch(`${API}/view/ags-products`)
+        const dataJson = await data.json()
+        console.log(dataJson)
+        setBody(dataJson)
     }
-    useEffect(loadData, [])
+
+    useEffect(() => {
+        fetchAPI()
+    }, [])
+
     return (
-        <>
-            <div className={med.contenedorBotones}>
+        <div className={med.contenedorBotones}>
+            <>
                 {
-                    consumo.map((consumo) => (
-                        <button href="#" className={`${med.btn} ${med.buttonMed}`}>{ consumo.tipo_consumo }</button>
+                    body.map((getTags, index) => (
+                        <button key={getTags.id} className={`${med.btn} ${med.buttonMed}`} >{getTags.tipo_consumo}</button>
                     ))
                 }
-            </div>
-        </>
+            </>
+        </div>
     )
 }
 

@@ -1,10 +1,14 @@
-const { factory } = require('../factory/quey_factory');
+const { factory } = require("../factory/quey_factory");
 
-async function getTags (req, res) {
-    let quey = `SELECT * FROM tipo_consumo`;
-    const getTags = await factory(quey);
+async function getTags(req, res) {
+  let quey = `SELECT * FROM tipo_consumo`;
+  const getTags = await factory(quey);
 
-    res.json({ getTags })
+  const object = getTags
+  res.json(object);
+  console.log(object);
 }
 
-module.exports = getTags
+module.exports = {
+  getTags
+};

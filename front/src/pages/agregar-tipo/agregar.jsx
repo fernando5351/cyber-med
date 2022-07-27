@@ -8,18 +8,20 @@ import Delete from '../../icon/addMed/eliminar.png'
 import { useNavigate } from 'react-router-dom'
 
 function Mod() {
-
     //validacion de datos de la tabla
     const [consumo, setConsumo] = useState([])
+    
+
+    const api = async () => {
+        const data = await fetch('http://localhost:4000/view/tags-products')
+        const dataJson = await data.json()
+        setConsumo(dataJson)
+        console.log(dataJson);
+    }
+
     useEffect(() => {
         api()
     }, [])
-
-    const api = async () => {
-        const data = await fetch('http://localhost:4000/agregar/uso')
-        const dataJson = await data.json()
-        setConsumo(dataJson)
-    }
     //variable para la navegaciond de rutas
     const navigate = useNavigate();
 
