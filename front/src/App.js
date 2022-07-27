@@ -6,6 +6,8 @@ import Medicinas from './pages/medicinas'
 import Agregar from './pages/agregar-tipo'
 import Vistauso from './pages/vistauso/Vistauso'
 import Forms from './components/forms/formtipouso'
+import Formuso from './components/forms/formtipouso'
+import Formeditar from './components/forms/formtipouso'
 import Modificacionmed from './pages/modificacionmed/Modificacionmed';
 import Empresa from './pages/empresa/Empresa'
 
@@ -23,7 +25,7 @@ const App = () => {
           <Route path="/medicinas/agregar" name='agregarTipo' element={<Agregar />} />
           <Route path="/modificaciones" name='agregarTipo' element={<Modificacionmed />} />
           <Route path="/medicinas/agregar/categoria" name='Home' element={<Formuso />} />
-          <Route path="/medicinas/editar/categoria" name='Home' element={<Formuso />} />
+          <Route path="/medicinas/editar/categoria" name='Home' element={<Formeditar />} />
           <Route path="/vistauso" name='Home' element={<Vistauso />} />
         </Routes>
       </Suspense>
