@@ -8,7 +8,7 @@ function TableHome(){
     }, [])
 
     const api = async () => {
-        const data = await fetch('http://localhost:4000/home')
+        const data = await fetch('http://localhost:4000/view/products')
         const dataJson = await data.json()
         setConsumo(dataJson)
     }
