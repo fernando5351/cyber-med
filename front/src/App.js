@@ -21,7 +21,13 @@ const App = () => {
           <Route path="/home" name='Home' element={<Home />} />
           <Route path="/medicinas" name='medicinas' element={<Medicinas />} />
           <Route path="/medicinas/agregar" name='agregarTipo' element={<Agregar />} />
+<<<<<<< HEAD
           <Route path="/medicinas/agregar/categoria" name='agregarTipo' element={<Forms />} />
+=======
+          <Route path="/modificaciones" name='agregarTipo' element={<Modificacionmed />} />
+          <Route path="/medicinas/agregar/categoria" name='Home' element={<Formuso />} />
+          <Route path="/medicinas/editar/categoria" name='Home' element={<Formuso />} />
+>>>>>>> fernando
           <Route path="/vistauso" name='Home' element={<Vistauso />} />
         </Routes>
       </Suspense>
