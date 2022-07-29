@@ -1,1 +1,1 @@
-export { default } from '.Proveedor'
+export { default } from './Empresa'

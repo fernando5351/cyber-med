@@ -4,6 +4,7 @@ import mail from '../../icon/Login/email.png';
 import styles from  '../../css/login.module.css'
 import { useNavigate } from 'react-router-dom'
 
+
 function Login() {
   const [body, setBody] = useState({ email: '', password: '' });
   const navigate = useNavigate();
@@ -22,7 +23,7 @@ function Login() {
   }
 
   return (
-    <body className={styles.body}>
+    <div className={styles.body}>
       <div className={styles.login}>
         <div className={styles.contenedorLogin}>
           <div className={styles.title}>
@@ -34,21 +35,21 @@ function Login() {
                 className={styles.mailler}
                 src={mail}
                 alt='' />
-              <input type="text" name='email' value={body.email} onChange={change} placeholder='Correo' className={styles.mail} />
+              <input type="text" name='email'  placeholder='Correo' className={styles.mail} />
             </div>
             <div className={styles.div}>
               <img
                 className={styles.lock}
                 src={lock}
                 alt='' />
-              <input type="password" name='password' value={body.password} onChange={change} placeholder='Contraseña' className={styles.pass} />
+              <input type="password" name='password'  placeholder='Contraseña' className={styles.pass}/>
             </div>
             <p></p>
-            <button onClick={() => onSubmit()} type="submit" name="enviar" className={styles.buton}>INGRESAR</button>
+            <button  type="submit" onClick={onSubmit} name="enviar" className={styles.buton}>INGRESAR</button>
           </form>
         </div>
       </div>
-    </body>
+    </div>
   );
 }
 
