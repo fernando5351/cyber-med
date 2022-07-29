@@ -2,8 +2,9 @@ const { factory, connection } = require('../factory/quey_factory');
 const path = require('path');
 const fs = require('fs')
 const port = `http://localhost:4000`;
+const por = require ('../app');
 
-async function getProducts (req, res) {
+async function getProductsid (req, res) {
     const { id } = req.params;
     console.log(id);
     let query = `SELECT productos.id, productos.nombre, productos.precios, productos.marca, productos.cant_gramos FROM productos WHERE id LIKE ${id};`;
@@ -20,6 +21,18 @@ async function getProducts (req, res) {
     // res.json({ img: getImg, formFirst: form1, formSecond: form2 });
     // console.log(query);
     // console.log(query2);
+
+  
+}
+
+async function getProducts (req,res){
+    let query = "select productos.id, productos.nombre, productos.descripcion, productos.precios, productos.cant_gramos, tipo_consumo.tipo_consumo, tipo_medicamento.tipo_uso from productos,tipo_consumo,tipo_medicamento where tipo_consumo.id=productos.id_tipo_uso and tipo_medicamento.id=id_tipo_uso;";
+    const table = await factory(query);
+    console.log(query);
+
+    const object = table;
+    res.json(object);
+    console.log(object);
 }
 
 async function postProduct (req, res){
@@ -85,6 +98,7 @@ async function delProducts (req, res) {
 }
 
 module.exports = {
+    getProductsid,
     getProducts,
     postProduct,
     editProducts,

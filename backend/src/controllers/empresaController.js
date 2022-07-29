@@ -5,10 +5,13 @@ const por = require ('../app');
 
 async function getEmpresa (req,res){
     let query = 'SELECT  empresa.id , empresa.nombre_empresa, empresa.direccion, empresa.telefono, empresa.email,empresa.lote,empresa.activo, productos.nombre from empresa,productos where productos.id=empresa.id_producto';
-    const response = await factory(query);
-
+    const getEmpresa = await factory(query);
     console.log(query)
-    res.json({response});
+
+    
+    const object = getEmpresa
+    res.json(object);
+    console.log(object);
 }
 
 async function postEmpresa(req,res){
@@ -34,6 +37,8 @@ async function updateEmpresa(req,res){
     console.log(query);
     res.json({response});
 }
+
+
 
 module.exports = {
     getEmpresa, 
