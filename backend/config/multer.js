@@ -2,7 +2,7 @@ const multer = require('multer')
 const path = require('path');
 
 // recibe image
-const storage = multer.diskStorage({
+const storage =  multer.diskStorage({
     destination: function(req, file, img) {
         img(null, path.join(__dirname, '../public/images'))
     },

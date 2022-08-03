@@ -9,7 +9,7 @@ function Modificacionmed() {
       <Navbar />
       <div className="contenedor-modificacion">
         <div className="contenedor-img">
-          <a class="waves-effect waves-light btn butonmod">
+          <a className="waves-effect waves-light btn butonmod" href="#">
             <img className="subiricon" src={imgsubir} alt="" />
           </a>
         </div>

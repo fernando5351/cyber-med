@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom'
 function Mod() {
     //validacion de datos de la tabla
     const [consumo, setConsumo] = useState([])
-    
+
 
     const api = async () => {
         const data = await fetch('http://localhost:4000/view/tags-products')
