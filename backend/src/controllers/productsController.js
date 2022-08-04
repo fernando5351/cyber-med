@@ -75,7 +75,7 @@ async function delProducts(req, res) {
 
   res.json(response)
 
-  console.log(dataRes[0].name_img)  
+  console.log(dataRes[0].name_img)
   const name_img = dataRes[0].name_img
   const result = await cloudinary.uploader.destroy(name_img)
   console.log(result)
