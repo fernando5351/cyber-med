@@ -67,7 +67,7 @@ async function delProducts(req, res) {
   const data = await factory(getData);
 
   const dataRes = data
-  console.log(dataRes.name_img)
+  console.log(dataRes[0].name_img)
   //const name_img = viewData.name_img
 
   //eliminamos el registro
@@ -79,9 +79,45 @@ async function delProducts(req, res) {
 }
 
 
+// async function delProducts (req, res) {
+//   const { id } = req.params;
+
+//   //query para obtener el nombre de la imagen
+//   let query = `SELECT name_img FROM productos WHERE id LIKE ${id}`;
+//   const response = await factory(query)
+
+//   //guardamos en una variable el valor de el json
+//   var variable = response;
+
+//   //desestructuramos lo que obtenemos del json
+//   let url = variable[0].img_url.split('/');
+
+//   //obtenemos el nombre de la img
+//   let dir = url[4];
+
+//   //eliminamos el registro
+//   let sql = `DELETE FROM productos WHERE id LIKE ${id}`;
+//   const delData = await factory(sql);
+
+//   res.json({delData });
+//   console.log(sql)
+
+//   //ruta donde se hubica la imagen
+//   let route = path.join(__dirname, `../../public/images/${dir}`)
+
+//   //eliminamos la imagen por el metodo file system
+//   try {
+//       console.log(response)
+//       fs.unlinkSync(route)
+//       console.log(` file removed ${dir}`)
+//       //file removed
+//     } catch(err) {
+//       console.error(err)
+//     }
+// }
 
 module.exports = {
   getProducts,
   postProduct,
-  delProducts,
+  delProducts
  };
