@@ -33,11 +33,12 @@ async function postProduct (req, res) {
 
   //subiendo imagenes a cloudinary
   const response = cloudinary.v2.uploader.upload(req.file.path)
-
+  console.log(( await response))
+  console.log((await response).public_id);
   //obtener la direccion y el id de la imagen en cloudinary
   let route = (await response).url;
   let name_img = (await response).public_id;
-  let query = `INSERT INTO productos(img_url, name_img, descripcion, id_tipo_uso, id_tipo_consumo, cantidad_medicamento,nombre, precios, marca, cant_gramos) VALUES (${connection.escape(route)}," ${name_img}", "${descripcion}", ${id_tipo_uso}, ${id_tipo_consumo}, ${cantidad_medicamento},"${nombre}", ${precios},"${marca}",${cant_gramos})`;
+  let query = `INSERT INTO productos(img_url, name_img, descripcion, id_tipo_uso, id_tipo_consumo, cantidad_medicamento,nombre, precios, marca, cant_gramos) VALUES (${connection.escape(route)}, "${name_img}", "${descripcion}", ${id_tipo_uso}, ${id_tipo_consumo}, ${cantidad_medicamento},"${nombre}", ${precios},"${marca}",${cant_gramos})`;
   const postData = await factory(query);
 
   res.json({ getData: postData });
@@ -51,7 +52,7 @@ async function postProduct (req, res) {
 
   //eliminamos la imagen por el metodo file system
   try {
-    fs.unlinkSync(router);
+    await fs.unlinkSync(router);
     console.log(` file removed ${router}`);
     //file removed
   } catch (err) {
@@ -67,54 +68,19 @@ async function delProducts(req, res) {
   const data = await factory(getData);
 
   const dataRes = data
-  console.log(dataRes[0].name_img)
-  //const name_img = viewData.name_img
 
   //eliminamos el registro
   let sql = `DELETE FROM productos WHERE id LIKE ${id}`;
   const response = await factory(sql)
 
   res.json(response)
-  //cloudinary.v2.uploader.destroy(name_img)
+
+  console.log(dataRes[0].name_img)  
+  const name_img = dataRes[0].name_img
+  const result = await cloudinary.uploader.destroy(name_img)
+  console.log(result)
 }
 
-
-// async function delProducts (req, res) {
-//   const { id } = req.params;
-
-//   //query para obtener el nombre de la imagen
-//   let query = `SELECT name_img FROM productos WHERE id LIKE ${id}`;
-//   const response = await factory(query)
-
-//   //guardamos en una variable el valor de el json
-//   var variable = response;
-
-//   //desestructuramos lo que obtenemos del json
-//   let url = variable[0].img_url.split('/');
-
-//   //obtenemos el nombre de la img
-//   let dir = url[4];
-
-//   //eliminamos el registro
-//   let sql = `DELETE FROM productos WHERE id LIKE ${id}`;
-//   const delData = await factory(sql);
-
-//   res.json({delData });
-//   console.log(sql)
-
-//   //ruta donde se hubica la imagen
-//   let route = path.join(__dirname, `../../public/images/${dir}`)
-
-//   //eliminamos la imagen por el metodo file system
-//   try {
-//       console.log(response)
-//       fs.unlinkSync(route)
-//       console.log(` file removed ${dir}`)
-//       //file removed
-//     } catch(err) {
-//       console.error(err)
-//     }
-// }
 
 module.exports = {
   getProducts,
