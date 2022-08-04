@@ -53,7 +53,7 @@ async function postProduct (req, res) {
   //eliminamos la imagen por el metodo file system
   try {
     await fs.unlinkSync(router);
-    console.log(` file removed ${router}`);
+    console.log(`file removed ${router}`);
     //file removed
   } catch (err) {
     console.error(err);
