@@ -50,10 +50,55 @@ async function postProduct (req, res) {
   //ruta donde se hubica la imagen
   let router = path.join(__dirname, `../../public/images/${img}`);
 
-  //eliminamos la imagen por el metodo file system
+  //eliminamos la imagen por el metodo file system                                                                                                                        
   try {
-    await fs.unlinkSync(router);
-    console.log(` file removed ${router}`);
+    await fs.unlinkSync(router);                                                                                                
+    console.log(` file removed ${router}`);                                                                     
+    //file removed
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+async function putProducts ( req, res ) {
+  const { id } = req.params;
+  const { descripcion, id_tipo_consumo, id_tipo_uso, cantidad_medicamento, nombre, precios, marca, cant_gramos, id_lote } = req.body
+
+  //obtener el nombre de la imagen para luego borrarla de cloudinary
+  let sql = `SELECT name_img FROM productos WHERE id LIKE ${id}`
+  const data = await factory(sql);
+
+  const dataRes = data
+
+  console.log(dataRes[0].name_img)  
+  const name_image = dataRes[0].name_img
+  
+  //subiendo imagenes a cloudinary
+  const response = cloudinary.v2.uploader.upload(req.file.path);
+  console.log(( await response));
+  console.log((await response).public_id);
+  //obtener la direccion y el id de la imagen en cloudinary
+  let route = (await response).url;
+  let name_img = (await response).public_id;
+  let query = `UPDATE productos SET nombre="${nombre}", descripcion="${descripcion}", id_tipo_uso="${id_tipo_uso}", id_tipo_consumo="${id_tipo_consumo}", cant_gramos="${cant_gramos}", marca="${marca}", precios="${precios}", id_lote="${id_lote}", img_url="${route}", cantidad_medicamento="${cantidad_medicamento}", name_img="${name_img}" WHERE id LIKE ${id}`;
+  const getdata = await factory(query);
+
+  res.json(getdata)
+
+  const del = await cloudinary.v2.uploader.destroy(name_image);
+  console.log(del);
+
+  //obtener el nombre de la imagen para removerla del server
+  const img = req.file.filename;
+  console.log(` el nombre de la imagen es: ${img}`)
+
+  //ruta donde se hubica la imagen
+  let router = path.join(__dirname, `../../public/images/${img}`);
+
+  //eliminamos la imagen por el metodo file system                                                                                                                        
+  try {
+    await fs.unlinkSync(router);                                                                                                
+    console.log(` file removed ${router}`);                                                                     
     //file removed
   } catch (err) {
     console.error(err);
@@ -85,5 +130,6 @@ async function delProducts(req, res) {
 module.exports = {
   getProducts,
   postProduct,
+  putProducts,
   delProducts
  };
