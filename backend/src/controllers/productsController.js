@@ -78,6 +78,8 @@ async function delProducts(req, res) {
   //cloudinary.v2.uploader.destroy(name_img)
 }
 
+
+
 module.exports = {
   getProducts,
   postProduct,
