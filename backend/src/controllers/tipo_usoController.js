@@ -4,7 +4,7 @@ const por = require ('../app');
 async function getTipo_usoid (req,res){
     const {id} = req.params;
     let query = `SELECT * FROM tipo_medicamento WHERE id LIKE ${id}`;
-    const response = await factory(query);
+    const response = await factory(query);  
     res.json({response});
 }
 async function getTipo_uso (req,res){
@@ -36,7 +36,7 @@ async function deleteTipo_uso (req,res){
     const response = await factory(query);
     console.log(query);
     res.json({response});
-}
+}1
 
 module.exports = {
     getTipo_usoid,

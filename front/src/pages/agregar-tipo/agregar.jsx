@@ -8,7 +8,7 @@ import Delete from '../../icon/addMed/eliminar.png'
 import { useNavigate } from 'react-router-dom'
 
 function Mod() {
-    //validacion de datos de la tabla
+    //validacion de datos de la tablafront/src/pages/agregar-tipo/agregar.jsx
     const [consumo, setConsumo] = useState([])
 
 

@@ -20,12 +20,21 @@ async function getProducts(req, res) {
   let query2 = `SELECT productos.descripcion, tipo_medicamento.tipo_uso, tipo_consumo.tipo_consumo, productos.cantidad_medicamento FROM productos, tipo_medicamento, tipo_consumo WHERE productos.id LIKE ${id} && productos.id_tipo_uso LIKE tipo_medicamento.id &&  productos.id_tipo_consumo LIKE tipo_consumo.id;`;
   const form2 = await factory(query2);
 
-  let query3 = `SELECT productos.img_url FROM productos WHERE id LIKE ${id}`;
-  const getImg = await factory(query3);
+    // res.json({ img: getImg, formFirst: form1, formSecond: form2 });
+    // console.log(query);
+    // console.log(query2);
 
-  res.json({ img: getImg, formFirst: form1, formSecond: form2 });
-  console.log(query);
-  console.log(query2);
+  
+}
+
+async function getProducts (req,res){
+    let query = "select productos.id, productos.nombre, productos.descripcion, productos.precios, productos.cant_gramos, tipo_consumo.tipo_consumo, tipo_medicamento.tipo_uso from productos,tipo_consumo,tipo_medicamento where tipo_consumo.id=productos.id_tipo_uso and tipo_medicamento.id=id_tipo_uso;";
+    const table = await factory(query);
+    console.log(query);
+
+    const object = table;
+    res.json(object);
+    console.log(object);
 }
 
 async function postProduct (req, res) {
@@ -83,7 +92,9 @@ async function delProducts(req, res) {
 
 
 module.exports = {
-  getProducts,
-  postProduct,
-  delProducts
- };
+    getProductsid,
+    getProducts,
+    postProduct,
+    editProducts,
+    delProducts
+}
