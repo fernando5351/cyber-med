@@ -11,7 +11,6 @@ import Formeditar from './components/forms/formtipouso'
 import Modificacionmed from './pages/modificacionmed/Modificacionmed';
 import Empresa from './pages/empresa/Empresa'
 
-
 const App = () => {
   return (
     <Router>
@@ -27,6 +26,7 @@ const App = () => {
           <Route path="/medicinas/agregar/categoria" name='Home' element={<Formuso />} />
           <Route path="/medicinas/editar/categoria" name='Home' element={<Formeditar />} />
           <Route path="/vistauso" name='Home' element={<Vistauso />} />
+          <Route path="/form" name='Home' element={<Form />} />
         </Routes>
       </Suspense>
     </Router>

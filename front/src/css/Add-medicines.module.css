@@ -6,9 +6,11 @@
   height: 100vh;
   flex-direction: column;
 }
+
 .annadir {
   margin-top: 15px;
 }
+
 .tbl {
   border-radius: 30px;
   overflow: hidden;
