@@ -57,6 +57,11 @@
   cursor: pointer;
 }
 
+.Btnn {
+  border: none;
+  background-color: transparent;
+}
+
 /*EFECTOS HOVER*/
 
 .Btnn .lupa:hover {

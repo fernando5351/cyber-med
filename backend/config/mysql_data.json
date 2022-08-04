@@ -1,8 +1,8 @@
 {
-    "mysql": {
-        "host": "localhost",
-        "user": "josue",
-        "pass": "Josue-17@19",
-        "database": "db_medicines"
-    }
+  "mysql": {
+    "host": "localhost",
+    "user": "josue",
+    "pass": "Josue-17@19",
+    "database": "db_medicines"
+  }
 }

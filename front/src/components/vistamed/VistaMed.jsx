@@ -12,66 +12,67 @@ function VistaMedy(props) {
   ];
   return (
     <div>
-        <div className={vistamed.contentPrincipal}>
-            <div className={vistamed.contentModificacion}>
-                <div className={vistamed.Img}>
-                    <a className={vistamed.butonmed}>
-                        <img className={vistamed.subiricon}
-                            src={imgsubir}
-                            alt="" />
-                    </a>
-                </div>
-                <div className={vistamed.Dato}>
-                    <form id={vistamed.estiloForm}>
-                        <div className={vistamed.contenedorLinea}>
-                            <label id={vistamed.color}>PRECIO :</label>
-                            <input id={vistamed.estilo} type="text" />
-                        </div>
-                        <div className={vistamed.contenedorLinea}>
-                            <label id={vistamed.color}>GRAMO :</label>
-                            <input id={vistamed.estilo} type="text" />
-                        </div>
-                        <div className={vistamed.contenedorLinea}>
-                            <label id={vistamed.color}>MARCA :</label>
-                            <input id={vistamed.estilo} type="text" />
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div className={vistamed.contentInfo}>
-                <div className={vistamed.Info}>
-                    <form id={vistamed.formEstilo}>
-                        <div className={vistamed.containerFormMed}>
-                            <div className={vistamed.caja}>
-                                <label id={vistamed.estiloColor}>DESCRIPCION :</label>
-                                <input id={vistamed.colorInfo} type="text" />
-                            </div>
-                            <div className={select.Caja}>
-                                <div className={select.estilo}>
-                                    <label id={select.titulo}>USO :</label>
-                                    <Select className={select.Select} isMulti options={options} />
-                                </div>
-                                <div className={select.estilo}>
-                                    <label id={select.titulo2}>ADMINISTRACION :</label>
-                                    <Select options={options} className={select.options} />
-                                </div>
-                            </div>
-                            <div className={`${vistamed.caja} ${vistamed.estiloBottom}`}>
-                                <label id={vistamed.estiloColor}>CANTIDAD :</label>
-                                <input id={vistamed.colorInfo} type="text" />
-                            </div>
-                        </div>
-                        <div className={vistamed.containerFormBtn}>
-                            <button className={vistamed.btnForm}>{props.cancel}</button>
-                            <button className={vistamed.btnForm}>{props.save}</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+      <div className={vistamed.contentPrincipal}>
+        <div className={vistamed.contentModificacion}>
+          <div className={vistamed.Img}>
+            <buton className={vistamed.butonmed}>
+              <img className={vistamed.subiricon} src={imgsubir} alt="" />
+            </buton>
+          </div>
+          <div className={vistamed.Dato}>
+            <form id={vistamed.estiloForm}>
+              <div className={vistamed.contenedorLinea}>
+                <label id={vistamed.color}>PRECIO :</label>
+                <input id={vistamed.estilo} type="text" />
+              </div>
+              <div className={vistamed.contenedorLinea}>
+                <label id={vistamed.color}>GRAMO :</label>
+                <input id={vistamed.estilo} type="text" />
+              </div>
+              <div className={vistamed.contenedorLinea}>
+                <label id={vistamed.color}>MARCA :</label>
+                <input id={vistamed.estilo} type="text" />
+              </div>
+            </form>
+          </div>
         </div>
+        <div className={vistamed.contentInfo}>
+          <div className={vistamed.Info}>
+            <form id={vistamed.formEstilo}>
+              <div className={vistamed.containerFormMed}>
+                <div className={vistamed.caja}>
+                  <label id={vistamed.estiloColor}>DESCRIPCION :</label>
+                  <input id={vistamed.colorInfo} type="text" />
+                </div>
+                <div className={select.Caja}>
+                  <div className={select.estilo}>
+                    <label id={select.titulo}>USO :</label>
+                    <Select
+                      className={select.Select}
+                      isMulti
+                      options={options}
+                    />
+                  </div>
+                  <div className={select.estilo}>
+                    <label id={select.titulo2}>ADMINISTRACION :</label>
+                    <Select options={options} className={select.options} />
+                  </div>
+                </div>
+                <div className={`${vistamed.caja} ${vistamed.estiloBottom}`}>
+                  <label id={vistamed.estiloColor}>CANTIDAD :</label>
+                  <input id={vistamed.colorInfo} type="text" />
+                </div>
+              </div>
+              <div className={vistamed.containerFormBtn}>
+                <button className={vistamed.btnForm}>{props.cancel}</button>
+                <button className={vistamed.btnForm}>{props.save}</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
-
- );
+  );
 }
 
 export default VistaMedy;
