@@ -14,53 +14,52 @@ function Navbar() {
   };
   const medicinas = () => {
     navigate("/medicinas");
-  }
+  };
   const empresa = () => {
-    navigate ("/empresa")
-  }
+    navigate("/empresa");
+  };
 
   return (
     <div className={Nav.contenedorNav}>
       <nav>
-        <a onClick={home} className={Nav.btnico}>
+        <button onClick={home} className={Nav.btnico}>
           <img className={Nav.logo} src={Carrito} alt="logo cybermed" />
-        </a>
+        </button>
         <ul className={Nav.menu}>
           <li>
-            <a className={Nav.btnmenu} onClick={home}>
+            <button className={Nav.btnmenu} onClick={home}>
               INICIO
-            </a>
+            </button>
           </li>
           <li>
-            <a className={Nav.btnmenu} onClick={empresa} >
+            <button className={Nav.btnmenu} onClick={empresa}>
               PROVEEDORES
-            </a>
+            </button>
           </li>
           <li>
-            <a className={Nav.btnmenu} onClick={medicinas}>
+            <button className={Nav.btnmenu} onClick={medicinas}>
               MEDICINAS
-            </a>
+            </button>
           </li>
           <li>
-            <a className={Nav.btnmenu}>AÑADIR</a>
+            <button className={Nav.btnmenu}>AÑADIR</button>
             <ul className={Nav.submenu}>
               <li>
-                <a className={Nav.subtnmenu}>USO</a>
+                <button className={Nav.subtnmenu}>USO</button>
               </li>
               <li>
-                <a className={Nav.subtnmenu}>CONSUMO</a>
+                <button className={Nav.subtnmenu}>CONSUMO</button>
               </li>
               <li>
-                <a className={Nav.subtnmenu}>MEDICAMENTO</a>
+                <button className={Nav.subtnmenu}>MEDICAMENTO</button>
               </li>
             </ul>
           </li>
           <li>
-            <a className={Nav.btnmenu} onClick={logOut}>
+            <button className={Nav.btnmenu} onClick={logOut}>
               CERRAR SESION
-            </a>
+            </button>
           </li>
-      
         </ul>
       </nav>
     </div>
