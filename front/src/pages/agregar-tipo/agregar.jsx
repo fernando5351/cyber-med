@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom'
 function Mod() {
     //validacion de datos de la tablafront/src/pages/agregar-tipo/agregar.jsx
     const [consumo, setConsumo] = useState([])
-
+    const [update, setUpdate] = useState(false)
 
     const api = async () => {
         const data = await fetch('http://localhost:4000/view/tags-products')
@@ -21,7 +21,8 @@ function Mod() {
 
     useEffect(() => {
         api()
-    }, [])
+        setUpdate(false)
+    }, [update])
     //variable para la navegaciond de rutas
     const navigate = useNavigate();
 
@@ -33,6 +34,18 @@ function Mod() {
     //ruta para editar un medicamento, esto lleva al formulario tipo consumo
     const edit = () => {
         navigate('/medicinas/editar/categoria')
+    }
+
+    //eliminar un registro
+    const handleDelete = (id) => {
+        const RequestInit = {
+            method: 'delete'
+          }
+          fetch(`http://localhost:4000/tipo_consumo/${id}`, RequestInit)
+          .then( res => res.json())
+          .then( res => console.log(res))
+
+          setUpdate(true)
     }
     return (
         <div className={Add.containerAdd}>
@@ -71,7 +84,7 @@ function Mod() {
                                                     className={barraNav.annadir}
                                                     src={Delete}
                                                     alt=''
-                                                //onClick={() => onDelete(`${consumo.id}`)}
+                                                    onClick={() => handleDelete(`${consumo.id}`)}
                                                 />
                                             </td>
                                         </tr>
