@@ -1,11 +1,12 @@
 import React from "react";
+import Navbar from "../../components/navegacion/Navbar";
 import vistamed from "../../css/vistamed.module.css";
 import imgsubir from "../../icon/Create/subir.png";
 import select from "../../css/select.module.css";
 import Select from "react-select";
 import { useNavigate } from "react-router-dom";
 
-function VistaMedy(props) {
+function Vista() {
   const options = [
     { value: "Opcion 1", label: "Opcion 1" },
     { value: "Opcion 2", label: "Opcion 2" },
@@ -15,10 +16,11 @@ function VistaMedy(props) {
   const navigate = useNavigate();
 
   const update = () => {
-    navigate(`/${props.url}`);
+    navigate(`/modificaciones}`);
   };
   return (
     <div>
+      <Navbar />
       <div className={vistamed.contentPrincipal}>
         <div className={vistamed.contentModificacion}>
           <div className={vistamed.Img}>
@@ -71,8 +73,8 @@ function VistaMedy(props) {
                 </div>
               </div>
               <div className={vistamed.containerFormBtn}>
-                <button className={vistamed.btnForm}>{props.cancel}</button>
-                <button onClick={update} className={vistamed.btnForm}>{props.save}</button>
+                <button className={vistamed.btnForm}>Cancelar</button>
+                <button onClick={update} className={vistamed.btnForm}>Actualizar</button>
               </div>
             </form>
           </div>
@@ -82,4 +84,4 @@ function VistaMedy(props) {
   );
 }
 
-export default VistaMedy;
+export default Vista;

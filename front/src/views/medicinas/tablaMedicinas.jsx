@@ -28,12 +28,12 @@ function Mod() {
 
     //ruta para agregar un nuevo medicamento, esto lleva al formulario tipo consumo
     const add = () => {
-        navigate('/medicinas/agregar/categoria')
+        navigate('/medicinas/agregar/categoria/consumo')
     }
 
     //ruta para editar un medicamento, esto lleva al formulario tipo consumo
     const edit = () => {
-        navigate('/medicinas/editar/categoria')
+        navigate('/medicinas/editar/categoria/consumo')
     }
 
     //eliminar un registro

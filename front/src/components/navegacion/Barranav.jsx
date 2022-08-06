@@ -8,7 +8,7 @@ function Barranav(props) {
   const Navigate = useNavigate();
 
   const Add = () => {
-    Navigate("/medicinas/agregar");
+    Navigate("/medicinas/tabla");
   };
 
   return (
