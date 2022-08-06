@@ -12,8 +12,8 @@ async function getTipo_consumo (req,res){
 }
 
 async function posTipo_consumo (req,res){
-    const {body} = req;
-    let query = `INSERT INTO tipo_consumo (tipo_consumo) VALUES (${connection.escape(body.tipo_consumo)})`;
+    const { tipo_consumo, estado } = req.body;
+    let query = `INSERT INTO tipo_consumo (tipo_consumo, estado) VALUES ("${tipo_consumo}", ${estado})`;
     const response = await factory(query);
     console.log(query);
     res.json({response});

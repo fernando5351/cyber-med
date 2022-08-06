@@ -18,6 +18,15 @@ function Navbar() {
   const empresa = () => {
     navigate("/empresa");
   };
+  const med = () => {
+    navigate("/medicinas/crear");
+  };
+  const uso = () => {
+    navigate("/medicinas/editar/categoria/uso")
+  };
+  const consumo = () => {
+    navigate("/medicinas/agregar/categoria/consumo")
+  }
 
   return (
     <div className={Nav.contenedorNav}>
@@ -45,13 +54,13 @@ function Navbar() {
             <button className={Nav.btnmenu}>AÑADIR</button>
             <ul className={Nav.submenu}>
               <li>
-                <button className={Nav.subtnmenu}>USO</button>
+                <button onClick={uso} className={Nav.subtnmenu}>USO</button>
               </li>
               <li>
-                <button className={Nav.subtnmenu}>CONSUMO</button>
+                <button onClick={consumo} className={Nav.subtnmenu}>CONSUMO</button>
               </li>
               <li>
-                <button className={Nav.subtnmenu}>MEDICAMENTO</button>
+                <button className={Nav.subtnmenu} onClick={med}>MEDICAMENTO</button>
               </li>
             </ul>
           </li>

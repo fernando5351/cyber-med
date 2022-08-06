@@ -1,0 +1,25 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    text-align: center;
+    width: 60%;
+    height: 40vh;
+    color: #fff;
+}
+
+.err, .NotFound {
+    text-shadow: 10px 4px 5px rgb(3, 3, 3);
+}
+.err {
+    font-size: 150px;
+}
+
+.NotFound {
+    font-size: 60px;
+}
