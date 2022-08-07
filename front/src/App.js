@@ -36,7 +36,6 @@ const App = () => {
             name="Vistaproducto"
             element={<VistaProducto />}
           />
-          <Route path="/home" element={App} />
         </Routes>
       </Suspense>
     </Router>
