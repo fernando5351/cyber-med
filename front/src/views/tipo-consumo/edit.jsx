@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 import Navbar from "../../components/navegacion/Navbar";
 import Form from '../../css/formtipouso.module.css'
 
-function Formuso() {
+function EditConsumo() {
     //capturar el estado con el hook
   const [tipoConsumo, setTipo_Consumo] = useState({
     tipo_consumo: "",
@@ -23,18 +23,18 @@ function Formuso() {
   //redireccionar a medicinas
     let navigate = useNavigate()
 
-  const handleSubmit = () => {
+  const handleSubmit = (id) => {
     
     //validacion de que los campos no esten vacios
     if ( tipo_consumo === "" || estado === "" ) {
       alert("Todos los campos son requeridos")
     } else {
       const RequestInit = {
-        method: 'POST',
+        method: 'PUT',
         headers: { 'Content-Type': 'application/json'},
         body: JSON.stringify(tipoConsumo)
       }
-      fetch('http://localhost:4000/tipo_consumo', RequestInit)
+      fetch(`http://localhost:4000/tipo_consumo/${id}`, RequestInit)
       .then( res => res.json() )
       .then( navigate("/medicinas") )
     }
@@ -62,7 +62,9 @@ return (
                 </select>
               </div>
               <div className={Form.botones}>
-                <button type="submit" name="guardar" onClick={handleSubmit} className={Form.buton1}>GUARDAR</button>
+                <button type="submit" name="guardar" onClick={ () =>{
+                    handleSubmit()
+                }} className={Form.buton1}>GUARDAR</button>
                 <button type="reset" name="eliminar" className={Form.buton2}>LIMPIAR</button>
               </div>
             </form>
@@ -72,4 +74,4 @@ return (
     </div>
   );
 }
-export default Formuso; 
+export default EditConsumo; 
