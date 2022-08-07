@@ -1,50 +1,45 @@
-
 import React, { useState, useEffect } from "react";
-import Navbar from "../navegacion/Navbar";
+import { useNavigate } from "react-router-dom"
+import Navbar from "../../components/navegacion/Navbar";
 import Form from '../../css/formtipouso.module.css'
 
 function Formuso() {
-
-  //capturar datos escritos por el cliente
-  const [tipo_consumo, setTipouso] = useState({
-    tipo_uso: "",
+    //capturar el estado con el hook
+  const [tipoConsumo, setTipo_Consumo] = useState({
+    tipo_consumo: "",
     estado: ""
   })
 
-  const change = (event) => {
-    console.log(event.target.value)
-    setTipouso({
-      ...tipo_consumo,
-      [event.target.name]: event.target.value
+  const change = (e) => {
+    console.log(e.target.value);
+    setTipo_Consumo({
+      ...tipoConsumo,
+      [e.target.name]: e.target.value
     })
   }
-
-  //destruction
-  let { tipo_uso, estado } = tipo_consumo
+  //destructuracion
+  let { tipo_consumo, estado } = tipoConsumo;
+    
+  //redireccionar a medicinas
+    let navigate = useNavigate()
 
   const handleSubmit = () => {
-    //validacion para que los campos no esten null
-    if (tipo_uso === "" || estado === "") {
-      alert("todos los campos son requeridos")
-      return
+    
+    //validacion de que los campos no esten vacios
+    if ( tipo_consumo === "" || estado === "" ) {
+      alert("Todos los campos son requeridos")
     } else {
       const RequestInit = {
-        method: 'post',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(tipo_consumo)
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json'},
+        body: JSON.stringify(tipoConsumo)
       }
-      fetch('http://localhost:4000/tipo_uso', RequestInit)
-      .then( res => res.text())
-      .then( res => console.log(res))
-
-      setTipouso({
-        tipo_uso: "",
-        estado: ""
-      })
+      fetch('http://localhost:4000/tipo_consumo', RequestInit)
+      .then( res => res.json() )
+      .then( navigate("/medicinas") )
     }
   }
-
-  return (
+return (
     <div className={Form.contentUso}>
       <Navbar />
       <div className={Form.containerUso}>
@@ -55,7 +50,7 @@ function Formuso() {
           <div className={Form.body}>
             <form className={Form.Form}>
               <div className={Form.formInput}>
-                <input type="text" name="tipo_uso" className={Form.input} placeholder="Tipo uso de la medicina"
+                <input type="text" name="tipo_consumo" className={Form.input} placeholder="Tipo uso de uso"
                   onChange={change}
                 />
               </div>

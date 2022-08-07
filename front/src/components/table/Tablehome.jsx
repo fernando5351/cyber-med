@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from "react";
 import tabla from "../../css/table.module.css";
+const API = "http://localhost:4000";
 
 function TableHome() {
-  const [productos, setConsumo] = useState([]);
-  useEffect(() => {
-    api();
-  }, []);
+  const [productos, setProductos] = useState([]);
 
-  const api = async () => {
-    const data = await fetch("http://localhost:4000/home");
-    const dataJson = await data.json();
-    setConsumo(dataJson);
+  const fetchAPI = async () => {
+    const url = await fetch(`${API}/view/products`);
+    const getData = await url.json();
+    console.log(getData);
+    setProductos(getData);
   };
+
+  useEffect(() => {
+    fetchAPI();
+  }, []);
   return (
     <div className={tabla.row}>
       <table className={tabla.tableM}>

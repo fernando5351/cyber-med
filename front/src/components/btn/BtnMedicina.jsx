@@ -6,7 +6,7 @@ const API = "http://localhost:4000";
 function BtnMedicina() {
   const [body, setBody] = useState([]);
 
-  const fetchAPI = async () => {
+  const Api = async () => {
     const data = await fetch(`${API}/view/tags-products`);
     const dataJson = await data.json();
     console.log(dataJson);
@@ -14,7 +14,7 @@ function BtnMedicina() {
   };
 
   useEffect(() => {
-    fetchAPI();
+    Api();
   }, []);
 
   const navigate = useNavigate();
