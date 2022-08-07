@@ -29,49 +29,21 @@ const App = () => {
             {/* vista de tags medicinas */}
             <Route path="/medicinas" name="medicinas" element={<Medicinas />} />
             {/* vista para ver los Medicamentos */}
-            <Route
-              path="/vistauso"
-              name="medicinas"
-              element={<Medicamentos />}
-            />
+            <Route path="/vistauso" name="medicinas" element={<Medicamentos />} />
             {/* crear un nuevo Medicamento */}
-            <Route
-              path="/medicinas/crear"
-              name="medicinas"
-              element={<CrateMed />}
-            />
+            <Route path="/medicinas/crear" name="medicinas" element={<CrateMed />} />
             {/* Tabla para editar el   tipo Uso */}
             <Route path="/tablauso" name="tablauso" element={<TableUso />} />
             {/* actualizar un Medicamento */}
-            <Route
-              path="/medicinas/actualizar"
-              name="medicinas"
-              element={<UpdateMed />}
-            />
+            <Route path="/medicinas/actualizar" name="medicinas" element={<UpdateMed />} />
             {/* agregar un tipo de consumo */}
-            <Route
-              path="/medicinas/agregar/categoria/consumo"
-              name="medicinas"
-              element={<Consumo />}
-            />
+            <Route path="/medicinas/agregar/categoria/consumo" name="medicinas" element={<Consumo />} />
             {/* editar un tipo de consumo */}
-            <Route
-              path="/medicinas/editar/categoria/consumo"
-              name="medicinas"
-              element={<EditConsumo />}
-            />
+            <Route path="/medicinas/editar/categoria/consumo" name="medicinas" element={<EditConsumo />} />
             {/* tabla para medicamentos */}
-            <Route
-              path="/medicinas/tabla"
-              name="medicinas"
-              element={<TablaConsumo />}
-            />
+            <Route path="/medicinas/tabla" name="medicinas" element={<TablaConsumo />} />
             {/* crear un tipo de uso del medicamento */}
-            <Route
-              path="/medicinas/editar/categoria/uso"
-              name="medicinas"
-              element={<TipoUso />}
-            />
+            <Route path="/medicinas/editar/categoria/uso" name="medicinas" element={<TipoUso />} />
             {/* PAGE NOT FOUND */}
             <Route path="*" name="error404" element={<NotFound />} />
           </Routes>
