@@ -32,11 +32,10 @@ function Mod() {
     }
 
     //ruta para editar un medicamento, esto lleva al formulario tipo consumo
-    const edit = () => {
-        navigate('/medicinas/editar/categoria/consumo')
+    const handleEdit = ( id ) => {
+        navigate(`/medicinas/editar/categoria/consumo`)
     }
-
-    //eliminar un registro
+    //eliminar un registro Em19%100fer
     const handleDelete = (id) => {
         const RequestInit = {
             method: 'delete'
@@ -79,7 +78,9 @@ function Mod() {
                                                     className={barraNav.annadir}
                                                     src={Edit}
                                                     alt=''
-                                                    onClick={edit} />
+                                                    onClick={ () => {
+                                                        handleEdit(`${consumo.id}`)
+                                                    }} />
                                                 <img
                                                     className={barraNav.annadir}
                                                     src={Delete}
