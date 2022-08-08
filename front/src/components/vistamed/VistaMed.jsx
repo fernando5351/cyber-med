@@ -1,4 +1,5 @@
 import React from "react";
+import Navbar from "../navegacion/Navbar";
 import vistamed from "../../css/vistamed.module.css";
 import imgsubir from "../../icon/Create/subir.png";
 import select from "../../css/select.module.css";
@@ -19,21 +20,42 @@ function VistaMedy(props) {
   };
   return (
     <div>
+<<<<<<< HEAD
+      <Navbar />
+      <div className={vistamed.contentPrincipal}>
+        <div className={vistamed.contentModificacion}>
+          <div className={vistamed.Img}>
+            <a className={vistamed.butonmed}>
+              <img className={vistamed.subiricon} src={imgsubir} alt="" />
+            </a>
+=======
       <div className={vistamed.contentPrincipal}>
         <div className={vistamed.contentModificacion}>
           <div className={vistamed.Img}>
             <buton className={vistamed.butonmed}>
               <img className={vistamed.subiricon} src={imgsubir} alt="" />
             </buton>
+>>>>>>> f4f54e7392986db9fa0e9f1f76fd92de1ce53baf
           </div>
           <div className={vistamed.Dato}>
             <form id={vistamed.estiloForm}>
               <div className={vistamed.contenedorLinea}>
+<<<<<<< HEAD
+                <label id={vistamed.color}>NOMBRE :</label>
+                <input id={vistamed.estilo} type="text" />
+              </div>
+              <div className={vistamed.contenedorLinea}>
+=======
+>>>>>>> f4f54e7392986db9fa0e9f1f76fd92de1ce53baf
                 <label id={vistamed.color}>PRECIO :</label>
                 <input id={vistamed.estilo} type="text" />
               </div>
               <div className={vistamed.contenedorLinea}>
+<<<<<<< HEAD
+                <label id={vistamed.color}>GRAMOS :</label>
+=======
                 <label id={vistamed.color}>GRAMO :</label>
+>>>>>>> f4f54e7392986db9fa0e9f1f76fd92de1ce53baf
                 <input id={vistamed.estilo} type="text" />
               </div>
               <div className={vistamed.contenedorLinea}>
@@ -69,10 +91,21 @@ function VistaMedy(props) {
                   <label id={vistamed.estiloColor}>CANTIDAD :</label>
                   <input id={vistamed.colorInfo} type="text" />
                 </div>
+<<<<<<< HEAD
+                <div className={`${vistamed.caja} ${vistamed.estiloBottom}`}>
+                  <label id={vistamed.estiloColor}>LOTE :</label>
+                  <input id={vistamed.colorInfo} type="text" />
+                </div>
+              </div>
+              <div className={vistamed.containerFormBtn}>
+                <button className={vistamed.btnForm}>{props.cancel}</button>
+                <button className={vistamed.btnForm}>{props.save}</button>
+=======
               </div>
               <div className={vistamed.containerFormBtn}>
                 <button className={vistamed.btnForm}>{props.cancel}</button>
                 <button onClick={update} className={vistamed.btnForm}>{props.save}</button>
+>>>>>>> f4f54e7392986db9fa0e9f1f76fd92de1ce53baf
               </div>
             </form>
           </div>
