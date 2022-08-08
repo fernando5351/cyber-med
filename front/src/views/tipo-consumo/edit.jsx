@@ -9,6 +9,12 @@ function EditConsumo() {
     tipo_consumo: "",
     estado: ""
   })
+	const [openDialog, setOpenDialog] = useState(false)
+
+
+  const handleDialog = () => {
+    setOpenDialog(prev => !prev)
+}
 
   const change = (e) => {
     console.log(e.target.value);
@@ -36,6 +42,7 @@ function EditConsumo() {
       }
       fetch(`http://localhost:4000/tipo_consumo/${id}`, RequestInit)
       .then( res => res.json() )
+      .then( handleDialog() )
       .then( navigate("/medicinas") )
     }
   }
@@ -48,7 +55,7 @@ return (
             <h1>Editar Tipo de Consumo</h1>
           </div>
           <div className={Form.body}>
-            <form className={Form.Form}>
+            <form onpen={openDialog} className={Form.Form}>
               <div className={Form.formInput}>
                 <input type="text" name="tipo_consumo" className={Form.input} placeholder="Tipo uso de consumo"
                   onChange={change}
