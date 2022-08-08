@@ -1,27 +1,43 @@
 import React, { useState, useEffect } from "react";
-import med from '../../css/medicinas.module.css';
-import axios from 'axios'
+import med from "../../css/medicinas.module.css";
+import { useNavigate } from "react-router";
+const API = "http://localhost:4000";
 
 function BtnMedicina() {
-    const [consumo, setConsumo] = useState([])
-    const loadData = () => {
-        axios.get('http://localhost:4000/medicinas')
-            .then(result => {
-                setConsumo(result.data)
-            })
-    }
-    useEffect(loadData, [])
-    return (
-        <>
-            <div className={med.contenedorBotones}>
-                {
-                    consumo.map((consumo) => (
-                        <button href="#" className={`${med.btn} ${med.buttonMed}`}>{ consumo.tipo_consumo }</button>
-                    ))
-                }
-            </div>
-        </>
-    )
+  const [body, setBody] = useState([]);
+
+  const Api = async () => {
+    const data = await fetch(`${API}/view/tags-products`);
+    const dataJson = await data.json();
+    console.log(dataJson);
+    setBody(dataJson);
+  };
+
+  useEffect(() => {
+    Api();
+  }, []);
+
+  const navigate = useNavigate();
+
+  const vistauso = () => {
+    navigate("/vistauso");
+  };
+
+  return (
+    <div className={med.contenedorBotones}>
+      <>
+        {body.map((getTags, index) => (
+          <button
+            key={getTags.id}
+            onClick={vistauso}
+            className={`${med.btn} ${med.buttonMed}`}
+          >
+            {getTags.tipo_consumo}
+          </button>
+        ))}
+      </>
+    </div>
+  );
 }
 
 export default BtnMedicina;

@@ -25,6 +25,13 @@ nav .menu {
   list-style: none;
 }
 
+.btnmenu,
+.btnico,
+.subtnmenu {
+  background-color: transparent;
+  border: none;
+}
+
 nav .btnico .logo {
   width: 90px;
   cursor: pointer;
@@ -69,7 +76,6 @@ nav .menu li .btnmenu {
 /* Lista despegable */
 
 .submenu {
-  margin-top: 35px;
   position: absolute;
   background-color: #ffffff;
   list-style: none;

@@ -15,42 +15,59 @@ function Navbar() {
   const medicinas = () => {
     navigate("/medicinas");
   };
+  const empresa = () => {
+    navigate("/empresa");
+  };
+  const med = () => {
+    navigate("/medicinas/crear");
+  };
+  const uso = () => {
+    navigate("/medicinas/editar/categoria/uso")
+  };
+  const consumo = () => {
+    navigate("/medicinas/agregar/categoria/consumo")
+  }
 
   return (
     <div className={Nav.contenedorNav}>
       <nav>
-        <a onClick={home} className={Nav.btnico}>
+        <button onClick={home} className={Nav.btnico}>
           <img className={Nav.logo} src={Carrito} alt="logo cybermed" />
-        </a>
+        </button>
         <ul className={Nav.menu}>
           <li>
-            <a className={Nav.btnmenu} onClick={home}>
+            <button className={Nav.btnmenu} onClick={home}>
               INICIO
-            </a>
+            </button>
           </li>
           <li>
-            <a className={Nav.btnmenu} onClick={medicinas}>
+            <button className={Nav.btnmenu} onClick={empresa}>
+              PROVEEDORES
+            </button>
+          </li>
+          <li>
+            <button className={Nav.btnmenu} onClick={medicinas}>
               MEDICINAS
-            </a>
+            </button>
           </li>
           <li>
-            <a className={Nav.btnmenu}>AÑADIR</a>
+            <button className={Nav.btnmenu}>AÑADIR</button>
             <ul className={Nav.submenu}>
               <li>
-                <a className={Nav.subtnmenu}>USO</a>
+                <button onClick={uso} className={Nav.subtnmenu}>USO</button>
               </li>
               <li>
-                <a className={Nav.subtnmenu}>CONSUMO</a>
+                <button onClick={consumo} className={Nav.subtnmenu}>CONSUMO</button>
               </li>
               <li>
-                <a className={Nav.subtnmenu}>MEDICAMENTO</a>
+                <button className={Nav.subtnmenu} onClick={med}>MEDICAMENTO</button>
               </li>
             </ul>
           </li>
           <li>
-            <a className={Nav.btnmenu} onClick={logOut}>
+            <button className={Nav.btnmenu} onClick={logOut}>
               CERRAR SESION
-            </a>
+            </button>
           </li>
         </ul>
       </nav>

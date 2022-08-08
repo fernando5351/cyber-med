@@ -1,3 +1,4 @@
-/modules
-/api
-/react
+/node_modules
+/config/mysql_data.json
+/mysql_data
+/.env

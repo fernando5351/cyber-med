@@ -7,7 +7,7 @@ function Btnhome() {
     <form className={BtnHome.contentMain}>
       <div className={BtnHome.content}>
         <select className={BtnHome.selecttype}>
-          <option className={BtnHome.options} value="0" disabled selected>
+          <option className={BtnHome.options} value="0" disabled>
             ADMINISTRACION
           </option>
           <option className={BtnHome.options} value="1">
@@ -25,8 +25,8 @@ function Btnhome() {
         <input placeholder="Nombre" className={BtnHome.nombreIn} type="text" />
       </div>
       <div className={BtnHome.content}>
-        <select class={BtnHome.selectuse}>
-          <option className={BtnHome.options} value="0" disabled selected>
+        <select className={BtnHome.selectuse}>
+          <option className={BtnHome.options} value="0" disabled>
             USO
           </option>
           <option className={BtnHome.options} value="1">
@@ -41,9 +41,9 @@ function Btnhome() {
         </select>
       </div>
       <div className={BtnHome.content}>
-        <a className={BtnHome.Btnn}>
+        <button className={BtnHome.Btnn}>
           <img className={BtnHome.lupa} src={Lupita} alt="" />
-        </a>
+        </button>
       </div>
     </form>
   );

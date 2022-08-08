@@ -1,16 +1,24 @@
 import React, { useState, useEffect } from "react";
 import tabla from "../../css/table.module.css";
-import axios from "axios";
+const API = "http://localhost:4000";
 
 function Tableempresa() {
-  const [empresa, SetEmpresa] = useState([]);
-  const loadData = () => {
-    axios.get("http://localhost:4000/empresa").then((result) => {
-      SetEmpresa(result.data);
-    });
-  };
-  useEffect(loadData, []);
-  return (
+
+  const [empresa,setEmpresa] = useState([]);
+
+  const fetchAPI = async () =>{
+    const data = await fetch (`${API}/view/empresa`)
+    const dataJson = await data.json();
+    console.log(dataJson);
+    setEmpresa(dataJson);
+  }
+
+  useEffect(()=> {
+    fetchAPI()
+  },[])
+
+
+  return( 
     <div className={tabla.row}>
       <table className={tabla.tableM}>
         <thead className={tabla.cabeza}>
@@ -23,24 +31,30 @@ function Tableempresa() {
             <th>TELEFONO</th>
             <th>LOTE</th>
             <th>ACTIVO</th>
-            {/* ad */}
           </tr>
         </thead>
         <tbody className={tabla.contenido}>
+          
           <>
-            {empresa.map((empresa) => (
-              <tr className={tabla.td}>
-                <td>{empresa.id}</td>
-                <td>{empresa.nombre_empresa}</td>
-                <td>{empresa.direccion}</td>
-                <td>{empresa.nombre}</td>
-                <td>{empresa.email}</td>
-                <td>{empresa.telefono}</td>
-                <td>{empresa.lote}</td>
-                <td>{empresa.activo}</td>
+          
+          {
+            empresa.map((empresa, index)=>(
+              <tr key={empresa.id}  className={tabla.td} >
+                  <td>{empresa.id}</td>
+                  <td>{empresa.nombre_empresa}</td>
+                  <td>{empresa.direccion}</td>
+                  <td>{empresa.nombre}</td>
+                  <td>{empresa.email}</td>
+                  <td>{empresa.telefono}</td>
+                  <td>{empresa.lote}</td>
+                  <td>{empresa.activo}</td>
               </tr>
-            ))}
+            ))
+          }
+         
           </>
+
+
         </tbody>
       </table>
     </div>
