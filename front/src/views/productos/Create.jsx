@@ -24,9 +24,9 @@ function Create() {
       <div className={vistamed.contentPrincipal}>
         <div className={vistamed.contentModificacion}>
           <div className={vistamed.Img}>
-            <buton className={vistamed.butonmed}>
+            <button type="file" className={vistamed.butonmed}>
               <img className={vistamed.subiricon} src={imgsubir} alt="" />
-            </buton>
+            </button>
           </div>
           <div className={vistamed.Dato}>
             <form id={vistamed.estiloForm}>
