@@ -35,7 +35,7 @@ function Mod() {
     const handleEdit = ( id ) => {
         navigate(`/medicinas/editar/categoria/consumo`)
     }
-    //eliminar un registro Em19%100fer
+    //eliminar un registro
     const handleDelete = (id) => {
         const RequestInit = {
             method: 'delete'
