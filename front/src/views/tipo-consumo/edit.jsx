@@ -5,16 +5,7 @@ import Form from '../../css/formtipouso.module.css'
 
 function EditConsumo() {
     //capturar el estado con el hook
-  const [tipoConsumo, setTipo_Consumo] = useState({
-    tipo_consumo: "",
-    estado: ""
-  })
-	const [openDialog, setOpenDialog] = useState(false)
-
-
-  const handleDialog = () => {
-    setOpenDialog(prev => !prev)
-}
+  const [tipoConsumo, setTipo_Consumo] = useState({})
 
   const change = (e) => {
     console.log(e.target.value);
@@ -40,9 +31,10 @@ function EditConsumo() {
         headers: { 'Content-Type': 'application/json'},
         body: JSON.stringify(tipoConsumo)
       }
-      fetch(`http://localhost:4000/tipo_consumo/${id}`, RequestInit)
+      const data = fetch(`http://localhost:4000/tipo_consumo/136`, RequestInit)
+      console.log(data)
       .then( res => res.json() )
-      .then( handleDialog() )
+      .then( res => res.json() )
       .then( navigate("/medicinas") )
     }
   }
@@ -55,9 +47,9 @@ return (
             <h1>Editar Tipo de Consumo</h1>
           </div>
           <div className={Form.body}>
-            <form onpen={openDialog} className={Form.Form}>
+            <form className={Form.Form}>
               <div className={Form.formInput}>
-                <input type="text" name="tipo_consumo" className={Form.input} placeholder="Tipo uso de consumo"
+                <input value={tipoConsumo.tipo_consumo} type="text" name="tipo_consumo" className={Form.input} placeholder="Tipo uso de consumo"
                   onChange={change}
                 />
               </div>
