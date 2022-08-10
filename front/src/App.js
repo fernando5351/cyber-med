@@ -7,11 +7,11 @@ import Empresa from "./views/empresa";
 import Medicinas from "./views/medicinas";
 import Medicamentos from "./views/vistaMedicamento/Vistauso";
 import CrateMed from "./views/productos/Create";
-import UpdateMed from "./views/productos/update";
 import Consumo from "./views/tipo-consumo/create";
 import EditConsumo from "./views/tipo-consumo/edit";
 import TablaConsumo from "./views/medicinas/tablaMedicinas";
 import TipoUso from "./views/tipo_uso/create";
+import Update from "./views/productos/update";
 import NotFound from "./views/NotFound/NotFound";
 
 const App = () => {
@@ -44,7 +44,7 @@ const App = () => {
             <Route
               path="/medicinas/actualizar"
               name="medicinas"
-              element={<UpdateMed />}
+              element={<Update />}
             />
             {/* agregar un tipo de consumo */}
             <Route
