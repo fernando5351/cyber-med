@@ -31,11 +31,15 @@ function Update() {
           <div className={vistamed.Dato}>
             <form id={vistamed.estiloForm}>
               <div className={vistamed.contenedorLinea}>
+                <label id={vistamed.color}>NOMBRE :</label>
+                <input id={vistamed.estilo} type="text" />
+              </div>
+              <div className={vistamed.contenedorLinea}>
                 <label id={vistamed.color}>PRECIO :</label>
                 <input id={vistamed.estilo} type="text" />
               </div>
               <div className={vistamed.contenedorLinea}>
-                <label id={vistamed.color}>GRAMO :</label>
+                <label id={vistamed.color}>GRAMOS :</label>
                 <input id={vistamed.estilo} type="text" />
               </div>
               <div className={vistamed.contenedorLinea}>
@@ -71,10 +75,18 @@ function Update() {
                   <label id={vistamed.estiloColor}>CANTIDAD :</label>
                   <input id={vistamed.colorInfo} type="text" />
                 </div>
+
+                <div className={`${vistamed.caja} ${vistamed.estiloBottom}`}>
+                  <label id={vistamed.estiloColor}>LOTE :</label>
+                  <input id={vistamed.colorInfo} type="text" />
+                </div>
               </div>
+
               <div className={vistamed.containerFormBtn}>
-                <button type="reset" className={vistamed.btnForm}>Cancelar</button>
-                <button onClick={update} className={vistamed.btnForm}>Guardar</button>
+                <button className={vistamed.btnForm}>CANCELAR</button>
+                <button onClick={update} className={vistamed.btnForm}>
+                  GUARDAR
+                </button>
               </div>
             </form>
           </div>

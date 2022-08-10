@@ -75,7 +75,9 @@ function VistaMedy(props) {
               </div>
               <div className={vistamed.containerFormBtn}>
                 <button className={vistamed.btnForm}>Cancelar</button>
-                <button className={vistamed.btnForm}>Actualizar</button>
+                <button onClick={update} className={vistamed.btnForm}>
+                  Actualizar
+                </button>
               </div>
             </form>
           </div>
@@ -85,4 +87,8 @@ function VistaMedy(props) {
   );
 }
 
+<<<<<<< HEAD
 export default VistaMedy;
+=======
+export default Create;
+>>>>>>> abygail
