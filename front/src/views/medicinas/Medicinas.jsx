@@ -5,6 +5,7 @@ import BtnMedicina from "../../components/btn/BtnMedicina";
 import med from '../../css/medicinas.module.css'
 
 function Medicinas() {
+    
     return (
         <div>
             <Navbar />

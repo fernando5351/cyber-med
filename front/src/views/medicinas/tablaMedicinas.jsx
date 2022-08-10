@@ -34,6 +34,8 @@ function Mod() {
     //ruta para editar un medicamento, esto lleva al formulario tipo consumo
     const handleEdit = ( id ) => {
         navigate(`/medicinas/editar/categoria/consumo`)
+        const i = id
+        console.log(i)
     }
     //eliminar un registro Em19%100fer
     const handleDelete = (id) => {
