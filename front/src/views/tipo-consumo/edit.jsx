@@ -1,43 +1,34 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom"
 import Navbar from "../../components/navegacion/Navbar";
 import Form from '../../css/formtipouso.module.css'
 
 function EditConsumo() {
-    //capturar el estado con el hook
-  const [tipoConsumo, setTipo_Consumo] = useState({})
 
-  const change = (e) => {
-    console.log(e.target.value);
-    setTipo_Consumo({
-      ...tipoConsumo,
-      [e.target.name]: e.target.value
+  const url = `http://localhost:4000/tipo_consumo/`
+
+  const [consumo, setConsumo] = useState({})
+
+  const change = ({target}) => {
+    console.log(target.value)
+    setConsumo({
+      ...consumo,
+      [target.name]: target.value
     })
   }
-  //destructuracion
-  let { tipo_consumo, estado } = tipoConsumo;
-    
-  //redireccionar a medicinas
-    let navigate = useNavigate()
 
-  const handleSubmit = (id) => {
-    
-    //validacion de que los campos no esten vacios
-    if ( tipo_consumo === "" || estado === "" ) {
-      alert("Todos los campos son requeridos")
-    } else {
+  const handleUpdate = async() => {
       const RequestInit = {
-        method: 'PUT',
+        method: "PUT",
         headers: { 'Content-Type': 'application/json'},
-        body: JSON.stringify(tipoConsumo)
+        body: JSON.stringify(consumo)
       }
-      const data = fetch(`http://localhost:4000/tipo_consumo/136`, RequestInit)
-      console.log(data)
-      .then( res => res.json() )
-      .then( res => res.json() )
-      .then( navigate("/medicinas") )
-    }
+      fetch(`${url}48`, RequestInit)
+      .then( res => console.log(res))
   }
+
+  useEffect ( () => {
+
+  })
 return (
     <div className={Form.contentUso}>
       <Navbar />
@@ -49,7 +40,7 @@ return (
           <div className={Form.body}>
             <form className={Form.Form}>
               <div className={Form.formInput}>
-                <input value={tipoConsumo.tipo_consumo} type="text" name="tipo_consumo" className={Form.input} placeholder="Tipo uso de consumo"
+                <input value={consumo.tipo_consumo} type="text" name="tipo_consumo" className={Form.input} placeholder="Tipo uso de consumo"
                   onChange={change}
                 />
               </div>
@@ -61,8 +52,9 @@ return (
                 </select>
               </div>
               <div className={Form.botones}>
-                <button type="submit" name="guardar" onClick={ () =>{
-                    handleSubmit()
+                <button name="guardar" onClick={ (e) =>{
+                    handleUpdate();
+                    e.preventDefault();
                 }} className={Form.buton1}>GUARDAR</button>
                 <button type="reset" name="eliminar" className={Form.buton2}>LIMPIAR</button>
               </div>

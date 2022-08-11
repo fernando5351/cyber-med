@@ -6,11 +6,13 @@ import select from "../../css/select.module.css";
 import Select from "react-select";
 
 function VistaMedy(props) {
+  
   const options = [
     { value: "Opcion 1", label: "Opcion 1" },
     { value: "Opcion 2", label: "Opcion 2" },
     { value: "Opcion 3", label: "Opcion 3" },
   ];
+
   return (
     <div>
       <Navbar />
@@ -75,7 +77,7 @@ function VistaMedy(props) {
               </div>
               <div className={vistamed.containerFormBtn}>
                 <button className={vistamed.btnForm}>Cancelar</button>
-                <button onClick={update} className={vistamed.btnForm}>
+                <button className={vistamed.btnForm}>
                   Actualizar
                 </button>
               </div>
@@ -87,8 +89,4 @@ function VistaMedy(props) {
   );
 }
 
-<<<<<<< HEAD
 export default VistaMedy;
-=======
-export default Create;
->>>>>>> abygail
