@@ -30,7 +30,7 @@ async function deleteTipo_cosumo(req,res){
 async function updateTipo_consumo(req,res){
     const {id} = req.params;
     const  {tipo_consumo, estado} = req.body;
-    let query = `UPDATE tipo_consumo SET estado="${estado}", tipo_consumo="${tipo_consumo}" WHERE id=${id}`;
+    let query = `UPDATE tipo_consumo SET estado=${estado}, tipo_consumo="${tipo_consumo}" WHERE id=${id}`;
     const response = await factory(query);
     console.log(query);
     res.json({response});

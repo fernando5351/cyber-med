@@ -69,23 +69,23 @@ function Mod() {
                         <tbody>
                             <>
                                 {
-                                    consumo.map((consumo) => (
-                                        <tr key={consumo.id} className={Add.background}>
-                                            <td>{consumo.id}</td>
-                                            <td>{consumo.tipo_consumo}</td>
+                                    consumo.map((getConsumo) => (
+                                        <tr key={getConsumo.id} className={Add.background}>
+                                            <td>{getConsumo.id}</td>
+                                            <td>{getConsumo.tipo_consumo}</td>
                                             <td>
                                                 <img
                                                     className={barraNav.annadir}
                                                     src={Edit}
                                                     alt=''
                                                     onClick={ () => {
-                                                        handleEdit(`${consumo.id}`)
+                                                        handleEdit(`${getConsumo.id}`)
                                                     }} />
                                                 <img
                                                     className={barraNav.annadir}
                                                     src={Delete}
                                                     alt=''
-                                                    onClick={() => handleDelete(`${consumo.id}`)}
+                                                    onClick={() => handleDelete(`${getConsumo.id}`)}
                                                 />
                                             </td>
                                         </tr>

@@ -8,7 +8,7 @@ function EditConsumo() {
 
   const [consumo, setConsumo] = useState({})
 
-  const change = ({target}) => {
+  const change = ({ target }) => {
     console.log(target.value)
     setConsumo({
       ...consumo,
@@ -16,20 +16,19 @@ function EditConsumo() {
     })
   }
 
-  const handleUpdate = async() => {
-      const RequestInit = {
-        method: "PUT",
-        headers: { 'Content-Type': 'application/json'},
-        body: JSON.stringify(consumo)
-      }
-      fetch(`${url}48`, RequestInit)
-      .then( res => console.log(res))
+  const handleUpdate = async () => {
+    const RequestInit = {
+      method: "PUT",
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(consumo)
+    }
+    fetch(`${url}49`, RequestInit)
+      .then(res => console.log(res))
   }
-
-  useEffect ( () => {
-
+  useEffect(() => {
+    console.log()
   })
-return (
+  return (
     <div className={Form.contentUso}>
       <Navbar />
       <div className={Form.containerUso}>
@@ -52,9 +51,9 @@ return (
                 </select>
               </div>
               <div className={Form.botones}>
-                <button name="guardar" onClick={ (e) =>{
-                    handleUpdate();
-                    e.preventDefault();
+                <button name="guardar" onClick={(e) => {
+                  handleUpdate();
+                  e.preventDefault();
                 }} className={Form.buton1}>GUARDAR</button>
                 <button type="reset" name="eliminar" className={Form.buton2}>LIMPIAR</button>
               </div>
