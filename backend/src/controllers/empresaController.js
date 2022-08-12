@@ -5,11 +5,11 @@ const por = require ('../app');
 
 async function getEmpresa (req,res){
     let query = 'SELECT  empresa.id , empresa.nombre_empresa, empresa.direccion, empresa.telefono, empresa.email,empresa.lote,empresa.activo, productos.nombre from empresa,productos where productos.id=empresa.id_producto';
-    const getEmpresa = await factory(query);
+    const data = await factory(query);
     console.log(query)
 
     
-    const object = getEmpresa
+    const object = data
     res.json(object);
     console.log(object);
 }
