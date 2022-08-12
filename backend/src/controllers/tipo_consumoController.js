@@ -1,5 +1,4 @@
 const {factory,connection} = require('../factory/quey_factory');
-const por = require ('../app');
 
 async function getTipo_consumo (req,res){
     let query = 'SELECT * FROM tipo_consumo';
@@ -30,8 +29,8 @@ async function deleteTipo_cosumo(req,res){
 
 async function updateTipo_consumo(req,res){
     const {id} = req.params;
-    const  {tipo_consumo} = req.body;
-    let query = `UPDATE tipo_consumo SET id=${id}, tipo_consumo="${tipo_consumo}" WHERE id=${id}`;
+    const  {tipo_consumo, estado} = req.body;
+    let query = `UPDATE tipo_consumo SET estado=${estado}, tipo_consumo="${tipo_consumo}" WHERE id=${id}`;
     const response = await factory(query);
     console.log(query);
     res.json({response});

@@ -1,4 +1,5 @@
 import React from "react";
+import Navbar from "../navegacion/Navbar";
 import vistamed from "../../css/vistamed.module.css";
 import imgsubir from "../../icon/Create/subir.png";
 import select from "../../css/select.module.css";
@@ -17,8 +18,10 @@ function VistaMedy(props) {
   const update = () => {
     navigate(`/${props.url}`);
   };
+
   return (
     <div>
+      <Navbar />
       <div className={vistamed.contentPrincipal}>
         <div className={vistamed.contentModificacion}>
           <div className={vistamed.Img}>
@@ -29,11 +32,18 @@ function VistaMedy(props) {
           <div className={vistamed.Dato}>
             <form id={vistamed.estiloForm}>
               <div className={vistamed.contenedorLinea}>
+                <label id={vistamed.color}>NOMBRE :</label>
+                <input id={vistamed.estilo} type="text" />
+              </div>
+              <div className={vistamed.contenedorLinea}>
                 <label id={vistamed.color}>PRECIO :</label>
                 <input id={vistamed.estilo} type="text" />
               </div>
               <div className={vistamed.contenedorLinea}>
+                <label id={vistamed.color}>GRAMOS :</label>
+
                 <label id={vistamed.color}>GRAMO :</label>
+
                 <input id={vistamed.estilo} type="text" />
               </div>
               <div className={vistamed.contenedorLinea}>
@@ -69,10 +79,21 @@ function VistaMedy(props) {
                   <label id={vistamed.estiloColor}>CANTIDAD :</label>
                   <input id={vistamed.colorInfo} type="text" />
                 </div>
+
+                <div className={`${vistamed.caja} ${vistamed.estiloBottom}`}>
+                  <label id={vistamed.estiloColor}>LOTE :</label>
+                  <input id={vistamed.colorInfo} type="text" />
+                </div>
               </div>
               <div className={vistamed.containerFormBtn}>
                 <button className={vistamed.btnForm}>{props.cancel}</button>
-                <button onClick={update} className={vistamed.btnForm}>{props.save}</button>
+                <button className={vistamed.btnForm}>{props.save}</button>
+              </div>
+              <div className={vistamed.containerFormBtn}>
+                <button className={vistamed.btnForm}>{props.cancel}</button>
+                <button onClick={update} className={vistamed.btnForm}>
+                  {props.save}
+                </button>
               </div>
             </form>
           </div>

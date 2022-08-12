@@ -1,16 +1,17 @@
 import React, { Suspense } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 import Login from "./views/login";
-import Home from "./views/home"
-import Empresa from "./views/empresa"
-import Medicinas from "./views/medicinas" 
-import Medicamentos from "./views/vistaMedicamento/Vistauso"
-import CrateMed from "./views/productos/Create"
-import UpdateMed from "./views/productos/update"
-import Consumo from "./views/tipo-consumo/create"
-import EditConsumo from "./views/tipo-consumo/edit"
-import TablaConsumo from "./views/medicinas/tablaMedicinas"
-import TipoUso from "./views/tipo_uso/create"
+import Home from "./views/home";
+import Empresa from "./views/empresa";
+import Medicinas from "./views/medicinas";
+import Medicamentos from "./views/vistaMedicamento/Vistauso";
+import CrateMed from "./views/productos/Create";
+import Consumo from "./views/tipo-consumo/create";
+import EditConsumo from "./views/tipo-consumo/edit";
+import TablaConsumo from "./views/medicinas/tablaMedicinas";
+import TipoUso from "./views/tipo_uso/create";
+import Update from "./views/productos/update";
 import NotFound from "./views/NotFound/NotFound";
 
 const App = () => {
@@ -31,7 +32,7 @@ const App = () => {
           {/* crear un nuevo Medicamento */}
           <Route path="/medicinas/crear" name="medicinas" element={<CrateMed />} />
           {/* actualizar un Medicamento */}
-          <Route path="/medicinas/actualizar" name="medicinas" element={<UpdateMed />} />
+          <Route path="/medicinas/actualizar" name="medicinas" element={<Update />} />
           {/* agregar un tipo de consumo */}
           <Route path="/medicinas/agregar/categoria/consumo" name="medicinas" element={<Consumo />} />
           {/* editar un tipo de consumo */}
