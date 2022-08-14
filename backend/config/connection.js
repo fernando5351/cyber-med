@@ -1,6 +1,4 @@
 const mysql = require('mysql2');
-const mysql_data = require('./mysql_data.json');
-
 
 //connection data
 const objectConnection = {

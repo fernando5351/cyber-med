@@ -10,5 +10,4 @@ const storage =  multer.diskStorage({
         name(null, `image${Date.now()}.${file.mimetype.split('/')[1]}`)
     }
 })
-
 module.exports = storage
