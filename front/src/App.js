@@ -9,7 +9,7 @@ import Medicamentos from "./views/vistaMedicamento/Vistauso";
 import CrateMed from "./views/productos/Create";
 import Consumo from "./views/tipo-consumo/create";
 import EditConsumo from "./views/tipo-consumo/edit";
-import TablaConsumo from "./views/medicinas/tablaMedicinas";
+import TablaConsumo from "./views/tipo-consumo/tablaMedicinas";
 import TipoUso from "./views/tipo_uso/create";
 import Update from "./views/productos/update";
 import NotFound from "./views/NotFound/NotFound";

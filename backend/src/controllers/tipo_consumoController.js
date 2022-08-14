@@ -3,7 +3,6 @@ const {factory,connection} = require('../factory/quey_factory');
 async function getTipo_consumo (req,res){
     let query = 'SELECT * FROM tipo_consumo';
     const getTipo_consumo = await factory(query);
-    res.json({response});
 
     const object = getTipo_consumo
     res.json(object);
