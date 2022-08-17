@@ -32,7 +32,7 @@ function Login() {
           <form className={styles.login}>
             <div className={styles.div}>
               <img className={styles.mailler} src={mail} alt="" />
-              <input
+              <input 
                 type="text"
                 name="email"
                 placeholder="Correo"
