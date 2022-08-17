@@ -1,18 +1,44 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"
-import { ProductContext } from "./productContext";
 import Navbar from "../../components/navegacion/Navbar";
 import Form from '../../css/formtipouso.module.css'
 
 function Formuso() {
-  const {
-    createProduct
-  } = useContext(ProductContext)
-
-  const [productData, setProductData] = useState({
+    //capturar el estado con el hook
+  const [tipoConsumo, setTipo_Consumo] = useState({
     tipo_consumo: "",
     estado: ""
   })
+
+  const change = (e) => {
+    console.log(e.target.value);
+    setTipo_Consumo({
+      ...tipoConsumo,
+      [e.target.name]: e.target.value
+    })
+  }
+  //destructuracion
+  let { tipo_consumo, estado } = tipoConsumo;
+    
+  //redireccionar a medicinas
+    let navigate = useNavigate()
+
+  const handleSubmit = () => {
+    
+    //validacion de que los campos no esten vacios
+    if ( tipo_consumo === "" || estado === "" ) {
+      alert("Todos los campos son requeridos")
+    } else {
+      const RequestInit = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json'},
+        body: JSON.stringify(tipoConsumo)
+      }
+      fetch('http://localhost:4000/tipo_consumo', RequestInit)
+      .then( res => res.json() )
+      .then( navigate("/medicinas") )
+    }
+  }
 return (
     <div className={Form.contentUso}>
       <Navbar />
