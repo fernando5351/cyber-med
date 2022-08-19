@@ -15,12 +15,12 @@ function EditConsumo() {
           <div className={Form.body}>
             <form className={Form.Form}>
               <div className={Form.formInput}>
-                <input value={consumo.tipo_consumo} type="text" name="tipo_consumo" className={Form.input} placeholder="Tipo uso de consumo"
-                  onChange={change}
+                <input type="text" name="tipo_consumo" className={Form.input} placeholder="Tipo uso de consumo"
+                 
                 />
               </div>
               <div multiple className={Form.formInput}>
-                <select name="estado" onChange={change} className={`${Form.input} ${Form.select}`}>
+                <select name="estado" className={`${Form.input} ${Form.select}`}>
                   <option value="" defaultValue="">ESTADO</option>
                   <option value={0}>Inhabilitado</option>
                   <option value={1}>Habilitado</option>
@@ -28,7 +28,6 @@ function EditConsumo() {
               </div>
               <div className={Form.botones}>
                 <button name="guardar" onClick={(e) => {
-                  handleUpdate();
                   e.preventDefault();
                 }} className={Form.buton1}>GUARDAR</button>
                 <button type="reset" name="eliminar" className={Form.buton2}>LIMPIAR</button>
