@@ -25,7 +25,7 @@ function Login() {
 
 
   //destruction
-  let { email, password } = body;
+  let { email, password } = body
 
   const handleSubmit = () => {
     if ( email === "" || password === "" ) {
