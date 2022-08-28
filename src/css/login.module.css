@@ -93,6 +93,7 @@
   padding-left: 95px !important;
   color: #2b6696 !important;
   border: none !important;
+  outline: none !important;
 }
 
 ::placeholder {
