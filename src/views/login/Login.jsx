@@ -7,7 +7,7 @@ import swal from 'sweetalert';
 
 function Login() {
 
-  const url = `https://localhost:4000`
+  const url = `http://localhost:4000`
   const [body, setBody] = useState({ 
     email: "",
     password: "" 
