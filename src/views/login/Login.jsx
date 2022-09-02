@@ -3,14 +3,17 @@ import lock from "../../icon/Login/password.png";
 import mail from "../../icon/Login/email.png";
 import styles from "../../css/login.module.css";
 import { useNavigate } from "react-router-dom";
-import swal from 'sweetalert';
+import Modal from '../../components/modal/modal'
+import Swal from 'sweetalert'
 
 function Login() {
 
+  const [alert, setAlert] = useState(false)
+
   const url = `http://localhost:4000`
-  const [body, setBody] = useState({ 
+  const [body, setBody] = useState({
     email: "",
-    password: "" 
+    password: ""
   });
 
   const navigate = useNavigate();
@@ -23,34 +26,35 @@ function Login() {
     });
   };
 
-
   //destruction
   let { email, password } = body
 
   const handleSubmit = () => {
-    if ( email === "" || password === "" ) {
-      swal({
-        icon: 'error',
-        title: 'ERROR',
-        text: 'TODOS LOS CAMPOS SON REQUERIDOS',
-        timer: '9000000',
-        footer: 'Why do I have this issue?'
-      })
+    if (email === "" || password === "") {
+      Swal("todos los campos son requeridos") 
     } else {
       const RequestInit = {
         method: 'POST',
         header: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body)
       }
-      fetch( url, RequestInit )
-      .then( res => res.json() )
-      .then( navigate("/home"))
+      fetch(url, RequestInit)
+        .then(res => res.json())
+        .then(navigate("/home"))
     }
   }
 
-  
+
   return (
     <div className={styles.body}>
+      <Modal
+        alert={alert}
+        setAlert={setAlert}
+      >
+        <h1>testo</h1>
+        <p>hola</p>
+        <button>ok</button>
+      </Modal>
       <div className={styles.login}>
         <div className={styles.contenedorLogin}>
           <div className={styles.title}>
@@ -80,7 +84,9 @@ function Login() {
             <p></p>
             <button
               type="submit"
-              onClick={handleSubmit}
+              onClick={() => {
+                handleSubmit()
+              }}
               name="enviar"
               className={styles.buton}
             >

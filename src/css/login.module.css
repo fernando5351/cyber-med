@@ -54,6 +54,7 @@
   width: 100%;
   padding: 4px;
   position: relative;
+  /* aca tenemos un pequeñin y chiquitin problemin */
 }
 
 .mailler {
@@ -75,25 +76,25 @@
 }
 
 .reset {
-  text-align: right !important;
+  text-align: right;
 }
 
 .mail,
 .pass {
-  padding: 4px !important;
-  width: 100% !important;
-  height: 60px !important;
-  border-radius: 30px !important;
-  box-sizing: border-box !important;
-  box-shadow: 0px 2px 6px 4px #72c4dd !important;
-  font-family: 'Noto Serif' !important;
+  padding: 4px;
+  width: 100%;
+  height: 60px;
+  border-radius: 30px;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 6px 4px #72c4dd;
+  font-family: 'Noto Serif';
   font-size: 16px;
-  font-style: normal !important;
-  text-align: left !important;
-  padding-left: 95px !important;
-  color: #2b6696 !important;
-  border: none !important;
-  outline: none !important;
+  font-style: normal;
+  text-align: left;
+  padding-left: 95px;
+  color: #2b6696;
+  border: none;
+  outline: none ;
 }
 
 ::placeholder {
@@ -112,5 +113,6 @@
   box-shadow: 0px 2px 6px 4px #72c4dd;
   border: none;
   height: 60px;
-  opacity: 75%;
+  cursor: pointer;
+  /*aca tenemos otro pequeñin problemin */
 }
