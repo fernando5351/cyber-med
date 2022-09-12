@@ -114,5 +114,6 @@
   border: none;
   height: 60px;
   cursor: pointer;
+  opacity: 75%;
   /*aca tenemos otro pequeñin problemin */
 }
