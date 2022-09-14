@@ -7,6 +7,7 @@ import Edit from '../../icon/addMed/editar.png'
 import Delete from '../../icon/addMed/eliminar.png'
 import { useNavigate } from 'react-router-dom'
 import { ProductContext } from './ProductContextProvider'
+import Create from './CreateProduct'
 
 function Mod() {
     //validacion de datos de la tablafront/src/pages/agregar-tipo/agregar.jsx
@@ -38,10 +39,10 @@ function Mod() {
     }
     return (
         <>
-            {/* <Create
+            <Create
                 isVisible={isVisible}
                 setIsVisible={setIsVisible}
-            /> */}
+            />
             <div className={Add.containerAdd}>
                 <Navbar />
                 <div className={Add.containerTab}>

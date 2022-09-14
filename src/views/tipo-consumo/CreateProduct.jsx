@@ -6,9 +6,11 @@ const createProduct = ({ isVisible, setIsVisible }) => {
   return (
     <div>
       <>
+        {isVisible &&
           <ProductContextProvider>
             <Create />
           </ProductContextProvider>
+        }
       </>
     </div>
   )
