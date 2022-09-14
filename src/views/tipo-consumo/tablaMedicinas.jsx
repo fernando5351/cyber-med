@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import Navbar from '../../components/navegacion/Navbar'
 import Agregar from '../../icon/Vista/agregar.png'
 import barraNav from '../../css/barranav.module.css'
@@ -12,6 +12,8 @@ function Mod() {
     //validacion de datos de la tablafront/src/pages/agregar-tipo/agregar.jsx
     const { products } = useContext(ProductContext)
     console.log(products)
+
+    const [isVisible, setIsVisible] = useState(true)
     //variable para la navegaciond de rutas
     const navigate = useNavigate();
 
@@ -22,7 +24,7 @@ function Mod() {
 
     //ruta para editar un medicamento, esto lleva al formulario tipo consumo
     const edit = () => {
-        navigate("/medicinas/categoria/consumo")
+        setIsVisible(!isVisible)
     }
 
     //eliminar un registro
@@ -35,55 +37,61 @@ function Mod() {
             .then(res => console.log(res))
     }
     return (
-        <div className={Add.containerAdd}>
-            <Navbar />
-            <div className={Add.containerTab}>
-                <div className={Add.containerBtn}>
-                    <img
-                        className={`${barraNav.annadir} ${Add.annadir}`}
-                        src={Agregar}
-                        alt=''
-                        onClick={add}
-                    />
-                </div>
-                <div className={Add.containerTable}>
-                    <table className={Add.tbl}>
-                        <thead>
-                            <tr className={Add.background}>
-                                <th>ID</th>
-                                <th>NOMBRE</th>
-                                <th>ACCION</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <>
-                                {products.map((products) => (
-                                    <tr key={products.id} className={Add.background}>
+        <>
+            {/* <Create
+                isVisible={isVisible}
+                setIsVisible={setIsVisible}
+            /> */}
+            <div className={Add.containerAdd}>
+                <Navbar />
+                <div className={Add.containerTab}>
+                    <div className={Add.containerBtn}>
+                        <img
+                            className={`${barraNav.annadir} ${Add.annadir}`}
+                            src={Agregar}
+                            alt=''
+                            onClick={add}
+                        />
+                    </div>
+                    <div className={Add.containerTable}>
+                        <table className={Add.tbl}>
+                            <thead>
+                                <tr className={Add.background}>
+                                    <th>ID</th>
+                                    <th>NOMBRE</th>
+                                    <th>ACCION</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <>
+                                    {products.map((products) => (
+                                        <tr key={products.id} className={Add.background}>
 
-                                        <td>{products.id}</td>
-                                        <td>{products.tipo_consumo}</td>
-                                        <td>
-                                            <img
-                                                className={barraNav.annadir}
-                                                src={Edit}
-                                                alt=''
-                                                onClick={edit}
-                                            />
-                                            <img
-                                                className={barraNav.annadir}
-                                                src={Delete}
-                                                alt=''
-                                                onClick={() => handleDelete(`${products.id}`)}
-                                            />
-                                        </td>
-                                    </tr>
-                                ))}
-                            </>
-                        </tbody>
-                    </table>
+                                            <td>{products.id}</td>
+                                            <td>{products.tipo_consumo}</td>
+                                            <td>
+                                                <img
+                                                    className={barraNav.annadir}
+                                                    src={Edit}
+                                                    alt=''
+                                                    onClick={edit}
+                                                />
+                                                <img
+                                                    className={barraNav.annadir}
+                                                    src={Delete}
+                                                    alt=''
+                                                    onClick={() => handleDelete(`${products.id}`)}
+                                                />
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
-        </div >
+            </div >
+        </>
     )
 }
 

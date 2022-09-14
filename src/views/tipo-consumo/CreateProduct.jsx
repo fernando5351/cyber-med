@@ -2,12 +2,14 @@ import React from 'react'
 import ProductContextProvider from './ProductContextProvider'
 import Create from './create'
 
-const createProduct = () => {
+const createProduct = ({ isVisible, setIsVisible }) => {
   return (
     <div>
-        <ProductContextProvider>
+      <>
+          <ProductContextProvider>
             <Create />
-        </ProductContextProvider>
+          </ProductContextProvider>
+      </>
     </div>
   )
 }

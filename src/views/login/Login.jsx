@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import lock from "../../icon/Login/password.png";
 import mail from "../../icon/Login/email.png";
 import styles from "../../css/login.module.css";
@@ -44,7 +44,6 @@ function Login() {
     }
   }
 
-
   return (
     <div className={styles.body}>
       <Modal
@@ -84,8 +83,9 @@ function Login() {
             <p></p>
             <button
               type="submit"
-              onClick={() => {
+              onClick={(e) => {
                 handleSubmit()
+                e.preventDefault()
               }}
               name="enviar"
               className={styles.buton}

@@ -7,12 +7,13 @@ import Empresa from "./views/empresa";
 import Medicinas from "./views/medicinas";
 import Medicamentos from "./views/vistaMedicamento/Vistauso";
 import CrateMed from "./views/productos/Create";
-import Consumo from "./views/tipo-consumo/createProduct";
+import Consumo from "./views/tipo-consumo/CreateProduct";
 import EditConsumo from "./views/tipo-consumo/edit";
 import View from "./views/tipo-consumo/View";
 import TipoUso from "./views/tipo_uso/create";
 import Update from "./views/productos/update";
 import NotFound from "./views/NotFound/NotFound";
+import CreateTable from './views/tipo-consumo/CreateProduct'
 
 
 const App = () => {
@@ -42,6 +43,7 @@ const App = () => {
           <Route path="/medicinas/tabla" name="medicinas" element={<View/>} />
           {/* crear un tipo de uso del medicamento */}
           <Route path="/medicinas/editar/categoria/uso" name="medicinas" element={<TipoUso />} />
+          <Route path="/laurita" name="medicinas" element={<CreateTable />} />
           {/* PAGE NOT FOUND */}
           <Route path="*" name="error404" element={<NotFound />} />
         </Routes>
