@@ -6,8 +6,16 @@ const path = require("path");
 const cors = require("cors");
 const storage = require('../config/multer')
 
+var session = require('express-session')
+
 // initialization
 const app = express();
+
+app.use(session({
+    secret: 'webslesson',
+    resave: true,
+    saveUninitialized: true
+  }));
 
 //settings
 app.set('port', port);
@@ -24,6 +32,7 @@ app.use(require('./routes/empresa'));
 app.use(require('./routes/tipo_uso'));
 app.use(require('./routes/tags'));
 app.use(require('./routes/tipo_consumo'));
+app.use(require('./routes/login'));
 
 
 //public files

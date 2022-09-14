@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import Login from "./views/login";
+import Login from "./views/login/Login";
 import Home from "./views/home";
 import Empresa from "./views/empresa";
 import Medicinas from "./views/medicinas";
