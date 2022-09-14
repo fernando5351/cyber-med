@@ -10,7 +10,7 @@ function Login() {
 
   const [alert, setAlert] = useState(false)
 
-  const url = `http://localhost:4000`
+  const url = `https://lovely-lace-production.up.railway.app/register/web`
   const [body, setBody] = useState({
     email: "",
     password: ""
@@ -40,7 +40,6 @@ function Login() {
       }
       fetch(url, RequestInit)
         .then(res => res.json())
-        .then(navigate("/home"))
     }
   }
 
