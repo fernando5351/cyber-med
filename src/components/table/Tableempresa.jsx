@@ -7,7 +7,7 @@ function Tableempresa() {
   const [empresa,setEmpresa] = useState([]);
 
   const fetchAPI = async () =>{
-    const data = await fetch (`${API}/view/empresa`)
+    const data = await fetch (`${API}/empresa`)
     const dataJson = await data.json();
     console.log(dataJson);
     setEmpresa(dataJson);

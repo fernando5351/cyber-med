@@ -9,7 +9,7 @@ import Medicamentos from "./views/vistaMedicamento/Vistauso";
 import CrateMed from "./views/productos/Create";
 import Consumo from "./views/tipo-consumo/CreateProduct";
 import EditConsumo from "./views/tipo-consumo/edit";
-import View from "./views/tipo-consumo/View";
+import TablaConsumo from "./views/medicinas/tablaMedicinas";
 import TipoUso from "./views/tipo_uso/create";
 import Update from "./views/productos/update";
 import NotFound from "./views/NotFound/NotFound";
@@ -40,7 +40,7 @@ const App = () => {
           {/* editar un tipo de consumo */}
           <Route path="/medicinas/editar/categoria/consumo" name="medicinas" element={<EditConsumo />} />
           {/* tabla para medicamentos */}
-          <Route path="/medicinas/tabla" name="medicinas" element={<View/>} />
+          <Route path="/medicinas/tabla" name="medicinas" element={<TablaConsumo/>} />
           {/* crear un tipo de uso del medicamento */}
           <Route path="/medicinas/editar/categoria/uso" name="medicinas" element={<TipoUso />} />
           <Route path="/laurita" name="medicinas" element={<CreateTable />} />

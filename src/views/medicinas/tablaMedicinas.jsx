@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext } from 'react'
+import React, { useState, useEffect } from 'react'
 import Navbar from '../../components/navegacion/Navbar'
 import Agregar from '../../icon/Vista/agregar.png'
 import barraNav from '../../css/barranav.module.css'
@@ -7,15 +7,13 @@ import Edit from '../../icon/addMed/editar.png'
 import Delete from '../../icon/addMed/eliminar.png'
 import { useNavigate } from 'react-router-dom'
 
-export const EditProduct = createContext();
-
 function Mod() {
     //validacion de datos de la tablafront/src/pages/agregar-tipo/agregar.jsx
     const [consumo, setConsumo] = useState([])
     const [update, setUpdate] = useState(false)
 
     const api = async () => {
-        const data = await fetch('http://localhost:4000/tipo_consumo')
+        const data = await fetch('http://localhost:4000/view/tags-products')
         const dataJson = await data.json()
         setConsumo(dataJson)
         console.log(dataJson);
