@@ -32,4 +32,4 @@ function Formuso() {
     </div>
   );
 }
-export default Formuso; 
+export default Formuso;
