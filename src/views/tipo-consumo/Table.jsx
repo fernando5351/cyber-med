@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, createContext } from 'react'
 import Navbar from '../../components/navegacion/Navbar'
 import Agregar from '../../icon/Vista/agregar.png'
 import barraNav from '../../css/barranav.module.css'
@@ -7,51 +7,40 @@ import Edit from '../../icon/addMed/editar.png'
 import Delete from '../../icon/addMed/eliminar.png'
 import { useNavigate } from 'react-router-dom'
 import { ProductContext } from './ProductContextProvider'
-import Create from './CreateProduct'
 
-function Mod() {
-    //validacion de datos de la tablafront/src/pages/agregar-tipo/agregar.jsx
-    const { products } = useContext(ProductContext)
-    console.log(products)
+export const Context = createContext()
 
-    const [isVisible, setIsVisible] = useState(true)
-    //variable para la navegaciond de rutas
-    const navigate = useNavigate();
+function Table(props) {
+    const { products, findProduct } = useContext(ProductContext)
 
-    //ruta para agregar un nuevo medicamento, esto lleva al formulario tipo consumo
-    const add = () => {
-        navigate('/medicinas/categoria/consumo')
+    const [edit, setEdit] = useState()
+    const navigate = useNavigate()
+
+    const EditProduct = (id) => {
+        const res = id
+        navigate("/medicinas/editar-consumo")
+        return res;
     }
-
-    //ruta para editar un medicamento, esto lleva al formulario tipo consumo
-    const edit = () => {
-        setIsVisible(!isVisible)
-    }
-
-    //eliminar un registro
-    const handleDelete = (id) => {
-        const RequestInit = {
-            method: 'delete'
-        }
-        fetch(`http://localhost:4000/tipo_consumo/${id}`, RequestInit)
-            .then(res => res.json())
-            .then(res => console.log(res))
-    }
+    
     return (
         <>
-            <Create
-                isVisible={isVisible}
-                setIsVisible={setIsVisible}
-            />
+            <Context.Provider
+                value={{
+                    EditProduct,
+                    edit,
+                    setEdit
+                }}
+            >
+                {props.children}
+            </Context.Provider>
+            <Navbar />
             <div className={Add.containerAdd}>
-                <Navbar />
                 <div className={Add.containerTab}>
                     <div className={Add.containerBtn}>
                         <img
                             className={`${barraNav.annadir} ${Add.annadir}`}
                             src={Agregar}
                             alt=''
-                            onClick={add}
                         />
                     </div>
                     <div className={Add.containerTable}>
@@ -75,13 +64,14 @@ function Mod() {
                                                     className={barraNav.annadir}
                                                     src={Edit}
                                                     alt=''
-                                                    onClick={edit}
+                                                    onClick={(e) => {
+                                                        EditProduct(`${products.id}`)
+                                                    }}
                                                 />
                                                 <img
                                                     className={barraNav.annadir}
                                                     src={Delete}
                                                     alt=''
-                                                    onClick={() => handleDelete(`${products.id}`)}
                                                 />
                                             </td>
                                         </tr>
@@ -96,4 +86,4 @@ function Mod() {
     )
 }
 
-export default Mod;
+export default Table;

@@ -25,7 +25,7 @@ function Navbar() {
     navigate("/medicinas/editar/categoria/uso")
   };
   const consumo = () => {
-    navigate("/medicinas/agregar/categoria/consumo")
+    navigate("/medicinas/listar-consumo")
   }
 
   return (

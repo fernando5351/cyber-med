@@ -1,15 +1,18 @@
 import React from 'react'
+import Formulario from './Formulario'
 import ProductContextProvider from './ProductContextProvider'
-import Tabla from './tablaMedicinas'
+import Table from './Table'
 
-const View = () => {
+const FormUso = () => {
   return (
     <div>
         <ProductContextProvider>
-            <Tabla />
+            <Table>
+              <Formulario />
+            </Table>
         </ProductContextProvider>
     </div>
   )
 }
 
-export default View
+export default FormUso

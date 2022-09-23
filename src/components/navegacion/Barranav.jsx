@@ -15,18 +15,13 @@ function Barranav(props) {
     // este es el que deben elegir
     <div className={Barra.contenedorBarra}>
       <div className={Barra.retro}>
-        <img className={Barra.atras} src={Retro} alt="retroceder" />
+       
       </div>
       <div className={Barra.tituloCont}>
         <p id={Barra.titulo}>{props.titulocont}</p>
       </div>
       <div className={Barra.agregar}>
-        <img
-          className={Barra.annadir}
-          src={Agregar}
-          alt="agregar"
-          onClick={Add}
-        />
+
       </div>
     </div>
   );
