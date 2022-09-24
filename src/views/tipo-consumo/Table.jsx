@@ -11,20 +11,26 @@ import { ProductContext } from './ProductContextProvider'
 export const Context = createContext()
 
 function Table(props) {
-    const { products, deleteProduct, findProduct } = useContext(ProductContext)
+    const { products, deleteProduct, editProduct, findProduct } = useContext(ProductContext)
 
-    const [edit, setEdit] = useState()
+    const InitialState = {
+        hola: ""
+    }
+    const [edit, setEdit] = useState(InitialState)
     const navigate = useNavigate()
 
     const DeleteProduct = (id) => {
-        deleteProduct(id)
-        setEdit()
-    }
+        if (editProduct) {
+          deleteProduct(id);
+          setEdit(InitialState);
+        }
+      };
 
     useEffect(() => {
-        deleteProduct()
-    }, [deleteProduct])
+        if (editProduct) setEdit(editProduct);
+      }, [editProduct]);
     
+
     const EditProduct = (id) => {
         const res = id
         navigate("/medicinas/editar-consumo")
