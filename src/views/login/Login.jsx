@@ -31,7 +31,10 @@ function Login() {
 
   const handleSubmit = () => {
     if (email === "" || password === "") {
-      Swal("todos los campos son requeridos") 
+      Swal({
+        title: "Todos los campos son requeridos",
+        icon: "error"
+      }) 
     } else {
       const RequestInit = {
         method: 'POST',

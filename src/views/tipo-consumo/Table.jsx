@@ -1,4 +1,4 @@
-import React, { useContext, useState, createContext } from 'react'
+import React, { useContext, useState, useEffect, createContext } from 'react'
 import Navbar from '../../components/navegacion/Navbar'
 import Agregar from '../../icon/Vista/agregar.png'
 import barraNav from '../../css/barranav.module.css'
@@ -11,17 +11,26 @@ import { ProductContext } from './ProductContextProvider'
 export const Context = createContext()
 
 function Table(props) {
-    const { products, findProduct } = useContext(ProductContext)
+    const { products, deleteProduct, findProduct } = useContext(ProductContext)
 
     const [edit, setEdit] = useState()
     const navigate = useNavigate()
 
+    const DeleteProduct = (id) => {
+        deleteProduct(id)
+        setEdit()
+    }
+
+    useEffect(() => {
+        deleteProduct()
+    }, [deleteProduct])
+    
     const EditProduct = (id) => {
         const res = id
         navigate("/medicinas/editar-consumo")
         return res;
     }
-    
+
     return (
         <>
             <Context.Provider
@@ -72,6 +81,9 @@ function Table(props) {
                                                     className={barraNav.annadir}
                                                     src={Delete}
                                                     alt=''
+                                                    onClick={() => {
+                                                        DeleteProduct(`${products.id}`)
+                                                    }}
                                                 />
                                             </td>
                                         </tr>
