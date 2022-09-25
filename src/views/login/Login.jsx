@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 import swal from 'sweetalert';
 
 function Login() {
-
   const url = `http://localhost:4000/login/web`
   //const url = `https://ciber-med-api.herokuapp.com/register/web`
   const [body, setBody] = useState({
@@ -28,28 +27,47 @@ function Login() {
   let { user_email, user_password } = body
 
   const handleSubmit = () => {
-    if ( user_email === "" || user_password === "" ) {
+    if (user_email === "" || user_password === "") {
       swal({
         icon: 'error',
         title: 'ERROR',
         text: 'TODOS LOS CAMPOS SON REQUERIDOS',
+        timer: '2000'
       })
     } else {
-      console.log(body);
       const RequestInit = {
         mode: 'cors',
         method: 'POST',
-        header: { 
+        header: {
           'Origin': 'http://localhost:3000',
           'X-Requested-With': 'XMLHttpRequest',
           'Content-Type': 'application/json',
-          "Accept": 'application/json',
-          
+          "Accept": 'application/json'
         },
-        body: JSON.stringify(body)
+        body: new URLSearchParams(body)
       }
-      fetch( url, RequestInit )
-      .then( res => res.text() )
+      fetch(url, RequestInit)
+        .then(data => data)
+        .then(data => {
+          if (data.redirected === true) {
+            swal({
+              icon: 'success',
+              title: 'REGISTRO EXITOSO',
+              timer: '2000'
+            });
+            setTimeout(() => {
+              window.location.href = `${data.url}`
+            }, 1000)
+          } else {
+            swal({
+              icon: 'error',
+              title: 'ERROR',
+              text: 'Usuario o contraseña incorrecta',
+              timer: '2000'
+            })
+          }
+        })
+        .catch(err => console.error(err));
     }
   }
 
