@@ -7,16 +7,16 @@ import swal from 'sweetalert';
 
 function Login() {
 
-  const url = `http://localhost:4000`
-  const [body, setBody] = useState({ 
-    email: "",
-    password: "" 
+  const url = `http://localhost:4000/login/web`
+  //const url = `https://ciber-med-api.herokuapp.com/register/web`
+  const [body, setBody] = useState({
+    user_email: "",
+    user_password: ""
   });
 
   const navigate = useNavigate();
 
   const onChange = (event) => {
-    console.log(event.target.value);
     setBody({
       ...body,
       [event.target.name]: event.target.value,
@@ -25,30 +25,34 @@ function Login() {
 
 
   //destruction
-  let { email, password } = body
+  let { user_email, user_password } = body
 
   const handleSubmit = () => {
-    if ( email === "" || password === "" ) {
+    if ( user_email === "" || user_password === "" ) {
       swal({
         icon: 'error',
         title: 'ERROR',
         text: 'TODOS LOS CAMPOS SON REQUERIDOS',
-        timer: '9000000',
-        footer: 'Why do I have this issue?'
       })
     } else {
+      console.log(body);
       const RequestInit = {
+        mode: 'cors',
         method: 'POST',
-        header: { 'Content-Type': 'application/json' },
+        header: { 
+          'Origin': 'http://localhost:3000',
+          'X-Requested-With': 'XMLHttpRequest',
+          'Content-Type': 'application/json',
+          "Accept": 'application/json',
+          
+        },
         body: JSON.stringify(body)
       }
       fetch( url, RequestInit )
-      .then( res => res.json() )
-      .then( navigate("/home"))
+      .then( res => res.text() )
     }
   }
 
-  
   return (
     <div className={styles.body}>
       <div className={styles.login}>
@@ -62,7 +66,7 @@ function Login() {
               <input
                 onChange={onChange}
                 type="text"
-                name="email"
+                name="user_email"
                 placeholder="Correo"
                 className={styles.mail}
               />
@@ -72,7 +76,7 @@ function Login() {
               <input
                 onChange={onChange}
                 type="password"
-                name="password"
+                name="user_password"
                 placeholder="Contraseña"
                 className={styles.pass}
               />
@@ -80,7 +84,10 @@ function Login() {
             <p></p>
             <button
               type="submit"
-              onClick={handleSubmit}
+              onClick={(e) => {
+                handleSubmit()
+                e.preventDefault()
+              }}
               name="enviar"
               className={styles.buton}
             >
