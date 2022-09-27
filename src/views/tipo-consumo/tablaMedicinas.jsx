@@ -104,4 +104,8 @@ function Mod() {
     )
 }
 
+<<<<<<< HEAD
 export default Mod;
+=======
+export default Mod; 
+>>>>>>> main

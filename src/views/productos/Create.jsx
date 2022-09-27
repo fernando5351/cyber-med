@@ -6,6 +6,8 @@ import select from "../../css/select.module.css";
 import Select from "react-select";
 
 function VistaMedy(props) {
+
+  
   
   const options = [
     { value: "Opcion 1", label: "Opcion 1" },

@@ -1,26 +1,76 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import lock from "../../icon/Login/password.png";
 import mail from "../../icon/Login/email.png";
 import styles from "../../css/login.module.css";
 import { useNavigate } from "react-router-dom";
+import swal from 'sweetalert';
 
 function Login() {
-  const [body, setBody] = useState({ email: "", password: "" });
+  //const url = `http://localhost:4000/login/web`
+  //const url = `https://ciber-med-api.herokuapp.com/login/web`
+  const url = "https://lovely-lace-production.up.railway.app/login/web"
+  const [body, setBody] = useState({
+    user_email: "",
+    user_password: ""
+  });
 
   const navigate = useNavigate();
 
-  const change = (event) => {
-    console.log(event.target.value);
+  const onChange = (event) => {
     setBody({
       ...body,
       [event.target.name]: event.target.value,
     });
   };
 
-  const onSubmit = () => {
-    navigate("/home");
-    console.log(body);
-  };
+
+  //destruction
+  let { user_email, user_password } = body
+
+  const handleSubmit = () => {
+    if (user_email === "" || user_password === "") {
+      swal({
+        icon: 'error',
+        title: 'ERROR',
+        text: 'TODOS LOS CAMPOS SON REQUERIDOS',
+        timer: '2000'
+      })
+    } else {
+      const RequestInit = {
+        mode: 'cors',
+        method: 'POST',
+        header: {
+          'Origin': 'http://localhost:3000',
+          'X-Requested-With': 'XMLHttpRequest',
+          'Content-Type': 'application/json',
+          "Accept": 'application/json'
+        },
+        body: new URLSearchParams(body)
+      }
+      fetch(url, RequestInit)
+        .then(data => data)
+        .then(data => {
+          if (data.redirected === true) {
+            swal({
+              icon: 'success',
+              title: 'REGISTRO EXITOSO',
+              timer: '2000'
+            });
+            setTimeout(() => {
+              window.location.href = `${data.url}`
+            }, 1000)
+          } else {
+            swal({
+              icon: 'error',
+              title: 'ERROR',
+              text: 'Usuario o contraseña incorrecta',
+              timer: '2000'
+            })
+          }
+        })
+        .catch(err => console.error(err));
+    }
+  }
 
   return (
     <div className={styles.body}>
@@ -33,8 +83,9 @@ function Login() {
             <div className={styles.div}>
               <img className={styles.mailler} src={mail} alt="" />
               <input
+                onChange={onChange}
                 type="text"
-                name="email"
+                name="user_email"
                 placeholder="Correo"
                 className={styles.mail}
               />
@@ -42,8 +93,9 @@ function Login() {
             <div className={styles.div}>
               <img className={styles.lock} src={lock} alt="" />
               <input
+                onChange={onChange}
                 type="password"
-                name="password"
+                name="user_password"
                 placeholder="Contraseña"
                 className={styles.pass}
               />
@@ -51,7 +103,10 @@ function Login() {
             <p></p>
             <button
               type="submit"
-              onClick={onSubmit}
+              onClick={(e) => {
+                handleSubmit()
+                e.preventDefault()
+              }}
               name="enviar"
               className={styles.buton}
             >
