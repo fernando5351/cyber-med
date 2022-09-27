@@ -4,8 +4,6 @@
 /node_modules
 /.pnp
 /node_modules
-/package.json
-/package-lock.json
 /react-consume-api
 .pnp.js
 
