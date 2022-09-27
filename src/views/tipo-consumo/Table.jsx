@@ -32,9 +32,9 @@ function Table(props) {
     
 
     const EditProduct = (id) => {
-        const res = id
+        const response = id
         navigate("/medicinas/editar-consumo")
-        return res;
+        return response;
     }
 
     return (

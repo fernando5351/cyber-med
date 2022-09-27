@@ -66,7 +66,7 @@ function Formulario() {
                 </div>
                 <div className={Form.botones}>
                   <button name="guardar" onClick={(e) => {
-
+                    saveProduct()
                     e.preventDefault();
                   }} className={Form.buton1}>GUARDAR</button>
                   <button type="reset" name="eliminar" className={Form.buton2}>LIMPIAR</button>
