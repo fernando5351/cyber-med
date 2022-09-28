@@ -6,7 +6,7 @@ function TableHome() {
   const [productos, setProductos] = useState([]);
 
   const fetchAPI = async () => {
-    const url = await fetch(`${API}/view/products`);
+    const url = await fetch(`${API}/products`);
     const getData = await url.json();
     console.log(getData);
     setProductos(getData);
