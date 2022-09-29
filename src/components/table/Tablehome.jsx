@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import tabla from "../../css/table.module.css";
-const API = "http://localhost:4000";
+const API = "https://lovely-lace-production.up.railway.app/products";
 
 function TableHome() {
   const [productos, setProductos] = useState([]);
 
   const fetchAPI = async () => {
-    const url = await fetch(`${API}/view/products`);
-    const getData = await url.json();
+    const data = await fetch(API);
+    const getData = await data.json();
     console.log(getData);
     setProductos(getData);
   };
