@@ -9,7 +9,8 @@
     align-items: center;
     flex-direction: column;
     width: 100%;
-    height: 83%;
+    height: 84vh;
+    background-color: transparent;
 }
 
 .contenedorPrincipalUso {
@@ -55,6 +56,7 @@
     align-content: center;
     justify-content: space-around;
 }
+
 .input {
     padding: 4px;
     width: 95%;
@@ -76,12 +78,12 @@
     background: #FFFFFF;
 }
 
-.select > option {
+.select>option {
     border-radius: 30px;
     outline: none;
 }
 
-.select > option:hover {
+.select>option:hover {
     background-color: #2b6696;
 }
 
