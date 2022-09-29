@@ -1,15 +1,12 @@
 import React from 'react'
-import Formulario from './Formulario'
-import ProductContextProvider from './ProductContextProvider'
-import Table from './Table'
+import Formulario from '../Formulario'
+import ProductContextProvider from '../arbol_info/ProductContextProvider'
 
 const FormUso = () => {
   return (
     <div>
         <ProductContextProvider>
-            <Table>
               <Formulario />
-            </Table>
         </ProductContextProvider>
     </div>
   )

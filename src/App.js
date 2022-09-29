@@ -10,9 +10,9 @@ import CrateMed from "./views/productos/Create";
 import TipoUso from "./views/tipo_uso/create";
 import Update from "./views/productos/update";
 import NotFound from "./views/NotFound/NotFound";
-import EditProduct from "./views/tipo-consumo/Formulario";
-import TipoConsumo from "./views/tipo-consumo/TipoConsumo";
-import FormUso from "./views/tipo-consumo/FormUso";
+import TipoConsumo from "./views/tipo-consumo/context/TipoConsumo";
+import FormUso from "./views/tipo-consumo/context/FormUso";
+import Edit from "./views/tipo-consumo/context/EditForm";
 
 
 const App = () => {
@@ -37,9 +37,9 @@ const App = () => {
           {/* listar tipo de consumo */}
           <Route path="/medicinas/listar-consumo" name="medicinas" element={<TipoConsumo />} />
           {/* editar un tipo de consumo */}
-          <Route path="/medicinas/editar-consumo" name="medicinas" element={<FormUso />} />
+          <Route path="/medicinas/crear-consumo" name="medicinas" element={<FormUso />} />
           {/* editar un tipo de consumo */}
-          <Route path="/medicinas/editar/categoria/consumo" name="medicinas" element={<EditProduct />} />
+          <Route path="/medicinas/editar/categoria/consumo" name="medicinas" element={<Edit />} />
           {/* crear un tipo de uso del medicamento */}
           <Route path="/medicinas/editar/categoria/uso" name="medicinas" element={<TipoUso />} />
           {/* PAGE NOT FOUND */}

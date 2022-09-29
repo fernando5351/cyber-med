@@ -1,5 +1,5 @@
-import ProductContextProvider from './ProductContextProvider'
-import Table from './Table'
+import ProductContextProvider from '../arbol_info/ProductContextProvider'
+import Table from '../Table'
 
 const Tipo_consumo = () => {
     return (

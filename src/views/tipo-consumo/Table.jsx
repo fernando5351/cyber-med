@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect, createContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Navbar from '../../components/navegacion/Navbar'
 import Agregar from '../../icon/Vista/agregar.png'
 import barraNav from '../../css/barranav.module.css'
@@ -6,48 +6,38 @@ import Add from '../../css/Add-medicines.module.css'
 import Edit from '../../icon/addMed/editar.png'
 import Delete from '../../icon/addMed/eliminar.png'
 import { useNavigate } from 'react-router-dom'
-import { ProductContext } from './ProductContextProvider'
+import { ProductContext } from './arbol_info/ProductContextProvider'
 
-export const Context = createContext()
+function Table() {
+    const { products, deleteProduct, findProduct, editProduct } = useContext(ProductContext)
 
-function Table(props) {
-    const { products, deleteProduct, editProduct, findProduct } = useContext(ProductContext)
-
-    const InitialState = {
-        hola: ""
-    }
-    const [edit, setEdit] = useState(InitialState)
     const navigate = useNavigate()
 
     const DeleteProduct = (id) => {
-        if (editProduct) {
-          deleteProduct(id);
-          setEdit(InitialState);
-        }
-      };
+        deleteProduct(id)
+        //console.log(`producto eliminado ${id}`);
+    }
+
+    const [productData, setProductData] = useState()
 
     useEffect(() => {
-        if (editProduct) setEdit(editProduct);
-      }, [editProduct]);
-    
+        if (editProduct) setProductData(editProduct);
+        localStorage.setItem('array', JSON.stringify(productData))
+      }, [editProduct, productData]);
 
     const EditProduct = (id) => {
-        const response = id
-        navigate("/medicinas/editar-consumo")
-        return response;
+        findProduct(id);
+        setTimeout( () => {
+            navigate('/medicinas/editar/categoria/consumo')
+        }, 100)
+    };
+
+    const add = () => {
+        navigate('/medicinas/crear-consumo')
     }
 
     return (
         <>
-            <Context.Provider
-                value={{
-                    EditProduct,
-                    edit,
-                    setEdit
-                }}
-            >
-                {props.children}
-            </Context.Provider>
             <Navbar />
             <div className={Add.containerAdd}>
                 <div className={Add.containerTab}>
@@ -56,6 +46,9 @@ function Table(props) {
                             className={`${barraNav.annadir} ${Add.annadir}`}
                             src={Agregar}
                             alt=''
+                            onClick={() => {
+                                add()
+                            }}
                         />
                     </div>
                     <div className={Add.containerTable}>
@@ -80,7 +73,8 @@ function Table(props) {
                                                     src={Edit}
                                                     alt=''
                                                     onClick={(e) => {
-                                                        EditProduct(`${products.id}`)
+                                                        EditProduct(products.id)
+                                                        e.preventDefault()
                                                     }}
                                                 />
                                                 <img
@@ -88,7 +82,7 @@ function Table(props) {
                                                     src={Delete}
                                                     alt=''
                                                     onClick={() => {
-                                                        DeleteProduct(`${products.id}`)
+                                                        DeleteProduct(products.id)
                                                     }}
                                                 />
                                             </td>
