@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
 import tabla from "../../css/table.module.css";
-const API = "http://localhost:4000";
+const API = "https://lovely-lace-production.up.railway.app/empresa";
 
 function Tableempresa() {
 
   const [empresa,setEmpresa] = useState([]);
 
   const fetchAPI = async () =>{
-    const data = await fetch (`${API}/empresa`)
+    const data = await fetch (API)
     const dataJson = await data.json();
     console.log(dataJson);
     setEmpresa(dataJson);
-  }
+  } 
 
   useEffect(()=> {
     fetchAPI()
@@ -38,7 +38,7 @@ function Tableempresa() {
           <>
           
           {
-            empresa.map((empresa, index)=>(
+            empresa.map((empresa)=>(
               <tr key={empresa.id}  className={tabla.td} >
                   <td>{empresa.id}</td>
                   <td>{empresa.nombre_empresa}</td>
