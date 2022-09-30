@@ -1,8 +1,17 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import Agregar from "../../icon/Vista/agregar.png";
+import Barra from "../../css/barranav.module.css";
 import tabla from "../../css/table.module.css";
 const API = "https://lovely-lace-production.up.railway.app/empresa";
 
 function Tableempresa() {
+
+  const Navigate = useNavigate();
+
+  const Add = ()=>{
+    Navigate("/empresa/crear")
+  }
 
   const [empresa,setEmpresa] = useState([]);
 
@@ -16,14 +25,21 @@ function Tableempresa() {
   useEffect(()=> {
     fetchAPI()
   },[])
-
-
+  
+  
   return( 
-    <div className={tabla.row}>
+    
+    <div className>
+    <img
+      className={Barra.annadir}
+      src={Agregar}
+      alt="agregar"
+      onClick={Add}
+    />
+      <div className={tabla.row}>
       <table className={tabla.tableM}>
         <thead className={tabla.cabeza}>
           <tr>
-            <th>ID</th>
             <th>EMPRESA</th>
             <th>DIRECCION</th>
             <th>PRODUCTO</th>
@@ -40,7 +56,7 @@ function Tableempresa() {
           {
             empresa.map((empresa)=>(
               <tr key={empresa.id}  className={tabla.td} >
-                  <td>{empresa.id}</td>
+               
                   <td>{empresa.nombre_empresa}</td>
                   <td>{empresa.direccion}</td>
                   <td>{empresa.nombre}</td>
@@ -58,6 +74,9 @@ function Tableempresa() {
         </tbody>
       </table>
     </div>
+  </div>
+    
+    
   );
 }
 

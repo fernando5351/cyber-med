@@ -22,7 +22,7 @@ function Navbar() {
     navigate("/medicinas/crear");
   };
   const uso = () => {
-    navigate("/medicinas/editar/categoria/uso")
+    navigate("/crear")
   };
   const consumo = () => {
     navigate("/medicinas/agregar/categoria/consumo")

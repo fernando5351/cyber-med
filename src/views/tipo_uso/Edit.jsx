@@ -1,34 +1,11 @@
-import React, { useState, useEffect ,useContext} from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"
 import Navbar from "../../components/navegacion/Navbar";
 import Form from '../../css/formtipouso.module.css'
-import {ProductContext} from "./arbol_info/productContextprovider"
 
-function Formuso() {
+function Edit() {
 
-  const {createProduct}  = useContext(ProductContext)
   
-  const initData ={
-    tipo_uso:"",
-    estado:""
-  }
-
-  const  [product,setProduct] = useState(initData) 
-
-  const onchange =(e)=>{
-    setProduct({
-      ...product,
-      [e.target.name]: e.target.value
-    }) 
-
-  }  
-
-  const handleSubmit =()=>{
-    createProduct(product)
-  }
-
- 
-
 return (
     <div className={Form.contentUso}>
       <Navbar />
@@ -41,24 +18,18 @@ return (
             <form className={Form.Form}>
               <div className={Form.formInput}>
                 <input type="text" name="tipo_uso" className={Form.input} placeholder="Tipo uso de uso"
-                onChange={
-                  onchange
-                }
+                  onChange={change}
                 />
               </div>
               <div multiple className={Form.formInput}>
-                <select name="estado" className={`${Form.input} ${Form.select}`} 
-                    onChange={
-                      onchange
-                    } >
+                <select name="estado" onChange={change} className={`${Form.input} ${Form.select}`}>
                   <option value="" defaultValue="">ESTADO</option>
                   <option value={0}>Inhabilitado</option>
                   <option value={1}>Habilitado</option>
                 </select>
               </div>
               <div className={Form.botones}>
-                <button type="submit" name="guardar" onClick={(e)=>{
-                  handleSubmit() }} className={Form.buton1}>GUARDAR</button>
+                <button type="submit" name="guardar" onClick={handleSubmit} className={Form.buton1}>GUARDAR</button>
                 <button type="reset" name="eliminar" className={Form.buton2}>LIMPIAR</button>
               </div>
             </form>
@@ -68,4 +39,4 @@ return (
     </div>
   );
 }
-export default Formuso; 
+export default Edit; 
