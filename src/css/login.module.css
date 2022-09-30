@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.body {
+  margin: 0;
+  padding: 0;
+  background-image: url(../img/login/medicines.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.contenedorLogin {
+  padding: 25px;
+  background: #ffff;
+  border-radius: 30px;
+  width: 375px;
+  height: 425.67px;
+  box-shadow: 1px 5px 5px 1px #72c4dd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.title {
+  width: 100%;
+  padding: 4px;
+}
+
+.letter {
+  font-size: 25px;
+  text-align: center;
+}
+
+.login {
+  width: 100%;
+  padding: 4px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.div {
+  width: 100%;
+  padding: 4px;
+  position: relative;
+  /* aca tenemos un pequeñin y chiquitin problemin */
+}
+
+.mailler {
+  width: 70px;
+  height: 75px;
+  position: absolute;
+  top: 45%;
+  left: 5%;
+  transform: translateY(-50%);
+}
+
+.lock {
+  width: 65px;
+  height: 52px;
+  position: absolute;
+  top: 45%;
+  left: 5%;
+  transform: translateY(-50%);
+}
+
+.reset {
+  text-align: right;
+}
+
+.mail,
+.pass {
+  padding: 4px;
+  width: 100%;
+  height: 60px;
+  border-radius: 30px;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 6px 4px #72c4dd;
+  font-family: 'Noto Serif';
+  font-size: 16px;
+  font-style: normal;
+  text-align: left;
+  padding-left: 95px;
+  color: #2b6696;
+  border: none;
+  outline: none ;
+}
+
+::placeholder {
+  font-family: 'Noto Serif' !important;
+  font-size: 25px;
+  font-style: italic !important;
+  color: #3271A5;
+}
+
+.buton {
+  width: 50%;
+  background: #3271A5;
+  font-size: 25px;
+  color: #ffff;
+  border-radius: 30px;
+  box-shadow: 0px 2px 6px 4px #72c4dd;
+  border: none;
+  height: 60px;
+  cursor: pointer;
+  opacity: 75%;
+  /*aca tenemos otro pequeñin problemin */
+}

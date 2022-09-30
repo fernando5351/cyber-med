@@ -1,0 +1,19 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+
+.content {
+    text-align: center;
+    width: 70%;
+    height: 90vh;
+}
+
+.Img {
+    width: 100%;
+    height: 100%;
+}
