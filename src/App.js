@@ -11,8 +11,10 @@ import TipoUso from "./views/tipo_uso/create";
 import Update from "./views/productos/update";
 import NotFound from "./views/NotFound/NotFound";
 import TipoConsumo from "./views/tipo-consumo/context/TipoConsumo";
+import TableUso from "./views/tipo_uso/Table";
 import FormUso from "./views/tipo-consumo/context/FormUso";
 import Edit from "./views/tipo-consumo/context/EditForm";
+import Table from "./views/tipo-consumo/Table";
 
 
 const App = () => {
@@ -40,6 +42,8 @@ const App = () => {
           <Route path="/medicinas/crear-consumo" name="medicinas" element={<FormUso />} />
           {/* editar un tipo de consumo */}
           <Route path="/medicinas/editar/categoria/consumo" name="medicinas" element={<Edit />} />
+          {/* listar tipo de uso */}
+          <Route path="/medicinas/listar-uso" name="medicina" element={<TableUso />} />
           {/* crear un tipo de uso del medicamento */}
           <Route path="/medicinas/editar/categoria/uso" name="medicinas" element={<TipoUso />} />
           {/* PAGE NOT FOUND */}
