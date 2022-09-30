@@ -6,7 +6,7 @@ import Home from "./views/home";
 import Empresa from "./views/empresa";
 import Medicinas from "./views/medicinas";
 import Medicamentos from "./views/vistaMedicamento/Vistauso";
-import CrateMed from "./views/productos/Create";
+import CrateMed from "./views/productos/context/Create";
 import TipoUso from "./views/tipo_uso/create";
 import Update from "./views/productos/update";
 import NotFound from "./views/NotFound/NotFound";
