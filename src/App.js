@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Login from "./views/login";
 import Home from "./views/home";
-import Create from "./views/tipo_uso/context/Create.jsx"
+import Create from "./views/tipo_uso/context/Create.jsx" 
 import Empresa from "./views/empresa";
 import FormEmpresa from "./views/formepresa/formEmpresa";
 import Medicinas from "./views/medicinas";

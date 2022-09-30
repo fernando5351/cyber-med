@@ -11,7 +11,7 @@ function TableUso() {
   const navigate = useNavigate();
 
   const add = () => {
-    navigate("/medicinas/editar/categoria/uso");
+    navigate("/crear");
   };
   return (
     <>
