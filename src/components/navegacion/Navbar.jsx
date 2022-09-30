@@ -22,10 +22,10 @@ function Navbar() {
     navigate("/medicinas/crear");
   };
   const uso = () => {
-    navigate("/crear")
+    navigate("/medicinas/listar-uso")
   };
   const consumo = () => {
-    navigate("/medicinas/agregar/categoria/consumo")
+    navigate("/medicinas/listar-consumo")
   }
 
   return (

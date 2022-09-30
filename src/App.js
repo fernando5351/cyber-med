@@ -8,13 +8,16 @@ import Empresa from "./views/empresa";
 import FormEmpresa from "./views/formepresa/formEmpresa";
 import Medicinas from "./views/medicinas";
 import Medicamentos from "./views/vistaMedicamento/Vistauso";
-import CrateMed from "./views/productos/Create";
-import Consumo from "./views/tipo-consumo/create";
-import EditConsumo from "./views/tipo-consumo/edit";
-import TablaConsumo from "./views/tipo-consumo/tablaMedicinas";
+import CrateMed from "./views/productos/context/Create";
 import TipoUso from "./views/tipo_uso/create";
 import Update from "./views/productos/update";
 import NotFound from "./views/NotFound/NotFound";
+import TipoConsumo from "./views/tipo-consumo/context/TipoConsumo";
+import TableUso from "./views/tipo_uso/Table";
+import FormUso from "./views/tipo-consumo/context/FormUso";
+import Edit from "./views/tipo-consumo/context/EditForm";
+import Table from "./views/tipo-consumo/Table";
+
 
 const App = () => {
   return (
@@ -39,12 +42,14 @@ const App = () => {
           <Route path="/medicinas/crear" name="medicinas" element={<CrateMed />} />
           {/* actualizar un Medicamento */}
           <Route path="/medicinas/actualizar" name="medicinas" element={<Update />} />
-          {/* agregar un tipo de consumo */}
-          <Route path="/medicinas/agregar/categoria/consumo" name="medicinas" element={<Consumo />} />
+          {/* listar tipo de consumo */}
+          <Route path="/medicinas/listar-consumo" name="medicinas" element={<TipoConsumo />} />
           {/* editar un tipo de consumo */}
-          <Route path="/medicinas/editar/categoria/consumo" name="medicinas" element={<EditConsumo />} />
-          {/* tabla para medicamentos */}
-          <Route path="/medicinas/tabla" name="medicinas" element={<TablaConsumo />} />
+          <Route path="/medicinas/crear-consumo" name="medicinas" element={<FormUso />} />
+          {/* editar un tipo de consumo */}
+          <Route path="/medicinas/editar/categoria/consumo" name="medicinas" element={<Edit />} />
+          {/* listar tipo de uso */}
+          <Route path="/medicinas/listar-uso" name="medicina" element={<TableUso />} />
           {/* crear un tipo de uso del medicamento */}
           <Route path="/medicinas/editar/categoria/uso" name="medicinas" element={<TipoUso />} />
           {/* PAGE NOT FOUND */}
