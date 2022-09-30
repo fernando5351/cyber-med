@@ -5,7 +5,7 @@ import Login from "./views/login";
 import Home from "./views/home";
 import Create from "./views/tipo_uso/context/Create.jsx" 
 import Empresa from "./views/empresa";
-import FormEmpresa from "./views/formepresa/formEmpresa";
+import FormEmpresa from "./views/form-empresa/FormEmpresa";
 import Medicinas from "./views/medicinas";
 import Medicamentos from "./views/vistaMedicamento/Vistauso";
 import CrateMed from "./views/productos/context/Create";
@@ -16,7 +16,7 @@ import TipoConsumo from "./views/tipo-consumo/context/TipoConsumo";
 import TableUso from "./views/tipo_uso/Table";
 import FormUso from "./views/tipo-consumo/context/FormUso";
 import Edit from "./views/tipo-consumo/context/EditForm";
-import Table from "./views/tipo-consumo/Table";
+/* import Table from "./views/tipo-consumo/Table"; */
 
 
 const App = () => {

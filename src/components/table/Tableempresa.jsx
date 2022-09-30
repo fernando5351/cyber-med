@@ -29,13 +29,15 @@ function Tableempresa() {
   
   return( 
     
-    <div className>
-    <img
+    <div>
+      <div className={Barra.top}>
+      <img
       className={Barra.annadir}
       src={Agregar}
       alt="agregar"
       onClick={Add}
     />
+      </div>
       <div className={tabla.row}>
       <table className={tabla.tableM}>
         <thead className={tabla.cabeza}>
