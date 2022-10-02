@@ -1,60 +1,35 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect,useContext} from 'react';
 import Navbar from '../../components/navegacion/Navbar';
 import Style from '../../css/formEmpresa.module.css'
+import {ProductContext} from "./arbol_info/ProductContextprovider"
 
 
 function FormEmpresa(){
 
 
-    //capturar datos escritos por el usuario
+    const {createProduct} = useContext(ProductContext);
 
-    const [form_empresa, setEmpresa] = useState({
+    const initData = {
         nombre_empresa: "",
+        id_producto: "",
         direccion: "",
-        id_producto:"",
-        email: "",
         telefono: "",
+        email: "",
         lote: "",
-        activo: "",
-    })
+        activo: ""
+    }
 
-    const change = (event) =>{
-        console.log(event.target.value)
-        setEmpresa({
-            ...form_empresa,
-            [event.target.name]: event.target.value
+    const [product,setProduct] = useState(initData)
+
+    const onchange =(e)=>{
+        setProduct({
+            ...product,
+            [e.target.name]: e.target.value
         })
     }
 
-    //destruction
-    let { nombre_empesa, direccion,id_producto,email,telefono,lote,activo} = form_empresa;
-
     const handleSubmit = () => {
-        //los campos no deben quedar nulos 
-        if (nombre_empesa === "" || direccion === "" || id_producto === "" || telefono === "" || direccion === "" || email === "" || lote === "" || activo === "" ) {
-            alert("debe llenar todos los campos no sea aragan")
-            return
-        } else{
-            const RequestInit = {
-                method: 'post',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(form_empresa)
-            }
-            fetch ('http://localhost:4000/empresa', RequestInit)
-            .then(res => res.text())
-            .then(res => console.log(res))
-
-            setEmpresa({
-                nombre_empesa: "",
-                direccion: "",
-                id_producto: "",
-                telefono: "",
-                email: "",
-                lote: "",
-                activo: ""
-
-            })
-        }
+        createProduct(product)
     }
 
 
@@ -66,13 +41,13 @@ function FormEmpresa(){
             
                 <h1 className={Style.text}>REGISTRAR LA EMPRESA </h1>
                 <form action="" className={Style.formempresa}>
-                    <input  className={Style.input} type="text" name='nombre_empresa' placeholder='Nombre de la empresa' onChange={change} />
-                    <input  className={Style.input} type="text" name='direccion' placeholder='Direccion' onChange={change}/>
-                    <input  className={Style.input} type="text" name='id_producto' placeholder='Producto' onChange={change}/>
-                    <input  className={Style.input} type="text" name='telefono' placeholder='Telefono' onChange={change}/>
-                    <input  className={Style.input} type="email" name='email' placeholder='Correo electronico' onChange={change}/>
-                    <input  className={Style.input} type="text" name='lote' placeholder='Lote' onChange={change} />
-                    <select name="activo" onChange={change}  className={Style.select}>
+                    <input  className={Style.input} type="text" name='nombre_empresa' placeholder='Nombre de la empresa' onChange={onchange} />
+                    <input  className={Style.input} type="text" name='direccion' placeholder='Direccion' onChange={onchange}/>
+                    <input  className={Style.input} type="text" name='id_producto' placeholder='Producto' onChange={onchange}/>
+                    <input  className={Style.input} type="text" name='telefono' placeholder='Telefono' onChange={onchange}/>
+                    <input  className={Style.input} type="email" name='email' placeholder='Correo electronico' onChange={onchange}/>
+                    <input  className={Style.input} type="text" name='lote' placeholder='Lote' onChange={onchange} />
+                    <select name="activo" onChange={onchange}  className={Style.select}>
                         <option value="" disabled selected>ESTADO</option>
                         <option value={1}>activo</option>
                         <option value={0}>inactivo</option>
