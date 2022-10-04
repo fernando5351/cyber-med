@@ -1,58 +1,60 @@
-import React, { createContext, useState, useEffect} from 'react'
+import React, { createContext, useState, useEffect } from 'react'
 import { ProductService } from "./productServices"
 
-export const ProductContext = createContext()
+export const ProductContextProduct = createContext()
 const productService = new ProductService()
- 
-const ProductContextProvider = (props) => {
+
+const ProductContext = (props) => {
 
 
     const [products, setProducts] = useState([])
     const [productEdition, setProductEdition] = useState(null)
 
     useEffect(() => {
-     productService.readAll().then( (data) => setProducts(data) );
+        productService.readAll().then((data) => setProducts(data));
     }, [])
-    
-    const createProduct = ( product ) => {
+
+    const createProduct = (product) => {
         productService.create(product)
-            .then( data => setProducts([ ...products, data]))
+            .then(data => setProducts([...products, data]))
+            .then( data => data)
+            .then(data => console.log(data))
     }
 
-    const productsDelete = ( id ) => {
+    const productsDelete = (id) => {
         productService.delete(id)
-            .then(() => setProducts(products.filter( (p) => p.id !== id )))
+            .then(() => setProducts(products.filter((p) => p.id !== id)))
     }
 
-    const findProduct = ( id ) => {
-        const product = products.find( p => p.id === id )
+    const findProduct = (id) => {
+        const product = products.find(p => p.id === id)
 
         setProductEdition(product)
     }
 
-    const updateProduct = ( product ) => {
+    const updateProduct = (product) => {
         productService.update(product)
-            .then( (data ) => 
+            .then((data) =>
                 setProducts(
-                    products.map( (p) => ( p.id === product.id ? data : product ))
+                    products.map((p) => (p.id === product.id ? data : product))
                 ))
-            setProductEdition(null)
+        setProductEdition(null)
     }
 
-  return (
-    <ProductContext.Provider
-        value={{
-            products,
-            createProduct,
-            productsDelete,
-            findProduct,
-            updateProduct,
-            productEdition
-        }}
-    >
-        {props.children}
-    </ProductContext.Provider>
-  )
+    return (
+        <ProductContextProduct.Provider
+            value={{
+                products,
+                createProduct,
+                productsDelete,
+                findProduct,
+                updateProduct,
+                productEdition
+            }}
+        >
+            {props.children}
+        </ProductContextProduct.Provider>
+    )
 }
 
-export default ProductContextProvider
+export default ProductContext

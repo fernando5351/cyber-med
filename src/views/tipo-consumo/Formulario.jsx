@@ -1,12 +1,12 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import Navbar from "../../components/navegacion/Navbar";
 import Form from '../../css/formtipouso.module.css'
 import { useNavigate } from "react-router-dom";
-import { ProductContext } from './arbol_info/ProductContextProvider'
+import { ProductContextConsumo } from './arbol_info/ProductContextProvider'
 
 function Formulario() {
 
-  const {createProduct} = useContext(ProductContext)
+  const { createProduct } = useContext(ProductContextConsumo)
 
   const initialData =  {
     tipo_consumo: "",
