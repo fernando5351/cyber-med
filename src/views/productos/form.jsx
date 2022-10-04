@@ -107,6 +107,7 @@ const Form = () => {
 
             const formData = new FormData(form);
 
+            //formData formulario xd
             createProduct(formData)
 
             setPreview(imgState)
