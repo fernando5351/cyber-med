@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import lock from "../../icon/Login/password.png";
 import mail from "../../icon/Login/email.png";
 import styles from "../../css/login.module.css";
-import { useNavigate } from "react-router-dom";
 import swal from 'sweetalert';
 
 function Login() {
@@ -13,8 +12,6 @@ function Login() {
     user_email: "",
     user_password: ""
   });
-
-  const navigate = useNavigate();
 
   const onChange = (event) => {
     setBody({

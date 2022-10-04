@@ -14,7 +14,6 @@ import TipoConsumo from "./views/tipo-consumo/context/TipoConsumo";
 import TableUso from "./views/tipo_uso/Table";
 import FormUso from "./views/tipo-consumo/context/FormUso";
 import Edit from "./views/tipo-consumo/context/EditForm";
-import Table from "./views/tipo-consumo/Table";
 
 
 const App = () => {

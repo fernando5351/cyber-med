@@ -10,7 +10,7 @@ export class ProductService {
     }
 
     readAll () {
-        return axios.get(`${this.url}/products`).then( res => res.data);
+       return axios.get(`${this.url}/products`).then( res => res.data);
     }
 
     update ( medicamento ) {
