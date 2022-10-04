@@ -2,9 +2,8 @@ import axios from 'axios'
 
 export class ProductService {
 
-    url = "http://localhost:4000";
-    //url = "https://lovely-lace-production.up.railway.app"
-    //url = "https://ciber-med-api.herokuapp.com"
+    //url = "http://localhost:4000";
+    url = "https://lovely-lace-production.up.railway.app"
 
     create(product){
         return axios.post(`${this.url}/tipo_consumo`, product).then(res => res.data);

@@ -6,10 +6,10 @@ import Add from '../../css/Add-medicines.module.css'
 import Edit from '../../icon/addMed/editar.png'
 import Delete from '../../icon/addMed/eliminar.png'
 import { useNavigate } from 'react-router-dom'
-import { ProductContext } from './arbol_info/ProductContextProvider'
+import { ProductContextConsumo } from './arbol_info/ProductContextProvider'
 
 function Table() {
-    const { products, deleteProduct, findProduct, editProduct } = useContext(ProductContext)
+    const { uso, deleteProduct, findProduct, editProduct } = useContext(ProductContextConsumo)
 
     const navigate = useNavigate()
 
@@ -62,7 +62,7 @@ function Table() {
                             </thead>
                             <tbody>
                                 <>
-                                    {products.map((products) => (
+                                    {uso.map((products) => (
                                         <tr key={products.id} className={Add.background}>
 
                                             <td>{products.id}</td>

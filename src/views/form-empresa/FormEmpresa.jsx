@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import Navbar from '../../components/navegacion/Navbar';
-import Style from '../../css/form_empresa.module.css'
+import Style from '../../css/formEmpresa.module.css'
 
 
-function Form_empresa(){
+function FormEmpresa(){
 
 
     //capturar datos escritos por el usuario
@@ -59,17 +59,17 @@ function Form_empresa(){
 
 
   return (
-    <div className={Style.container}>
+    <div>
         <Navbar />
         <div className={Style.content}>
             <div className={Style.form}>
             
                 <h1 className={Style.text}>REGISTRAR LA EMPRESA </h1>
                 <form action="" className={Style.formempresa}>
-                    <input  className={Style.input} type="text" name='nombre_empresa' placeholder='nombre de la empresa' onChange={change} />
+                    <input  className={Style.input} type="text" name='nombre_empresa' placeholder='Nombre de la empresa' onChange={change} />
                     <input  className={Style.input} type="text" name='direccion' placeholder='Direccion' onChange={change}/>
                     <input  className={Style.input} type="text" name='id_producto' placeholder='Producto' onChange={change}/>
-                    <input  className={Style.input} type="text" name='telefono' placeholder='telefono' onChange={change}/>
+                    <input  className={Style.input} type="text" name='telefono' placeholder='Telefono' onChange={change}/>
                     <input  className={Style.input} type="email" name='email' placeholder='Correo electronico' onChange={change}/>
                     <input  className={Style.input} type="text" name='lote' placeholder='Lote' onChange={change} />
                     <select name="activo" onChange={change}  className={Style.select}>
@@ -88,5 +88,5 @@ function Form_empresa(){
   )
 }
 
-export default Form_empresa;
+export default FormEmpresa;
 

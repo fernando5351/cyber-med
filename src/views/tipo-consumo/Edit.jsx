@@ -2,13 +2,13 @@ import React, { useContext, useState, useEffect } from "react";
 import Navbar from "../../components/navegacion/Navbar";
 import Form from '../../css/formtipouso.module.css'
 import { useNavigate } from "react-router-dom";
-import { ProductContext } from './arbol_info/ProductContextProvider'
+import { ProductContextConsumo } from './arbol_info/ProductContextProvider'
 
 function Edit() {
 
   const {
     updateProduct 
-  } = useContext(ProductContext)
+  } = useContext(ProductContextConsumo)
   
   const initialData =  {
     tipo_consumo: "",

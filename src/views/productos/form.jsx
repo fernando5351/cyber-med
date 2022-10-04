@@ -5,13 +5,15 @@ import { useNavigate } from 'react-router-dom';
 //import imgsubir from "../../icon/Create/subir.png";
 import Select from "react-select";
 import Swal from 'sweetalert'
-import { ProductContext } from "../tipo-consumo/arbol_info/ProductContextProvider"
+import { ProductContextConsumo } from "../tipo-consumo/arbol_info/ProductContextProvider"
 import { ProductContextProduct } from "./arbol_info/ProductContextProvider"
+import { ProductContext } from "../tipo_uso/arbol_info/productContextprovider"
 
 
 const Form = () => {
 
     const { createProduct } = useContext(ProductContextProduct)
+    const { uso } = useContext(ProductContextConsumo)
     const { products } = useContext(ProductContext)
 
     const imgState = "https://res.cloudinary.com/dtbs1ycrd/image/upload/v1664686909/upload/subir_y1dery.png"
@@ -69,12 +71,16 @@ const Form = () => {
             [action.name]: ev.value
         })
     }
-    const map = products.map((arrElement) => ({
+    const map = uso.map((arrElement) => ({
         label: arrElement.tipo_consumo,
         value: arrElement.id
         // { value: "Opcion 1", label: "Opcion 1" },
     }));
 
+    const usoSelect = products.map( (uso) => ({
+        label: uso.tipo_uso,
+        value: uso.id
+    }))
     const navigate = useNavigate()
     const {
         nombre,
@@ -169,7 +175,7 @@ const Form = () => {
                                             className={form.Select}
                                             options={map}
                                             name="id_tipo_uso"
-                                            onChange={dataChange}
+                                            onChange={usoSelect}
                                         />
                                     </div>
                                     <div className={form.estilo}>

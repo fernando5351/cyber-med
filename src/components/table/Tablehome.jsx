@@ -20,7 +20,6 @@ function TableHome() {
       <table className={tabla.tableM}>
         <thead className={tabla.cabeza}>
           <tr>
-            <th>ID</th>
             <th>NOMBRE</th>
             <th>ADMINISTRACION</th>
             <th>USO</th>
@@ -33,7 +32,7 @@ function TableHome() {
           <>
             {productos.map((productos) => (
               <tr className={tabla.td}>
-                <td>{productos.id}</td>
+               
                 <td>{productos.nombre}</td>
                 <td>{productos.tipo_consumo}</td>
                 <td>{productos.tipo_uso}</td>

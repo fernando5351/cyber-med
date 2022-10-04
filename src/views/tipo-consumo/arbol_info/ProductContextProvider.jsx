@@ -1,12 +1,12 @@
 import React, { createContext, useState, useEffect } from "react";
 import { ProductService } from "./ProductServices";
 
-export const ProductContext = createContext();
+export const ProductContextConsumo = createContext();
 const productService = new ProductService();
 
 const ProductContextProvider = (props) => {
   
-  const [products, setProducts] = useState([]);
+  const [uso, setProducts] = useState([]);
 
   const [editProduct, setEditProduct] = useState(null);
 
@@ -17,17 +17,17 @@ const ProductContextProvider = (props) => {
   const createProduct = (product) => {
     productService
       .create(product)
-      .then((data) => setProducts([...products, data]));
+      .then((data) => setProducts([...uso, data]));
   };
 
   const deleteProduct = (id) => {
     productService
       .delete(id)
-      .then(() => setProducts(products.filter((p) => p.id !== id)));
+      .then(() => setProducts(uso.filter((p) => p.id !== id)));
   };
 
   const findProduct = (id) => {
-    const product = products.find((p) => p.id === id);
+    const product = uso.find((p) => p.id === id);
 
     setEditProduct(product);
   };
@@ -37,7 +37,7 @@ const ProductContextProvider = (props) => {
       .update(product)
       .then((data) =>
         setProducts(
-          products.map((p) => (p.id === product.id ? data : product))
+          uso.map((p) => (p.id === product.id ? data : product))
         )
       );
 
@@ -45,18 +45,18 @@ const ProductContextProvider = (props) => {
   };
 
   return (
-    <ProductContext.Provider
+    <ProductContextConsumo.Provider
       value={{
         createProduct,
         deleteProduct,
         findProduct,
         updateProduct,
         editProduct,
-        products,
+        uso,
       }}
     >
       {props.children}
-    </ProductContext.Provider>
+    </ProductContextConsumo.Provider>
   );
 };
 

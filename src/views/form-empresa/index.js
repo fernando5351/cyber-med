@@ -1,1 +1,1 @@
-export { default } from './form_empresa'
+export { default } from './FormEmpresa'
