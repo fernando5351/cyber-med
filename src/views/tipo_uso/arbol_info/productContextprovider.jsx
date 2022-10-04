@@ -6,26 +6,25 @@ const productService = new ProductService()
 
 const ProductContextProvider = (props) => {
 
-
     const [products, setProducts]=useState([])
     const [prodcutEditon, setprodcutEditon] = useState(null);
 
     useEffect(()=>{
-       productService.readAll().then( (data) => setProducts(data));
+       productService.readAll().then( data => setProducts(data) )
     },[])
 
     const createProduct =(product)=>{
         productService.create(product)
-            .then (data => setProducts([...setProducts,data]))
-    }
+            .then( (data) => setProducts([ ...products, data ]));
+    };
 
-    const deleteProduct = (id)=>{
+    const deleteProduct = (id) =>{
         productService.delete(id)
             .then(()=> setProducts(products.filter((p)=>p.id !==id)))
     }
 
     const findProduct = (id)=>{
-        const product = products.find(p=>product.id === id)
+        const product = products.find((p)=>p.id === id)
         
         setprodcutEditon(product)
     }

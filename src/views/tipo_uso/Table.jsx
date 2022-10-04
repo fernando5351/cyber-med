@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useContext, useState } from "react";
 import Navbar from '../../components/navegacion/Navbar'
 import Agregar from '../../icon/Vista/agregar.png'
 import barraNav from '../../css/barranav.module.css'
@@ -6,15 +6,42 @@ import Add from '../../css/Add-medicines.module.css'
 import Edit from '../../icon/addMed/editar.png'
 import Delete from '../../icon/addMed/eliminar.png'
 import { useNavigate } from 'react-router-dom'
+import { ProductContext } from './arbol_info/productContextprovider'
 
 function TableUso() {
-  const navigate = useNavigate();
 
-  const add = () => {
-    navigate("/crear");
-  };
-  return (
-    <>
+    const { products, deleteProduct, findProduct, editProduct } = useContext(ProductContext)
+
+    const navigate = useNavigate()
+
+    console.log(products);
+
+    const DeleteProduct = (id) => {
+        deleteProduct(id)
+        //console.log(`producto eliminado ${id}`);
+    }
+
+    const [productData, setProductData] = useState()
+
+    useEffect(() => {
+        if (editProduct) setProductData(editProduct);
+        localStorage.setItem('array', JSON.stringify(productData))
+    }, [editProduct, productData]);
+
+    const EditProduct = (id) => {
+        findProduct(id);
+        setTimeout(() => {
+            navigate('/edit/uso')
+        }, 100)
+    };
+
+    const add = () => {
+        navigate('/crear-uso')
+    }
+
+
+    return (
+        <>
             <Navbar />
             <div className={Add.containerAdd}>
                 <div className={Add.containerTab}>
@@ -39,26 +66,35 @@ function TableUso() {
                             </thead>
                             <tbody>
                                 <>
-                                    
-                                        <tr  className={Add.background}>
-                                            <td>1</td>
-                                            <td>oral</td>
+                                    {products.map((products) => (
+                                        <tr key={products.id} className={Add.background}>
+
+                                            <td>{products.id}</td>
+                                            <td>{products.tipo_uso}</td>
+
                                             <td>
                                                 <img
                                                     className={barraNav.annadir}
                                                     src={Edit}
                                                     alt=''
-                                                   
+                                                    onClick={(e) => {
+                                                        EditProduct(products.id)
+                                                        e.preventDefault()
+                                                    }}
+
                                                 />
                                                 <img
                                                     className={barraNav.annadir}
                                                     src={Delete}
-                                                    alt=''
-                                                    
+                                                    alt=""
+                                                    onClick={() => {
+                                                        DeleteProduct(products.id)
+                                                    }}
                                                 />
                                             </td>
+
                                         </tr>
-                                    
+                                    ))}
                                 </>
                             </tbody>
                         </table>
@@ -66,7 +102,7 @@ function TableUso() {
                 </div>
             </div >
         </>
-  );
+    );
 }
 
 export default TableUso;

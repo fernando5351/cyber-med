@@ -6,7 +6,7 @@ import { ProductContext } from './arbol_info/ProductContextProvider'
 
 function Formulario() {
 
-  const { createProduct } = useContext(ProductContext)
+  const {createProduct} = useContext(ProductContext)
 
   const initialData =  {
     tipo_consumo: "",

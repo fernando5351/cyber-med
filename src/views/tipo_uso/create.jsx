@@ -1,32 +1,33 @@
-import React, { useState, useEffect ,useContext} from "react";
-import { useNavigate } from "react-router-dom"
+import React, { useState,useContext} from "react";
+ import { useNavigate } from "react-router-dom"
 import Navbar from "../../components/navegacion/Navbar";
 import Form from '../../css/formtipouso.module.css'
 import {ProductContext} from "./arbol_info/productContextprovider"
 
 function Formuso() {
 
-  const {createProduct}  = useContext(ProductContext)
-  
-  const initData ={
-    tipo_uso:"",
-    estado:""
+  const { createProduct } = useContext(ProductContext)
+
+  const initialData =  {
+    tipo_uso: "",
+    estado: ""
   }
+  const [consumo, setConsumo] = useState(initialData)
 
-  const  [product,setProduct] = useState(initData) 
+  const navigate = useNavigate()
 
-  const onchange =(e)=>{
-    setProduct({
-      ...product,
+  const onChange = (e) => {
+    setConsumo({
+      ...consumo,
       [e.target.name]: e.target.value
-    }) 
-
-  }  
-
-  const handleSubmit =()=>{
-    createProduct(product)
+    })
   }
-
+  const saveProduct = () => {
+    //console.log(consumo);
+    createProduct(consumo)
+    setConsumo(initialData)
+    navigate("/medicinas/listar-uso")
+  }
  
 
 return (
@@ -42,14 +43,14 @@ return (
               <div className={Form.formInput}>
                 <input type="text" name="tipo_uso" className={Form.input} placeholder="Tipo uso de uso"
                 onChange={
-                  onchange
+                  onChange
                 }
                 />
               </div>
               <div multiple className={Form.formInput}>
                 <select name="estado" className={`${Form.input} ${Form.select}`} 
                     onChange={
-                      onchange
+                      onChange
                     } >
                   <option value="" defaultValue="">ESTADO</option>
                   <option value={0}>Inhabilitado</option>
@@ -58,7 +59,7 @@ return (
               </div>
               <div className={Form.botones}>
                 <button type="submit" name="guardar" onClick={(e)=>{
-                  handleSubmit() }} className={Form.buton1}>GUARDAR</button>
+                  saveProduct() }} className={Form.buton1}>GUARDAR</button>
                 <button type="reset" name="eliminar" className={Form.buton2}>LIMPIAR</button>
               </div>
             </form>

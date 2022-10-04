@@ -14,8 +14,9 @@ import TipoUso from "./views/tipo_uso/create";
 import Update from "./views/productos/update";
 import NotFound from "./views/NotFound/NotFound";
 import TipoConsumo from "./views/tipo-consumo/context/TipoConsumo";
-import TableUso from "./views/tipo_uso/Table";
+import TableUso from "./views/tipo_uso/context/TableContext";
 import FormUso from "./views/tipo-consumo/context/FormUso";
+import Edituso from "./views/tipo_uso/context/Edit"
 import Edit from "./views/tipo-consumo/context/EditForm";
 /* import Table from "./views/tipo-consumo/Table"; */
 
@@ -40,7 +41,7 @@ const App = () => {
           {/* vista para ver los Medicamentos */}
           <Route path="/vistauso" name="medicinas" element={<Medicamentos />} />
           {/* crear tipo de uso */}
-          <Route path="/crear" name="uso" element={<Create/>} />
+          <Route path="/crear-uso" name="uso" element={<Create/>} />
           {/* crear un nuevo Medicamento */}
           <Route path="/medicinas/crear" name="medicinas" element={<CrateMed />} />
           {/* actualizar un Medicamento */}
@@ -53,6 +54,8 @@ const App = () => {
           <Route path="/medicinas/editar/categoria/consumo" name="medicinas" element={<Edit />} />
           {/* listar tipo de uso */}
           <Route path="/medicinas/listar-uso" name="medicina" element={<TableUso />} />
+          {/* editar tipo uso */}
+          <Route path="/edit/uso" name="tipo_uso" element={<Edituso />} />
           {/* crear un tipo de uso del medicamento */}
           <Route path="/medicinas/editar/categoria/uso" name="medicinas" element={<TipoUso />} />
           {/* PAGE NOT FOUND */}
