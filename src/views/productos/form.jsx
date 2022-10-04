@@ -173,9 +173,9 @@ const Form = () => {
                                         <label id={form.titulo}>USO :</label>
                                         <Select
                                             className={form.Select}
-                                            options={map}
+                                            options={usoSelect}
                                             name="id_tipo_uso"
-                                            onChange={usoSelect}
+                                            onChange={dataChange}
                                         />
                                     </div>
                                     <div className={form.estilo}>
