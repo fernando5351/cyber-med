@@ -7,7 +7,7 @@ import {ProductContext} from './arbol_info/productContextprovider'
 
 function Edit() {
 
-  const {updateProoduct} = useContext(ProductContext)
+  const { updateProduct } = useContext(ProductContext)
 
   const initialData = {
     tipo_uso: "",
@@ -34,9 +34,9 @@ function Edit() {
 
   const saveProduct = () => {
     console.log(uso)
-    updateProoduct(uso)
+    updateProduct(uso)
     setUso(initialData)
-    navigate('/crear')
+    navigate('/medicinas/listar-uso')
   }
   
   const cancel = ()=>{
@@ -55,18 +55,23 @@ return (
             <form className={Form.Form}>
               <div className={Form.formInput}>
                 <input type="text" name="tipo_uso" className={Form.input} placeholder="Tipo uso de uso"
-                  onChange={(e)=>onchange(e.target.value, "tipo_uso")}
+                  onChange={(e)=>onChange(e.target.value, "tipo_uso")} value={uso.tipo_uso}
                 />
               </div>
               <div multiple className={Form.formInput}>
-                <select name="estado" onChange={(e)=>onchange (e.target.value, "estado")} className={`${Form.input} ${Form.select}`}>
+                <select name="estado" onChange={(e)=>onChange (e.target.value, "estado")} className={`${Form.input} ${Form.select}`} value={uso.estado}>
                   <option value="" defaultValue="">ESTADO</option>
                   <option value={0}>Inhabilitado</option>
                   <option value={1}>Habilitado</option>
                 </select>
               </div>
               <div className={Form.botones}>
-                <button type="submit" name="guardar" onClick={(e)=>{saveProduct()}} className={Form.buton1}>GUARDAR</button>
+                <button type="submit" name="guardar" 
+                onClick={(e)=>{
+                  e.preventDefault()
+                  saveProduct()
+                }} 
+                className={Form.buton1}>GUARDAR</button>
                 <button type="reset" name="eliminar" onClick={()=>{cancel()}} className={Form.buton2}>LIMPIAR</button>
               </div>
             </form>

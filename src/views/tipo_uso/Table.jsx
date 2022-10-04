@@ -10,7 +10,7 @@ import { ProductContext } from './arbol_info/productContextprovider'
 
 function TableUso() {
 
-    const { products, deleteProduct, findProduct, editProduct } = useContext(ProductContext)
+    const { products, deleteProduct, prodcutEditon,findProduct } = useContext(ProductContext)
 
     const navigate = useNavigate()
 
@@ -24,9 +24,9 @@ function TableUso() {
     const [productData, setProductData] = useState()
 
     useEffect(() => {
-        if (editProduct) setProductData(editProduct);
-        localStorage.setItem('array', JSON.stringify(productData))
-    }, [editProduct, productData]);
+        if (prodcutEditon) setProductData(prodcutEditon);
+        localStorage.setItem('array', JSON.stringify(prodcutEditon))
+    }, [prodcutEditon, productData]);
 
     const EditProduct = (id) => {
         findProduct(id);
