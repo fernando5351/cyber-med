@@ -1,37 +1,41 @@
-import React, {useState,useEffect,useContext} from 'react';
+import React, {useState,useContext} from 'react';
+import { useNavigate } from 'react-router';
 import Navbar from '../../components/navegacion/Navbar';
-import Style from '../../css/formEmpresa.module.css'
-import {ProductContext} from "./arbol_info/ProductContextprovider"
-
+import Style from '../../css/formEmpresa.module.css';
+import {ProductContextEmpresa} from './arbol_info/ProductContextprovider'
 
 function FormEmpresa(){
 
 
-    const {createProduct} = useContext(ProductContext);
+  const { createProduct } = useContext(ProductContextEmpresa)
 
-    const initData = {
-        nombre_empresa: "",
-        id_producto: "",
-        direccion: "",
-        telefono: "",
-        email: "",
-        lote: "",
-        activo: ""
+
+    const initialData =  {
+      nombre_empresa: "",
+      id_producto: "",
+      direccion: "",
+      telefono: "",
+      email: "",
+      lote: "",
+      activo: ""
     }
-
-    const [product,setProduct] = useState(initData)
-
-    const onchange =(e)=>{
-        setProduct({
-            ...product,
-            [e.target.name]: e.target.value
-        })
+    
+    const [empresa, setEmpresa] = useState(initialData)
+  
+    const navigate = useNavigate()
+  
+    const onChange = (e) => {
+      setEmpresa({
+        ...empresa,
+        [e.target.name]: e.target.value
+      })
     }
-
-    const handleSubmit = () => {
-        createProduct(product)
+    const saveProduct = () => {
+      console.log(empresa);
+      createProduct(empresa)
+      setEmpresa(initialData)
+      navigate("/empresa")
     }
-
 
   return (
     <div>
@@ -41,19 +45,22 @@ function FormEmpresa(){
             
                 <h1 className={Style.text}>REGISTRAR LA EMPRESA </h1>
                 <form action="" className={Style.formempresa}>
-                    <input  className={Style.input} type="text" name='nombre_empresa' placeholder='Nombre de la empresa' onChange={onchange} />
-                    <input  className={Style.input} type="text" name='direccion' placeholder='Direccion' onChange={onchange}/>
-                    <input  className={Style.input} type="text" name='id_producto' placeholder='Producto' onChange={onchange}/>
-                    <input  className={Style.input} type="text" name='telefono' placeholder='Telefono' onChange={onchange}/>
-                    <input  className={Style.input} type="email" name='email' placeholder='Correo electronico' onChange={onchange}/>
-                    <input  className={Style.input} type="text" name='lote' placeholder='Lote' onChange={onchange} />
-                    <select name="activo" onChange={onchange}  className={Style.select}>
-                        <option value="" disabled selected>ESTADO</option>
+                    <input  className={Style.input} type="text" name='nombre_empresa' placeholder='Nombre de la empresa' onChange={onChange} />
+                    <input  className={Style.input} type="text" name='direccion' placeholder='Direccion' onChange={onChange}/>
+                    <input  className={Style.input} type="text" name='id_producto' placeholder='ID_Producto' onChange={onChange}/>
+                    <input  className={Style.input} type="text" name='telefono' placeholder='Telefono' onChange={onChange}/>
+                    <input  className={Style.input} type="email" name='email' placeholder='Correo electronico' onChange={onChange}/>
+                    <input  className={Style.input} type="text" name='lote' placeholder='Lote' onChange={onChange} />
+                    <select name="activo" onChange={onChange}  className={Style.select}>
+                        <option value="" defaultValue="">ESTADO</option>
                         <option value={1}>activo</option>
                         <option value={0}>inactivo</option>
                     </select>
                     <div className={Style.btn}>
-                    <button type='submit' onClick={handleSubmit} className={Style.button}> ENVIAR</button>
+                    <button type='submit' onClick={ (e) => {
+                      saveProduct()
+                      e.preventDefault()
+                      }} className={Style.button}> ENVIAR</button>
                     </div>
                 
                 </form>

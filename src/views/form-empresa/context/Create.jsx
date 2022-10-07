@@ -1,13 +1,13 @@
 import React from "react";
-import CreateForm  from '../FormEmpresa'
-import ProductContextProvider from "../arbol_info/ProductContextprovider";
+import ProductContextEmpresa from "../arbol_info/ProductContextprovider";
+import FormEmpresa from "../FormEmpresa";
 
 const Create = () => {
     return(
         <div>
-            <ProductContextProvider>
-                <CreateForm/>
-            </ProductContextProvider>
+            <ProductContextEmpresa>
+                <FormEmpresa />
+            </ProductContextEmpresa>
         </div>
     )
 }

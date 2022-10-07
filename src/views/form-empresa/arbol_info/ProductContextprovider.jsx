@@ -1,22 +1,21 @@
 import React, {createContext,useState,useEffect} from 'react';
 import { ProductService } from './ProductsServices';
 
-export const ProductContext = createContext();
+export const ProductContextEmpresa = createContext();
 const productService = new ProductService();
 
-const ProductContextProvider = (props) => {
+const ProductContextProviderEmpresa = (props) => {
 
-
-    const [products,setProducts] = useState([])
+    const [products,setProducts] = useState([]);
     const [prodcutEditon, setprodcutEditon] = useState(null);
 
     useEffect(()=>{
-        productService.readAll().then()((data) => setProducts(data));
+        productService.readAll().then((data) => setProducts(data));
     },[])
 
-    const createProduct = (product) => {
-        productService.create(product)
-            .then (data => setProducts([...setProducts,data]));
+    const createProduct = (empresa) => {
+        productService.create(empresa)
+            .then ((data) => setProducts([...products,data]));
     }
 
     const deleteProduct = (id) => {
@@ -25,7 +24,7 @@ const ProductContextProvider = (props) => {
     }
 
     const findProduct = (id) => {
-       const product = products.find(p => product.id === id)
+       const product = products.find((p) => p.id === id)
 
        setprodcutEditon(product)
     }
@@ -34,14 +33,13 @@ const ProductContextProvider = (props) => {
         productService.update(product)
             .then((data) =>setProducts(
                 products.map((p)=>(p.id === products.id ? data: product))
-                ))
-                setprodcutEditon(null)
+            ))
+            setprodcutEditon(null)
 
     }    
     
     return(
-        <ProductContext.Provider
-
+        <ProductContextEmpresa.Provider
         value = {{
             products,
             createProduct,
@@ -50,10 +48,11 @@ const ProductContextProvider = (props) => {
             updateProduct,
             prodcutEditon
         }} 
+        
         >
-            {props.chhildren}
-        </ProductContext.Provider>
+            {props.children}
+        </ProductContextEmpresa.Provider>
     )
 }
 
-export default ProductContextProvider
+export default ProductContextProviderEmpresa
