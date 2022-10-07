@@ -7,11 +7,12 @@ const productService = new ProductService()
 const ProductContext = (props) => {
 
 
+    const id = 8;
     const [products, setProducts] = useState([])
     const [productEdition, setProductEdition] = useState(null)
 
     useEffect(() => {
-        productService.readAll().then((data) => setProducts(data));
+        productService.readAll(id).then((data) => setProducts(data));
     }, [])
 
     const createProduct = (product) => {
