@@ -1,10 +1,10 @@
 import React, {createContext,useState,useEffect} from 'react';
 import { ProductService } from './ProductsServices';
 
-export const ProductContext = createContext();
+export const ProductContextEmpresa = createContext();
 const productService = new ProductService();
 
-const ProductContextProvider = (props) => {
+const ProductContextProviderEmpresa = (props) => {
 
     const [products,setProducts] = useState([]);
     const [prodcutEditon, setprodcutEditon] = useState(null);
@@ -13,8 +13,8 @@ const ProductContextProvider = (props) => {
         productService.readAll().then((data) => setProducts(data));
     },[])
 
-    const createProduct = (product) => {
-        productService.create(product)
+    const createProduct = (empresa) => {
+        productService.create(empresa)
             .then ((data) => setProducts([...products,data]));
     }
 
@@ -39,8 +39,7 @@ const ProductContextProvider = (props) => {
     }    
     
     return(
-        <ProductContext.Provider
-
+        <ProductContextEmpresa.Provider
         value = {{
             products,
             createProduct,
@@ -49,10 +48,11 @@ const ProductContextProvider = (props) => {
             updateProduct,
             prodcutEditon
         }} 
+        
         >
-            {props.chhildren}
-        </ProductContext.Provider>
+            {props.children}
+        </ProductContextEmpresa.Provider>
     )
 }
 
-export default ProductContextProvider
+export default ProductContextProviderEmpresa
