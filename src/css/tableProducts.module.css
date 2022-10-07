@@ -58,6 +58,14 @@
     padding: 15px;
 }
 
+.containerTable {
+    width: 95%;
+    height: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .thNombre {
     margin-top: 3px;
     width: 100%;
@@ -86,10 +94,20 @@
     width: 73%;
     height: 95%;
     background: #fff;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-family: Noto serif;
+    font-weight: 900;
+    color: rgb(141, 207, 236);
     border-bottom: solid 3px rgb(141, 207, 236);
 }
 
 .table {
     width: 91%;
     height: 340px;
+}
+
+.paddingBotton {
+    padding-bottom: 35px;
 }

@@ -27,12 +27,12 @@ function Vista() {
                     <p>hola</p>
                   </div>
                   <div className={table.tdNOmbre}>
-
+                    <p>como estas?</p>
                   </div>
                 </div>
                 <div className={table.thNombre}>
                   <div className={table.theadNombre}>
-                    
+
                   </div>
                   <div className={table.tdNOmbre}>
 
@@ -40,7 +40,7 @@ function Vista() {
                 </div>
                 <div className={table.thNombre}>
                   <div className={table.theadNombre}>
-                    
+
                   </div>
                   <div className={table.tdNOmbre}>
 
@@ -48,18 +48,17 @@ function Vista() {
                 </div>
                 <div className={table.thNombre}>
                   <div className={table.theadNombre}>
-                    
+
                   </div>
                   <div className={table.tdNOmbre}>
 
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
           <div className={table.table}>
-
+            
           </div>
         </div>
         {/* ))
