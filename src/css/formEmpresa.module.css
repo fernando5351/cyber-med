@@ -1,64 +1,64 @@
-.content{
-    display: flex;
-    justify-content: center;
-    margin-top: 5%;
+.content {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
 }
-.form{
-    background-color: rgb(255, 255, 255);
-    height: 60vh;
-    border-radius: 25px;
-    width: 80%;
+.form {
+  background-color: rgb(221, 35, 35);
+  height: 60vh;
+  border-radius: 25px;
+  width: 85%;
 }
-.text{
-    color: rgb(141, 207, 236);
-    text-align: center;
-    margin-top: 1%;
+.text {
+  color: rgb(141, 207, 236);
+  text-align: center;
+  margin-top: 1%;
 }
-.formempresa{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    height: 80%;
-    width: 100%;
-    margin-top: 1%;
+.formempresa {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 80%;
+  width: 100%;
+  margin-top: 1%;
 }
-.input{
-    border: none;
-    border-radius: 5px;
-    border-bottom: 2px solid #2b6696;
-    width: 40%;
-    height: 50px;
-    outline: none;
-    color: #2b6696;
-    font-size: large;
-    margin-right: 2%;
-    margin-left: 2%;
+.input {
+  border: none;
+  border-radius: 5px;
+  border-bottom: 2px solid #2b6696;
+  width: 40%;
+  height: 50px;
+  outline: none;
+  color: #2b6696;
+  font-size: large;
+  margin-right: 2%;
+  margin-left: 2%;
 }
-.select{
-    margin-top: 1%;
-    width: 25%;
-    height: 40px;
-    margin-right: 5%;
-    border-radius: 25px;
-    border: 2px solid #2b6696 ;
-    color: rgb(5, 46, 64);
-    font-size: larger;
-    outline: none;
+.select {
+  margin-top: 1%;
+  width: 25%;
+  height: 40px;
+  margin-right: 5%;
+  border-radius: 25px;
+  border: 2px solid #2b6696;
+  color: rgb(5, 46, 64);
+  font-size: larger;
+  outline: none;
 }
-.btn{
-    margin-right: 10%;
-    width: 15%;
-    margin-top: 1%;
+.btn {
+  margin-right: 10%;
+  width: 15%;
+  margin-top: 1%;
 }
-.button{
-    height: 40px;
-    width: 100%;
-    border-radius: 20px;
-    border: 2px solid #2b6696;
-    color: rgb(5, 46, 64);
-    font-size: larger;
+.button {
+  height: 40px;
+  width: 100%;
+  border-radius: 20px;
+  border: 2px solid #2b6696;
+  color: rgb(5, 46, 64);
+  font-size: larger;
 }
-::placeholder{
-    color: rgb(5, 46, 64);
-    font-size: x-large;
+::placeholder {
+  color: rgb(5, 46, 64);
+  font-size: x-large;
 }

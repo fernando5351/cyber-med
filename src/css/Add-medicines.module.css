@@ -1,53 +1,53 @@
 .containerAdd {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    flex-direction: column;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
 }
 
 .annadir {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
 .tbl {
-    border-radius: 30px;
-    margin-top: 15px;
-    width: 100%;
-    text-align: center;
-    border-collapse: collapse;
+  border-radius: 30px;
+  margin-top: 15px;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
 }
 
 .containerTab {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 90%;
 }
 
 .containerBtn {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 70%;
-    height: 20%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 70%;
+  height: 20%;
 }
 
 .containerTable {
-    width: 70%;
-    height: 80%;
-    margin-bottom: 25px;
+  width: 70%;
+  height: 80%;
+  margin-bottom: 25px;
 }
 .containerTableE {
-    width: 80%;
-    height: 80%;
-    margin-bottom: 25px;
+  width: 95%;
+  height: 80%;
+  margin-bottom: 25px;
 }
 
 .background {
-    background: #fff;
-    border-bottom: 1px solid #000;
+  background: #fff;
+  border-bottom: 1px solid #000;
 }
