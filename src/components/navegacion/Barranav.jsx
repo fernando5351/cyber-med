@@ -18,7 +18,7 @@ function Barranav(props) {
        
       </div>
       <div className={Barra.tituloCont}>
-        <p id={Barra.titulo}>{props.titulocont}</p>
+        <p id={Barra.titulo}>{props.title}</p>
       </div>
       <div className={Barra.agregar}>
 
