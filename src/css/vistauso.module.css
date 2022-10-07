@@ -12,7 +12,10 @@
   display: flex;
   justify-content: space-evenly;
   flex-flow: row wrap;
-  margin-bottom: 50px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 .subcontenedorPro {
@@ -23,13 +26,10 @@
 }
 
 .card {
-  margin-left: 3%;
-  margin-right: 3%;
-  margin-top: 3%;
-  width: 220px;
-  height: 300px;
+  width: 240px;
+  height: 240px;
   border-radius: 40px;
-  border: 1px solid rgb(69, 69, 69);
+  border: 1px solid rgb(99, 89, 89);
 }
 
 .cardContent,
@@ -38,20 +38,22 @@
   height: 88%;
   margin-top: 3%;
   margin-left: 5px;
-  border-radius: 20px;
+  border-radius: 30px;
 }
 
 .contentBtn,
 .btnVerM {
   color: rgb(0, 0, 0);
-  border-radius: 30px;
   width: 90%;
   margin-left: 5%;
   text-align: center;
   text-decoration: none;
   font-family: Noto Serif;
+  background-color: transparent;
+  font-size: 13px;
 }
 
 .btnVerM:hover {
-  font-size: large;
+  font-size: 16px;
+  cursor: pointer;
 }

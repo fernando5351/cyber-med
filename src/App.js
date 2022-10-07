@@ -9,7 +9,6 @@ import FormEmpresa from "./views/form-empresa/context/Create";
 import FormEmp from "./views/form-empresa/FormEmpresa";
 import FormEditEmpresa from "./views/form-empresa/FormEditEmpresa";
 import Medicinas from "./views/medicinas";
-import Medicamentos from "./views/vistaMedicamento/Vistauso";
 import CrateMed from "./views/productos/context/Create";
 import TipoUso from "./views/tipo_uso/create";
 import Update from "./views/productos/update";
@@ -44,7 +43,7 @@ const App = () => {
           {/* vista productos */}
           <Route path="/view-products" name="FormEditEmpresa" element={ <Table /> } />
           {/* vista para ver los Medicamentos */}
-          <Route path="/vistauso" name="medicinas" element={<Medicamentos />} />
+          {/* <Route path="/vistauso" name="medicinas" element={<Medicamentos />} /> */}
           {/* crear tipo de uso */}
           <Route path="/crear-uso" name="uso" element={<Create/>} />
           {/* crear un nuevo Medicamento */}

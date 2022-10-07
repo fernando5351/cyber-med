@@ -1,5 +1,4 @@
 .contenedorPrincipal {
-    background-color: rgb(253, 253, 253);
     margin-top: 90px;
     margin-bottom: 35px;
     padding: 9px;
@@ -14,6 +13,20 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+}
+.conteneroClass{
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+.contenedorMedicinas{
+    margin-top: 15px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
 }
 
 .buttonMed {

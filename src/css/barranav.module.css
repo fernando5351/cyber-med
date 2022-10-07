@@ -19,10 +19,10 @@
 }
 
 #titulo {
-  font-size: xx-large;
+  font-size: 40px;
   font-family: Noto Serif;
-  font-weight: 900;
-  margin-top: 2%;
+  font-weight: 500;
+  margin-top: 2.5%;
 }
 
 .annadir,
