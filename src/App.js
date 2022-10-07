@@ -18,6 +18,7 @@ import TableUso from "./views/tipo_uso/context/TableContext";
 import FormUso from "./views/tipo-consumo/context/FormUso";
 import Edituso from "./views/tipo_uso/context/Edit"
 import Edit from "./views/tipo-consumo/context/EditForm";
+import Table from "./views/productos/context/table";
 /* import Table from "./views/tipo-consumo/Table"; */
 
 
@@ -38,6 +39,8 @@ const App = () => {
           <Route path="/empresa/crear" name="formepresa" element={< FormEmpresa/>} />
           {/* Formulario para editar la empresa */}
           <Route path="/empresa/editar" name="FormEditEmpresa" element={<FormEditEmpresa /> } />
+          {/* vista productos */}
+          <Route path="/view-products" name="FormEditEmpresa" element={ <Table /> } />
           {/* vista para ver los Medicamentos */}
           <Route path="/vistauso" name="medicinas" element={<Medicamentos />} />
           {/* crear tipo de uso */}
