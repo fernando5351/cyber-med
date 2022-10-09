@@ -16,6 +16,8 @@ const UpdateProductForm = () => {
     const { uso } = useContext(ProductContextConsumo)
     const { products } = useContext(ProductContext)
 
+
+
     useEffect(() => {
         const data = JSON.parse(localStorage.getItem('editProduct'))
         if (data) setEdit(data)
@@ -31,12 +33,15 @@ const UpdateProductForm = () => {
         cantidad_medicamento: "",
         cant_gramos: "",
     }
-    const [edit, setEdit] = useState()
+
+
     const SelectState = {
         id_tipo_consumo: "",
         id_tipo_uso: ""
     }
-
+    const arryaData = { ...intial, ...SelectState}
+    
+    const [edit, setEdit] = useState(arryaData)
     const [file, setFile] = useState()
     const [preview, setPreview] = useState(imgState);
     const [product, setProduct] = useState(intial)
@@ -232,10 +237,10 @@ const UpdateProductForm = () => {
                             </div>
                             <div className={form.containerFormBtn}>
                                 <button className={form.btnForm}
-                                onClick={ (e) => {
-                                    handleCancel()
-                                    e.preventDefault()
-                                }}
+                                    onClick={(e) => {
+                                        handleCancel()
+                                        e.preventDefault()
+                                    }}
                                 >Cancelar</button>
                                 <button className={form.btnForm}
                                     onClick={(event) => {
