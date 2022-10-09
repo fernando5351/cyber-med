@@ -1,12 +1,12 @@
 import React from "react";
 import ProductContextEmpresa from "../arbol_info/ProductContextprovider";
-import Table from "../../../components/table/Tableempresa"
+import Empresa from "../../empresa/Empresa";
 
 const Tableempresa = () =>{
     return (
         <div>
             <ProductContextEmpresa>
-                <Table/>
+                <Empresa /> 
             </ProductContextEmpresa>
         </div>
     )

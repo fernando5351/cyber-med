@@ -24,7 +24,7 @@ function Tableempresa() {
 
   useEffect(()=> {
     if(prodcutEdition) setProductData(prodcutEdition);
-    localStorage.setItem('array',JSON.stringify(prodcutEdition))
+    localStorage.setItem('empresa',JSON.stringify(prodcutEdition))
   },[prodcutEdition,productData]);
 
   const EditProduct = (id) => {
@@ -96,14 +96,14 @@ function Tableempresa() {
                         src={Edit}
                         alt=""
                         onClick={() => {
-                          EditProduct();
+                          EditProduct(products.id);
                         }}
                       />
                       <img className={Barra.annadir} 
                       src={Delete} 
                       alt=""
                       onClick={()=>{
-                        Deleteproduct();
+                        Deleteproduct(products.id);
                       }} />
                     </td>
                   </tr>

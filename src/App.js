@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./views/login";
 import Home from "./views/home";
 import Create from "./views/tipo_uso/context/Create.jsx" 
-import Empresa from "./views/empresa";
+import Empresa from "./views/form-empresa/context/Table";
 import FormEmpresa from "./views/form-empresa/context/Create";
 import FormEmp from "./views/form-empresa/FormEmpresa";
 import FormEditEmpresa from "./views/form-empresa/FormEditEmpresa";
