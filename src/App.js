@@ -4,9 +4,9 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./views/login";
 import Home from "./views/home";
 import Create from "./views/tipo_uso/context/Create.jsx" 
-import Empresa from "./views/empresa";
+import Empresa from "./views/form-empresa/context/Table";
 import FormEmpresa from "./views/form-empresa/context/Create";
-import FormEditEmpresa from "./views/form-empresa/FormEditEmpresa";
+import FormEditEmpresa from "./views/form-empresa/context/Editempresa";
 import Medicinas from "./views/medicinas/Btnvistauso";
 import CrateMed from "./views/productos/context/Create";
 import TipoUso from "./views/tipo_uso/create";

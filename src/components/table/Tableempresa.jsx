@@ -1,35 +1,56 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Agregar from "../../icon/Vista/agregar.png";
 import Barra from "../../css/barranav.module.css";
 import tabla from "../../css/Add-medicines.module.css";
 import Edit from "../../icon/addMed/editar.png";
 import Delete from "../../icon/addMed/eliminar.png";
-const API = "https://lovely-lace-production.up.railway.app/empresa";
+import { ProductContextEmpresa } from "../../views/form-empresa/arbol_info/ProductContextprovider";
+
+
 
 function Tableempresa() {
+
+  const {products, deleteProduct, findProduct ,prodcutEditon} = useContext(ProductContextEmpresa)
+
   const Navigate = useNavigate();
+  console.log(products)
+  
+  const Deleteproduct = (id) => {
+    deleteProduct(id)
+  }
+
+  const [productData,setProductData] = useState()
+
+  useEffect(()=> {
+    if(prodcutEditon) setProductData(prodcutEditon);
+    localStorage.setItem('empresa',JSON.stringify(productData))
+  },[prodcutEditon,productData]);
+
+  const EditProduct = (id) => {
+    findProduct(id);
+    setTimeout(() => {
+      Navigate('/empresa/editar')
+    },100)
+  }
+  
 
   const Add = () => {
     Navigate("/empresa/crear");
   };
 
-  const editEmpresa = () => {
-    Navigate("/empresa/editar");
-  };
 
-  const [empresa, setEmpresa] = useState([]);
 
-  const fetchAPI = async () => {
-    const data = await fetch(API);
-    const dataJson = await data.json();
-    console.log(dataJson);
-    setEmpresa(dataJson);
-  };
+  // const fetchAPI = async () => {
+  //   const data = await fetch(API);
+  //   const dataJson = await data.json();
+  //   console.log(dataJson);
+  //   setEmpresa(dataJson);
+  // };
 
-  useEffect(() => {
-    fetchAPI();
-  }, []);
+  // useEffect(() => {
+  //   fetchAPI();
+  // }, []);
 
   return (
     <div className={tabla.containerAdd}>
@@ -60,25 +81,30 @@ function Tableempresa() {
             </thead>
             <tbody>
               <>
-                {empresa.map((empresa) => (
-                  <tr key={empresa.id} className={tabla.background}>
-                    <td>{empresa.nombre_empresa}</td>
-                    <td>{empresa.direccion}</td>
-                    <td>{empresa.nombre}</td>
-                    <td>{empresa.email}</td>
-                    <td>{empresa.telefono}</td>
-                    <td>{empresa.lote}</td>
-                    <td>{empresa.activo}</td>
+                {products.map((products) => (
+                  <tr key={products.id} className={tabla.background}>
+                    <td>{products.nombre_empresa}</td>
+                    <td>{products.direccion}</td>
+                    <td>{products.nombre}</td>
+                    <td>{products.email}</td>
+                    <td>{products.telefono}</td>
+                    <td>{products.lote}</td>
+                    <td>{products.activo}</td>
                     <td>
                       <img
                         className={Barra.annadir}
                         src={Edit}
                         alt=""
                         onClick={() => {
-                          editEmpresa();
+                          EditProduct(products.id);
                         }}
                       />
-                      <img className={Barra.annadir} src={Delete} alt="" />
+                      <img className={Barra.annadir} 
+                      src={Delete} 
+                      alt=""
+                      onClick={()=>{
+                        Deleteproduct(products.id);
+                      }} />
                     </td>
                   </tr>
                 ))}
