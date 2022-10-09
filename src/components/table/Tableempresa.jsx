@@ -11,7 +11,7 @@ import { ProductContextEmpresa } from "../../views/form-empresa/arbol_info/Produ
 
 function Tableempresa() {
 
-  const {products, deleteProduct, findProduct,prodcutEdition} = useContext(ProductContextEmpresa)
+  const {products, deleteProduct, findProduct ,prodcutEditon} = useContext(ProductContextEmpresa)
 
   const Navigate = useNavigate();
   console.log(products)
@@ -23,9 +23,9 @@ function Tableempresa() {
   const [productData,setProductData] = useState()
 
   useEffect(()=> {
-    if(prodcutEdition) setProductData(prodcutEdition);
-    localStorage.setItem('empresa',JSON.stringify(prodcutEdition))
-  },[prodcutEdition,productData]);
+    if(prodcutEditon) setProductData(prodcutEditon);
+    localStorage.setItem('empresa',JSON.stringify(productData))
+  },[prodcutEditon,productData]);
 
   const EditProduct = (id) => {
     findProduct(id);

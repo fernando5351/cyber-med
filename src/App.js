@@ -6,8 +6,7 @@ import Home from "./views/home";
 import Create from "./views/tipo_uso/context/Create.jsx" 
 import Empresa from "./views/form-empresa/context/Table";
 import FormEmpresa from "./views/form-empresa/context/Create";
-import FormEmp from "./views/form-empresa/FormEmpresa";
-import FormEditEmpresa from "./views/form-empresa/FormEditEmpresa";
+import FormEditEmpresa from "./views/form-empresa/context/Editempresa";
 import Medicinas from "./views/medicinas";
 import CrateMed from "./views/productos/context/Create";
 import TipoUso from "./views/tipo_uso/create";
@@ -37,7 +36,6 @@ const App = () => {
           <Route path="/medicinas" name="medicinas" element={<Medicinas />} />
           {/* Formulario para crear empresa */}
           <Route path="/empresa/crear" name="formepresa" element={< FormEmpresa/>} />
-          <Route path="/empresa/crear1" name="formepresa" element={< FormEmp/>} />
           {/* Formulario para editar la empresa */}
           <Route path="/empresa/editar" name="FormEditEmpresa" element={<FormEditEmpresa /> } />
           {/* vista productos */}
