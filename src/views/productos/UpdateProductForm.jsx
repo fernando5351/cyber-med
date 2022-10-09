@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import Navbar from "../../components/navegacion/Navbar";
 import form from "../../css/formProduct.module.css";
 import { useNavigate } from 'react-router-dom';
@@ -10,11 +10,17 @@ import { ProductContextProduct } from "./arbol_info/ProductContextProvider"
 import { ProductContext } from "../tipo_uso/arbol_info/productContextprovider"
 
 
-const Form = () => {
+const UpdateProductForm = () => {
 
-    const { createProduct } = useContext(ProductContextProduct)
+    const { updateProduct } = useContext(ProductContextProduct)
     const { uso } = useContext(ProductContextConsumo)
     const { products } = useContext(ProductContext)
+
+    useEffect(() => {
+        const data = JSON.parse(localStorage.getItem('editProduct'))
+        if (data) setEdit(data)
+    }, [])
+
 
     const imgState = "https://res.cloudinary.com/dtbs1ycrd/image/upload/v1664686909/upload/subir_y1dery.png"
     const intial = {
@@ -25,7 +31,7 @@ const Form = () => {
         cantidad_medicamento: "",
         cant_gramos: "",
     }
-
+    const [edit, setEdit] = useState()
     const SelectState = {
         id_tipo_consumo: "",
         id_tipo_uso: ""
@@ -47,7 +53,14 @@ const Form = () => {
                     setPreview(reader.result)
                 }
 
-                setFile(image)
+                const img = edit.img_url;
+                console.log(img);
+                console.log(preview);
+                if (preview !== imgState) {
+                    setFile(image)
+                } else {
+                    setFile(img)
+                }
             } else {
                 Swal({
                     title: "El archivo debe de ser una imagen",
@@ -58,10 +71,10 @@ const Form = () => {
         }
     }
 
-    const onChange = (e) => {
+    const onChange = (data, field) => {
         setProduct({
             ...product,
-            [e.target.name]: e.target.value
+            [field]: data,
         })
     }
 
@@ -77,10 +90,11 @@ const Form = () => {
         // { value: "Opcion 1", label: "Opcion 1" },
     }));
 
-    const usoSelect = products.map( (uso) => ({
+    const usoSelect = products.map((uso) => ({
         label: uso.tipo_uso,
         value: uso.id
     }))
+
     const navigate = useNavigate()
     const {
         nombre,
@@ -108,14 +122,18 @@ const Form = () => {
             const formData = new FormData(form);
 
             //formData formulario xd
-            createProduct(formData)
+            updateProduct(formData)
 
             setPreview(imgState)
             setTimeout(() => {
-                navigate("/medicinas")
+                navigate("/home")
             }, 200);
 
         }
+    }
+
+    const handleCancel = () => {
+        console.log(edit);
     }
 
     return (
@@ -136,24 +154,28 @@ const Form = () => {
                                     <label id={form.color}>NOMBRE :</label>
                                     <input id={form.estilo} type="text" name="nombre"
                                         onChange={onChange}
+                                        value={edit.nombre}
                                     />
                                 </div>
                                 <div className={form.contenedorLinea}>
                                     <label id={form.color}>PRECIO :</label>
                                     <input id={form.estilo} type="text" name="precios"
                                         onChange={onChange}
+                                        value={edit.precios}
                                     />
                                 </div>
                                 <div className={form.contenedorLinea}>
                                     <label id={form.color}>GRAMOS :</label>
                                     <input id={form.estilo} type="text" name="cant_gramos"
                                         onChange={onChange}
+                                        value={edit.cant_gramos}
                                     />
                                 </div>
                                 <div className={form.contenedorLinea}>
                                     <label id={form.color}>MARCA :</label>
                                     <input id={form.estilo} type="text" name="marca"
                                         onChange={onChange}
+                                        value={edit.marca}
                                     />
                                 </div>
                             </div>
@@ -167,6 +189,7 @@ const Form = () => {
                                     <label id={form.fontStyle}>DESCRIPCION :</label>
                                     <input id={form.colorInfo} type="text" name="descripcion"
                                         onChange={onChange}
+                                        value={edit.descripcion}
                                     />
                                 </div>
                                 <div className={form.cajaSelect}>
@@ -177,6 +200,7 @@ const Form = () => {
                                             options={usoSelect}
                                             name="id_tipo_uso"
                                             onChange={dataChange}
+                                            value="5"
                                         />
                                     </div>
                                     <div className={form.estilo}>
@@ -186,6 +210,7 @@ const Form = () => {
                                             className={form.options}
                                             name="id_tipo_consumo"
                                             onChange={dataChange}
+                                            value={edit.id_tipo_consumo}
                                         />
                                     </div>
                                 </div>
@@ -193,18 +218,25 @@ const Form = () => {
                                     <label id={form.estiloColor}>CANTIDAD :</label>
                                     <input id={form.colorInfo} type="text" name="cantidad_medicamento"
                                         onChange={onChange}
+                                        value={edit.cantidad_medicamento}
                                     />
                                 </div>
                                 <div className={`${form.caja} ${form.estiloBottom}`}>
                                     <label id={form.estiloColor}>LOTE :</label>
                                     <input id={form.colorInfo} type="text" name='lote'
                                         onChange={onChange}
+                                        value={edit.lote}
                                     />
                                 </div>
 
                             </div>
                             <div className={form.containerFormBtn}>
-                                <button className={form.btnForm}>Cancelar</button>
+                                <button className={form.btnForm}
+                                onClick={ (e) => {
+                                    handleCancel()
+                                    e.preventDefault()
+                                }}
+                                >Cancelar</button>
                                 <button className={form.btnForm}
                                     onClick={(event) => {
                                         handleSubmit()
@@ -222,4 +254,4 @@ const Form = () => {
     )
 }
 
-export default Form
+export default UpdateProductForm
