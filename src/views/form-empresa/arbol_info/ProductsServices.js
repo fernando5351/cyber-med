@@ -9,7 +9,7 @@ export class ProductService {
     }
 
     readAll(){
-        return axios.get(`${this.url}/empresa`).then(res => res.data);
+        return axios.get(`${this.url}/empresa`).then((res) => res.data);
     }
 
     update(empresa){
@@ -17,6 +17,6 @@ export class ProductService {
     }
 
     delete(id){
-        return axios.delete(`${this.url}//empresa${id}`).then(res => res.data);
+        return axios.delete(`${this.url}/empresa/${id}`).then(res => res.data);
     }
 }

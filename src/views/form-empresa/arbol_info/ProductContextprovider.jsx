@@ -13,8 +13,8 @@ const ProductContextProviderEmpresa = (props) => {
         productService.readAll().then((data) => setProducts(data));
     },[])
 
-    const createProduct = (empresa) => {
-        productService.create(empresa)
+    const createProduct = (product) => {
+        productService.create(product)
             .then ((data) => setProducts([...products,data]));
     }
 
@@ -32,9 +32,12 @@ const ProductContextProviderEmpresa = (props) => {
     const updateProduct = (product) => {
         productService.update(product)
             .then((data) =>setProducts(
-                products.map((p)=>(p.id === products.id ? data: product))
-            ))
-            setprodcutEditon(null)
+                products.map((p)=>(p.id === product.id ? data: product))
+             )
+            
+            )
+            
+        setprodcutEditon(null)
 
     }    
     
