@@ -41,9 +41,11 @@
   margin-right: 5%;
   border-radius: 25px;
   border: 2px solid #2b6696;
-  color: rgb(5, 46, 64);
+  color: rgb(255, 255, 255);
   font-size: larger;
   outline: none;
+  background-color: #2b6696;
+  cursor: pointer;
 }
 .btn {
   margin-right: 10%;
@@ -57,8 +59,20 @@
   border: 2px solid #2b6696;
   color: rgb(5, 46, 64);
   font-size: larger;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
 }
 ::placeholder {
   color: rgb(5, 46, 64);
   font-size: x-large;
+}
+
+.select:hover{
+  background-color: rgb(255, 255, 255);
+  color: #2b6696;
+}
+
+.button:hover{
+  background-color: #2b6696;
+  color: rgb(255, 255, 255);
 }
