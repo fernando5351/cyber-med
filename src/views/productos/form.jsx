@@ -113,7 +113,7 @@ const Form = () => {
             setPreview(imgState)
             setTimeout(() => {
                 navigate("/medicinas")
-            }, 200);
+            }, 180);
 
         }
     }

@@ -21,9 +21,7 @@ const ProductContext = (props) => {
 
     const createProduct = (product) => {
         productService.create(product)
-            .then(data => setProducts([...products, data]))
-            .then( data => data)
-            .then(data => console.log(data))
+            .then( (data) => setProducts([...products, data]))
     }
 
     const productsDelete = (id) => {

@@ -2,8 +2,8 @@
 
 export class ProductService{
 
-    url = "https://lovely-lace-production.up.railway.app"
-    //url = "http://localhost:4000"
+    //url = "https://lovely-lace-production.up.railway.app"
+    url = "http://localhost:4000"
 
     create(uso){
         return axios.post(`${this.url}/tipo_uso`,uso).then(res => res.data);
