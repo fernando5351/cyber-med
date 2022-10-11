@@ -48,11 +48,12 @@ const Form = () => {
 
                 setPreview(image)
             } else {
-                Swal({
-                    title: "El archivo debe de ser una imagen",
-                    icon: "error",
-                    timer: "2000"
-                })
+                Swal.fire({
+                    icon: 'error',
+                    title: 'ERROR',
+                    text: 'El archivo debe ser una imagen',
+                    timer: '2000',
+                }).then((res) => console.log(res))
             }
         }
     }
