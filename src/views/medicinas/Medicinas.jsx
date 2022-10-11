@@ -47,7 +47,7 @@ function Medicinas() {
                           onClick={(e) => {
                             handleView(products.id)
                             e.preventDefault()
-                          }}>VER MÁS</button>
+                          }}>{products.nombre}</button>
                       </div>
                     </div>
                   </div>

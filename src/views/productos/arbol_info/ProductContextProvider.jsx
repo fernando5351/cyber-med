@@ -7,7 +7,7 @@ const productService = new ProductService()
 const ProductContext = (props) => {
 
     const [products, setProducts] = useState([])
-    const [ viewProducts, setViewProducts ] = useState([])
+    const [viewProducts, setViewProducts] = useState([])
     const [productEdition, setProductEdition] = useState(null)
 
     useEffect(() => {
@@ -16,12 +16,13 @@ const ProductContext = (props) => {
 
     const viewProduct = (id) => {
         productService.readProduct(id)
-            .then( (data) => setViewProducts(data) )
+            .then((data) => setViewProducts(data))
     }
 
     const createProduct = (product) => {
         productService.create(product)
-            .then( (data) => setProducts([...products, data]))
+            .then(res => console.log(res))
+            console.log(products)
     }
 
     const productsDelete = (id) => {

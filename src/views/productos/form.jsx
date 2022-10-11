@@ -4,7 +4,7 @@ import form from "../../css/formProduct.module.css";
 import { useNavigate } from 'react-router-dom';
 //import imgsubir from "../../icon/Create/subir.png";
 import Select from "react-select";
-import Swal from 'sweetalert'
+import Swal from 'sweetalert2'
 import { ProductContextConsumo } from "../tipo-consumo/arbol_info/ProductContextProvider"
 import { ProductContextProduct } from "./arbol_info/ProductContextProvider"
 import { ProductContext } from "../tipo_uso/arbol_info/productContextprovider"
@@ -31,7 +31,6 @@ const Form = () => {
         id_tipo_uso: ""
     }
 
-    const [file, setFile] = useState()
     const [preview, setPreview] = useState(imgState);
     const [product, setProduct] = useState(intial)
     const [state, setState] = useState(SelectState)
@@ -47,7 +46,7 @@ const Form = () => {
                     setPreview(reader.result)
                 }
 
-                setFile(image)
+                setPreview(image)
             } else {
                 Swal({
                     title: "El archivo debe de ser una imagen",
@@ -77,7 +76,7 @@ const Form = () => {
         // { value: "Opcion 1", label: "Opcion 1" },
     }));
 
-    const usoSelect = products.map( (uso) => ({
+    const usoSelect = products.map((uso) => ({
         label: uso.tipo_uso,
         value: uso.id
     }))
@@ -94,13 +93,13 @@ const Form = () => {
     const {
         id_tipo_uso,
         id_tipo_consumo } = state
-    const handleSubmit = async (event) => {
-        if (nombre === "" || precios === "" || descripcion === "" || id_tipo_consumo === "" || id_tipo_uso === "" || marca === "" || cant_gramos === "" || cantidad_medicamento === "" || file === "https://res.cloudinary.com/dtbs1ycrd/image/upload/v1664686909/upload/subir_y1dery.png") {
-            Swal({
+    const handleSubmit = async () => {
+        if (nombre === "" || precios === "" || descripcion === "" || id_tipo_consumo === "" || id_tipo_uso === "" || marca === "" || cant_gramos === "" || cantidad_medicamento === "" || preview === "https://res.cloudinary.com/dtbs1ycrd/image/upload/v1664686909/upload/subir_y1dery.png") {
+            Swal.fire({
                 icon: 'error',
                 title: 'ERROR',
                 text: 'TODOS LOS CAMPOS SON REQUERIDOS',
-                timer: '2000'
+                timer: '2000',
             }).then((res) => console.log(res))
         } else {
             const form = document.getElementById('formData')
@@ -110,11 +109,31 @@ const Form = () => {
             //formData formulario xd
             createProduct(formData)
 
-            setPreview(imgState)
+            let timerInterval
+            Swal.fire({
+                title: 'Guardando cambios',
+                text: 'por favor espere, en breve sera redirigido en breve.',
+                timer: 2000,
+                timerProgressBar: true,
+                didOpen: () => {
+                    Swal.showLoading()
+                    const b = Swal.getHtmlContainer().querySelector('b')
+                    timerInterval = setInterval(() => {
+                        b.textContent = Swal.getTimerLeft()
+                    }, 100)
+                },
+                willClose: () => {
+                    clearInterval(timerInterval)
+                }
+            }).then((result) => {
+                /* Read more about handling dismissals below */
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    console.log('I was closed by the timer')
+                }
+            })
             setTimeout(() => {
                 navigate("/medicinas")
-            }, 180);
-
+            }, 2800);
         }
     }
 
