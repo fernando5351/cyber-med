@@ -28,32 +28,41 @@
 .card {
   width: 240px;
   height: 240px;
-  border-radius: 40px;
-  border: 1px solid rgb(99, 89, 89);
 }
 
-.cardContent,
-.imgPro {
-  width: 95%;
-  height: 88%;
-  margin-top: 3%;
-  margin-left: 5px;
+.cardContent {
+  width: 90%;
+  height: 80%;
   border-radius: 30px;
+  border:  1px solid #8DCFEC;
+}
+
+.imgPro{
+  border-radius: 5px;
+  width: 80%;
+  height: 80%;
+  margin-top: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 10%;
 }
 
 .contentBtn,
 .btnVerM {
-  color: rgb(0, 0, 0);
+  color: #3271A5;
   width: 90%;
   margin-left: 5%;
+  margin-top: 2%;
   text-align: center;
   text-decoration: none;
   font-family: Noto Serif;
   background-color: transparent;
-  font-size: 13px;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 .btnVerM:hover {
-  font-size: 16px;
+  font-size: 21px;
   cursor: pointer;
 }

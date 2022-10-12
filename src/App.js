@@ -7,14 +7,14 @@ import Create from "./views/tipo_uso/context/Create.jsx"
 import Empresa from "./views/form-empresa/context/Table";
 import FormEmpresa from "./views/form-empresa/context/Create";
 import FormEditEmpresa from "./views/form-empresa/context/Editempresa";
-import Medicinas from "./views/medicinas";
+import Medicinas from "./views/medicinas/Btnvistauso";
 import CrateMed from "./views/productos/context/Create";
 import TipoUso from "./views/tipo_uso/create";
-import Update from "./views/productos/update";
+import Update from "./views/productos/context/UpdateProduct";
 import NotFound from "./views/NotFound/NotFound";
 import TipoConsumo from "./views/tipo-consumo/context/TipoConsumo";
 import TableUso from "./views/tipo_uso/context/TableContext";
-import FormUso from "./views/tipo-consumo/context/FormUso";
+import FormUso from "./views/tipo-consumo/context/FormConsumo";
 import Edituso from "./views/tipo_uso/context/Edit"
 import Edit from "./views/tipo-consumo/context/EditForm";
 import Table from "./views/productos/context/table";
@@ -47,7 +47,7 @@ const App = () => {
           {/* crear un nuevo Medicamento */}
           <Route path="/medicinas/crear" name="medicinas" element={<CrateMed />} />
           {/* actualizar un Medicamento */}
-          <Route path="/medicinas/actualizar" name="medicinas" element={<Update />} />
+          <Route path="/medicinas/actualizar-product" name="medicinas" element={<Update />} />
           {/* listar tipo de consumo */}
           <Route path="/medicinas/listar-consumo" name="medicinas" element={<TipoConsumo />} />
           {/* editar un tipo de consumo */}

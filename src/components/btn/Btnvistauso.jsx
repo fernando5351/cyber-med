@@ -11,7 +11,7 @@ function Btnvistauso() {
             <img className={Btnview.imgPro} src={med} alt="" />
           </div>
           <div className={Btnview.contentBtn}>
-            <button className={Btnview.btnVerM}>VER MÁS</button>
+            <button className={Btnview.btnVerM}>VER MAS</button>
           </div>
         </div>
       </div>

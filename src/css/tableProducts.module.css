@@ -46,6 +46,10 @@
   align-items: center;
 }
 
+.padingImg{
+  padding: 15px;
+}
+
 .img {
   height: 100%;
   width: 100%;
@@ -170,4 +174,5 @@
   border-radius: 25px;
   font-size: 16px;
   font-family: Noto serif;
+  cursor: pointer;
 }

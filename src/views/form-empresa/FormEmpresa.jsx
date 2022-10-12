@@ -87,8 +87,8 @@ function FormEmpresa() {
               <option value="" defaultValue="">
                 ESTADO
               </option>
-              <option value={1}>activo</option>
-              <option value={0}>inactivo</option>
+              <option value={1}>ACTIVO</option>
+              <option value={0}>INACTIVO</option>
             </select>
             <div className={Style.btn}>
               <button

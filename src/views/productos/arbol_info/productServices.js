@@ -9,6 +9,9 @@ export class ProductService {
         return axios.post(`${this.url}/products`, medicamento).then( res => res.data);
     }
 
+    readProduct (id) {
+        return axios.get(`${this.url}/products/${id}`).then( res => res.data)
+    }
     readAll () {
        return axios.get(`${this.url}/products`).then( res => res.data);
     }

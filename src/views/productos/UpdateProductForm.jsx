@@ -1,20 +1,28 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import Navbar from "../../components/navegacion/Navbar";
 import form from "../../css/formProduct.module.css";
 import { useNavigate } from 'react-router-dom';
 //import imgsubir from "../../icon/Create/subir.png";
 import Select from "react-select";
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert'
 import { ProductContextConsumo } from "../tipo-consumo/arbol_info/ProductContextProvider"
 import { ProductContextProduct } from "./arbol_info/ProductContextProvider"
 import { ProductContext } from "../tipo_uso/arbol_info/productContextprovider"
 
 
-const Form = () => {
+const UpdateProductForm = () => {
 
-    const { createProduct } = useContext(ProductContextProduct)
+    const { updateProduct } = useContext(ProductContextProduct)
     const { uso } = useContext(ProductContextConsumo)
     const { products } = useContext(ProductContext)
+
+
+
+    useEffect(() => {
+        const data = JSON.parse(localStorage.getItem('editProduct'))
+        if (data) setEdit(data)
+    }, [])
+
 
     const imgState = "https://res.cloudinary.com/dtbs1ycrd/image/upload/v1664686909/upload/subir_y1dery.png"
     const intial = {
@@ -26,11 +34,15 @@ const Form = () => {
         cant_gramos: "",
     }
 
+
     const SelectState = {
         id_tipo_consumo: "",
         id_tipo_uso: ""
     }
-
+    const arryaData = { ...intial, ...SelectState}
+    
+    const [edit, setEdit] = useState(arryaData)
+    const [file, setFile] = useState()
     const [preview, setPreview] = useState(imgState);
     const [product, setProduct] = useState(intial)
     const [state, setState] = useState(SelectState)
@@ -46,22 +58,28 @@ const Form = () => {
                     setPreview(reader.result)
                 }
 
-                setPreview(image)
+                const img = edit.img_url;
+                console.log(img);
+                console.log(preview);
+                if (preview !== imgState) {
+                    setFile(image)
+                } else {
+                    setFile(img)
+                }
             } else {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'ERROR',
-                    text: 'El archivo debe ser una imagen',
-                    timer: '2000',
-                }).then((res) => console.log(res))
+                Swal({
+                    title: "El archivo debe de ser una imagen",
+                    icon: "error",
+                    timer: "2000"
+                })
             }
         }
     }
 
-    const onChange = (e) => {
+    const onChange = (data, field) => {
         setProduct({
             ...product,
-            [e.target.name]: e.target.value
+            [field]: data,
         })
     }
 
@@ -81,6 +99,7 @@ const Form = () => {
         label: uso.tipo_uso,
         value: uso.id
     }))
+
     const navigate = useNavigate()
     const {
         nombre,
@@ -94,13 +113,13 @@ const Form = () => {
     const {
         id_tipo_uso,
         id_tipo_consumo } = state
-    const handleSubmit = async () => {
-        if (nombre === "" || precios === "" || descripcion === "" || id_tipo_consumo === "" || id_tipo_uso === "" || marca === "" || cant_gramos === "" || cantidad_medicamento === "" || preview === "https://res.cloudinary.com/dtbs1ycrd/image/upload/v1664686909/upload/subir_y1dery.png") {
-            Swal.fire({
+    const handleSubmit = async (event) => {
+        if (nombre === "" || precios === "" || descripcion === "" || id_tipo_consumo === "" || id_tipo_uso === "" || marca === "" || cant_gramos === "" || cantidad_medicamento === "" || file === "https://res.cloudinary.com/dtbs1ycrd/image/upload/v1664686909/upload/subir_y1dery.png") {
+            Swal({
                 icon: 'error',
                 title: 'ERROR',
                 text: 'TODOS LOS CAMPOS SON REQUERIDOS',
-                timer: '2000',
+                timer: '2000'
             }).then((res) => console.log(res))
         } else {
             const form = document.getElementById('formData')
@@ -108,34 +127,18 @@ const Form = () => {
             const formData = new FormData(form);
 
             //formData formulario xd
-            createProduct(formData)
+            updateProduct(formData)
 
-            let timerInterval
-            Swal.fire({
-                title: 'Guardando cambios',
-                text: 'por favor espere, en breve sera redirigido en breve.',
-                timer: 2000,
-                timerProgressBar: true,
-                didOpen: () => {
-                    Swal.showLoading()
-                    const b = Swal.getHtmlContainer().querySelector('b')
-                    timerInterval = setInterval(() => {
-                        b.textContent = Swal.getTimerLeft()
-                    }, 100)
-                },
-                willClose: () => {
-                    clearInterval(timerInterval)
-                }
-            }).then((result) => {
-                /* Read more about handling dismissals below */
-                if (result.dismiss === Swal.DismissReason.timer) {
-                    console.log('I was closed by the timer')
-                }
-            })
+            setPreview(imgState)
             setTimeout(() => {
-                navigate("/medicinas")
-            }, 2800);
+                navigate("/home")
+            }, 200);
+
         }
+    }
+
+    const handleCancel = () => {
+        console.log(edit);
     }
 
     return (
@@ -156,24 +159,28 @@ const Form = () => {
                                     <label id={form.color}>NOMBRE :</label>
                                     <input id={form.estilo} type="text" name="nombre"
                                         onChange={onChange}
+                                        value={edit.nombre}
                                     />
                                 </div>
                                 <div className={form.contenedorLinea}>
                                     <label id={form.color}>PRECIO :</label>
                                     <input id={form.estilo} type="text" name="precios"
                                         onChange={onChange}
+                                        value={edit.precios}
                                     />
                                 </div>
                                 <div className={form.contenedorLinea}>
                                     <label id={form.color}>GRAMOS :</label>
                                     <input id={form.estilo} type="text" name="cant_gramos"
                                         onChange={onChange}
+                                        value={edit.cant_gramos}
                                     />
                                 </div>
                                 <div className={form.contenedorLinea}>
                                     <label id={form.color}>MARCA :</label>
                                     <input id={form.estilo} type="text" name="marca"
                                         onChange={onChange}
+                                        value={edit.marca}
                                     />
                                 </div>
                             </div>
@@ -187,6 +194,7 @@ const Form = () => {
                                     <label id={form.fontStyle}>DESCRIPCION :</label>
                                     <input id={form.colorInfo} type="text" name="descripcion"
                                         onChange={onChange}
+                                        value={edit.descripcion}
                                     />
                                 </div>
                                 <div className={form.cajaSelect}>
@@ -197,6 +205,7 @@ const Form = () => {
                                             options={usoSelect}
                                             name="id_tipo_uso"
                                             onChange={dataChange}
+                                            value="5"
                                         />
                                     </div>
                                     <div className={form.estilo}>
@@ -206,6 +215,7 @@ const Form = () => {
                                             className={form.options}
                                             name="id_tipo_consumo"
                                             onChange={dataChange}
+                                            value={edit.id_tipo_consumo}
                                         />
                                     </div>
                                 </div>
@@ -213,18 +223,25 @@ const Form = () => {
                                     <label id={form.estiloColor}>CANTIDAD :</label>
                                     <input id={form.colorInfo} type="text" name="cantidad_medicamento"
                                         onChange={onChange}
+                                        value={edit.cantidad_medicamento}
                                     />
                                 </div>
                                 <div className={`${form.caja} ${form.estiloBottom}`}>
                                     <label id={form.estiloColor}>LOTE :</label>
                                     <input id={form.colorInfo} type="text" name='lote'
                                         onChange={onChange}
+                                        value={edit.lote}
                                     />
                                 </div>
 
                             </div>
                             <div className={form.containerFormBtn}>
-                                <button className={form.btnForm}>Cancelar</button>
+                                <button className={form.btnForm}
+                                    onClick={(e) => {
+                                        handleCancel()
+                                        e.preventDefault()
+                                    }}
+                                >Cancelar</button>
                                 <button className={form.btnForm}
                                     onClick={(event) => {
                                         handleSubmit()
@@ -242,4 +259,4 @@ const Form = () => {
     )
 }
 
-export default Form
+export default UpdateProductForm

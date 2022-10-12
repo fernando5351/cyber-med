@@ -25,6 +25,7 @@ function Formulario() {
   const saveProduct = () => {
     //console.log(consumo);
     createProduct(consumo)
+    console.log(consumo);
     setConsumo(initialData)
     navigate("/medicinas/listar-consumo")
   }
@@ -56,6 +57,7 @@ function Formulario() {
                 <div className={Form.botones}>
                   <button name="guardar" onClick={(e) => {
                     saveProduct()
+                    e.preventDefault()
                   }} className={Form.buton1}>GUARDAR</button>
                   <button type="reset" name="eliminar" className={Form.buton2}>LIMPIAR</button>
                 </div>
