@@ -7,6 +7,9 @@ import Create from "./views/tipo_uso/context/Create.jsx"
 import Empresa from "./views/form-empresa/context/Table";
 import FormEmpresa from "./views/form-empresa/context/Create";
 import FormEditEmpresa from "./views/form-empresa/context/Editempresa";
+import Lote from "./views/lote/Lote";
+import FormLote from "./views/form-lote/FormLote";
+import FormEditLote from "./views/form-lote/FormEditLote";
 import Medicinas from "./views/medicinas/Btnvistauso";
 import CrateMed from "./views/productos/context/Create";
 import TipoUso from "./views/tipo_uso/create";
@@ -32,6 +35,12 @@ const App = () => {
           <Route path="/home" name="home" element={<Home />} />
           {/* vista de proveedores */}
           <Route path="/empresa" name="medicinas" element={<Empresa />} />
+          {/* vista Lote */}
+          <Route path="/empresa/lote" name="lote" element={<Lote />} />
+          {/* Formulario para crear Lote */}
+          <Route path="/empresa/lote/crear-lote" name="lote" element={<FormLote />} />
+          {/* Formulario para editar Lote */}
+          <Route path="/empresa/lote/editar-lote" name="lote" element={<FormEditLote />} />
           {/* vista de tags medicinas */}
           <Route path="/medicinas" name="medicinas" element={<Medicinas />} />
           {/* Formulario para crear empresa */}

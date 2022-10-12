@@ -42,7 +42,7 @@ function Navbar() {
           </li>
           <li>
             <button className={Nav.btnmenu} onClick={empresa}>
-              PROVEEDORES
+              EMPRESA
             </button>
           </li>
           <li>
