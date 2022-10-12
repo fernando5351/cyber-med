@@ -13,7 +13,7 @@ function FormEmpresa() {
     direccion: "",
     telefono: "",
     email: "",
-    lote: "",
+    id_lote: "",
     activo: "",
   };
 
@@ -79,7 +79,7 @@ function FormEmpresa() {
             <input
               className={Style.input}
               type="text"
-              name="lote"
+              name="id_lote"
               placeholder="Lote"
               onChange={onChange}
             />
