@@ -88,7 +88,7 @@ function Tableempresa() {
                     <td>{products.nombre}</td>
                     <td>{products.email}</td>
                     <td>{products.telefono}</td>
-                    <td>{products.lote}</td>
+                    <td>{products.detalle_producto}</td>
                     <td>{products.activo}</td>
                     <td>
                       <img
