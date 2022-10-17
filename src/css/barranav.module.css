@@ -25,6 +25,41 @@
   margin-top: 2.5%;
 }
 
+.back{
+  cursor: pointer;
+  height: 60px;
+  width: 60px;
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  margin-right: 90%;
+  border-radius: 50px;
+  box-shadow: 5px 5px 15px 5px #777272;
+}
+
+.back2{
+  cursor: pointer;
+  height: 60px;
+  width: 60px;
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50px;
+  margin-top: 20px;
+  margin-left: 100px;
+  margin-bottom: -50px;
+  box-shadow: 5px 5px 15px 5px #777272;
+}
+
+.viewLote{
+  cursor: pointer;
+  height: 60px;
+  width: 60px;
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  margin-right: 90%;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px 5px #777272;
+}
+
 .annadir,
 .atras {
   cursor: pointer;
@@ -38,6 +73,30 @@
 }
 
 .annadir:hover {
+  transform: scale(1.2);
+  background-color: rgb(255, 255, 255);
+  transition-duration: 0s;
+  border-style: solid;
+  border-color: rgb(141, 207, 236);
+}
+
+.back2:hover{
+  transform: scale(1.2);
+  background-color: rgb(255, 255, 255);
+  transition-duration: 0s;
+  border-style: solid;
+  border-color: rgb(141, 207, 236);
+}
+
+.viewLote:hover{
+  transform: scale(1.2);
+  background-color: rgb(255, 255, 255);
+  transition-duration: 0s;
+  border-style: solid;
+  border-color: rgb(141, 207, 236);
+}
+
+.back:hover{
   transform: scale(1.2);
   background-color: rgb(255, 255, 255);
   transition-duration: 0s;

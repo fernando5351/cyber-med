@@ -1,6 +1,7 @@
 import React, { useState, useEffect,useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Agregar from "../../icon/Vista/agregar.png";
+import icoLote from "../../icon/Vista/lote.png"
 import Barra from "../../css/barranav.module.css";
 import tabla from "../../css/Add-medicines.module.css";
 import Edit from "../../icon/addMed/editar.png";
@@ -39,6 +40,10 @@ function Tableempresa() {
     Navigate("/empresa/crear");
   };
 
+  const viewLote = () => {
+    Navigate("/empresa/lote")
+  } 
+
 
 
   // const fetchAPI = async () => {
@@ -56,6 +61,15 @@ function Tableempresa() {
     <div className={tabla.containerAdd}>
       <div className={tabla.containerTab}>
         <div className={tabla.containerBtn}>
+        <img
+            className={Barra.viewLote}
+            src={icoLote}
+            alt="viewLote"
+            onClick={() => {
+              viewLote();
+            }} 
+          />
+
           <img
             className={Barra.annadir}
             src={Agregar}
