@@ -21,7 +21,7 @@ const ProductContext = (props) => {
 
     const createProduct = (product) => {
         productService.create(product)
-            .then(res => console.log(res))
+            .then( data => setProducts([...products + data]))
             console.log(products)
     }
 

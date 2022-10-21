@@ -160,7 +160,7 @@ const Form = () => {
                                 </div>
                                 <div className={form.contenedorLinea}>
                                     <label id={form.color}>PRECIO :</label>
-                                    <input id={form.estilo} type="number" 
+                                    <input name='precios' id={form.estilo} type="number" 
                                         onChange={onChange}
                                     />
                                 </div>

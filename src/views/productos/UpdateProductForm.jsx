@@ -16,15 +16,12 @@ const UpdateProductForm = () => {
     const { uso } = useContext(ProductContextConsumo)
     const { products } = useContext(ProductContext)
 
-
-
     useEffect(() => {
         const data = JSON.parse(localStorage.getItem('editProduct'))
         if (data) setEdit(data)
     }, [])
 
 
-    const imgState = "https://res.cloudinary.com/dtbs1ycrd/image/upload/v1664686909/upload/subir_y1dery.png"
     const intial = {
         nombre: "",
         precios: "",
@@ -39,11 +36,19 @@ const UpdateProductForm = () => {
         id_tipo_consumo: "",
         id_tipo_uso: ""
     }
-    const arryaData = { ...intial, ...SelectState}
-    
+    const arryaData = { ...intial, ...SelectState }
     const [edit, setEdit] = useState(arryaData)
+
+
+    setTimeout(() => {
+        let img = edit.img_url
+        const imgState = img
+        console.log(imgState);
+    }, 200);
+
+
     const [file, setFile] = useState()
-    const [preview, setPreview] = useState(imgState);
+    const [preview, setPreview] = useState();
     const [product, setProduct] = useState(intial)
     const [state, setState] = useState(SelectState)
 
@@ -61,7 +66,7 @@ const UpdateProductForm = () => {
                 const img = edit.img_url;
                 console.log(img);
                 console.log(preview);
-                if (preview !== imgState) {
+                if (preview !== edit) {
                     setFile(image)
                 } else {
                     setFile(img)
@@ -129,7 +134,6 @@ const UpdateProductForm = () => {
             //formData formulario xd
             updateProduct(formData)
 
-            setPreview(imgState)
             setTimeout(() => {
                 navigate("/home")
             }, 200);
