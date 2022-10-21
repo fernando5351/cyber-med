@@ -21,7 +21,6 @@ function Vista() {
   }, [productEdition, productData])
 
   const handleDelete = (id) => {
-    alert("desea eliminar el producto con el id " + id)
     productsDelete(id)
     navigate("/medicinas")
   }
