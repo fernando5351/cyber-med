@@ -226,6 +226,7 @@ const Form = () => {
                             <div className={form.containerFormBtn}>
                                 <button className={form.btnForm}>Cancelar</button>
                                 <button className={form.btnForm}
+                                id="b"
                                     onClick={(event) => {
                                         handleSubmit()
                                         event.preventDefault()
