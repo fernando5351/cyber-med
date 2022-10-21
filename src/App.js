@@ -7,9 +7,9 @@ import Create from "./views/tipo_uso/context/Create.jsx"
 import Empresa from "./views/form-empresa/context/Table";
 import FormEmpresa from "./views/form-empresa/context/Create";
 import FormEditEmpresa from "./views/form-empresa/context/Editempresa";
-import Lote from "./views/lote/Lote";
-import FormLote from "./views/form-lote/FormLote";
-import FormEditLote from "./views/form-lote/FormEditLote";
+import Lote from "./views/form-lote/context/table.jsx";
+import FormLote from "./views/form-lote/context/Create";
+import FormEditLote from "./views/form-lote/context/Edit";
 import Medicinas from "./views/medicinas/Btnvistauso";
 import CrateMed from "./views/productos/context/Create";
 import TipoUso from "./views/tipo_uso/create";
