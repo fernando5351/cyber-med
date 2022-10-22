@@ -30,26 +30,33 @@
   height: 50px;
   outline: none;
   color: #2b6696;
-  font-size: large;
+  font-size: 24px;
   margin-right: 2%;
   margin-left: 2%;
+  background-color: rgb(255, 255, 255);
+}
+.letter{
+  font-size: large;
+  color: #2b6696;
+  font-weight: 500;
 }
 .select {
   margin-top: 1%;
-  width: 25%;
+  width: 30%;
   height: 40px;
   margin-right: 5%;
+  margin-left: 9%;
   border-radius: 25px;
   border: 2px solid #2b6696;
   color: rgb(255, 255, 255);
-  font-size: larger;
+  font-size: large;
   outline: none;
   background-color: #2b6696;
   cursor: pointer;
 }
 .btn {
   margin-right: 10%;
-  width: 15%;
+  width: 20%;
   margin-top: 1%;
 }
 .button {
@@ -61,10 +68,6 @@
   font-size: larger;
   background-color: rgb(255, 255, 255);
   cursor: pointer;
-}
-::placeholder {
-  color: rgb(5, 46, 64);
-  font-size: x-large;
 }
 
 .select:hover{
