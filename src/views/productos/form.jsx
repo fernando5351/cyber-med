@@ -3,7 +3,7 @@ import Navbar from "../../components/navegacion/Navbar";
 import form from "../../css/formProduct.module.css";
 import { useNavigate } from 'react-router-dom';
 //import imgsubir from "../../icon/Create/subir.png";
-import Select from "react-select";
+import Select from "react-select"; 
 import Swal from 'sweetalert2'
 import { ProductContextConsumo } from "../tipo-consumo/arbol_info/ProductContextProvider";
 import { ProductContextProduct } from "./arbol_info/ProductContextProvider";

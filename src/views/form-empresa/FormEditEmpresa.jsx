@@ -13,8 +13,7 @@ function FormEditEmpresa() {
         direccion: "",
         telefono: "",
         email: "",
-        lote: "",
-        activo: "",
+        activo: "", 
       };
 
       const navigate = useNavigate()
@@ -40,8 +39,6 @@ function FormEditEmpresa() {
         setEmpresaEdit(initialData)
         navigate("/empresa")
     }
-
-
     
     return(
         <div>
@@ -56,7 +53,6 @@ function FormEditEmpresa() {
                     <input  className={Style.input} type="text" name='id_producto' placeholder='Producto' value={empresaEdit.id_producto} onChange={(e)=> onChange(e.target.value,"id_producto")}/>
                     <input  className={Style.input} type="text" name='telefono' placeholder='Telefono' value={empresaEdit.telefono} onChange={(e)=> onChange(e.target.value, "telefono")} />
                     <input  className={Style.input} type="email" name='email' placeholder='Correo electronico' value={empresaEdit.email} onChange={(e)=> onChange(e.target.value, "email")}/>
-                    <input  className={Style.input} type="text" name='lote' placeholder='Lote' value={empresaEdit.lote} onChange={(e)=>onChange(e.target.value, "lote")}/>
                     <select value={empresaEdit.activo} name="activo"  className={Style.select} onChange={(e)=> onChange(e.target.value,"activo")}>
                         <option value="" disabled selected>ESTADO</option>
                         <option value={1}>activo</option>

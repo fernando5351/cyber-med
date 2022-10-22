@@ -13,7 +13,6 @@ function FormEmpresa() {
     direccion: "",
     telefono: "",
     email: "",
-    id_lote: "",
     activo: "",
   };
 
@@ -74,13 +73,6 @@ function FormEmpresa() {
               type="email"
               name="email"
               placeholder="Correo electronico"
-              onChange={onChange}
-            />
-            <input
-              className={Style.input}
-              type="text"
-              name="id_lote"
-              placeholder="Lote"
               onChange={onChange}
             />
             <select name="activo" onChange={onChange} className={Style.select}>

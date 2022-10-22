@@ -36,6 +36,7 @@ function FormEditLote(){
       });
     }
 
+    console.log(editLote);
     const saveLote = () =>{
       console.log(editLote)
       updateProduct(editLote)
