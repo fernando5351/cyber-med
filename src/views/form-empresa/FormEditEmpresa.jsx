@@ -53,14 +53,16 @@ function FormEditEmpresa() {
                 <form action="" className={Style.formempresa}>
                     <input  className={Style.input} type="text" name='nombre_empresa' placeholder='Nombre de la empresa' value={empresaEdit.nombre_empresa} onChange={(e)=> onChange (e.target.value,"nombre_empresa")}/>
                     <input  className={Style.input} type="text" name='direccion' placeholder='Direccion' value={empresaEdit.direccion} onChange={(e) => onChange(e.target.value, "direccion")}/>
-                    <input  className={Style.input} type="text" name='id_producto' placeholder='Producto' value={empresaEdit.id_producto} onChange={(e)=> onChange(e.target.value,"id_producto")}/>
+                    {/* <input  className={Style.input} type="text" name='id_producto' placeholder='Producto' value={empresaEdit.id_producto} onChange={(e)=> onChange(e.target.value,"id_producto")}/> */}
+                    <select className={Style.input} >
+                        <option className={Style.letter} value="">ID_Producto</option>
+                    </select>
                     <input  className={Style.input} type="text" name='telefono' placeholder='Telefono' value={empresaEdit.telefono} onChange={(e)=> onChange(e.target.value, "telefono")} />
                     <input  className={Style.input} type="email" name='email' placeholder='Correo electronico' value={empresaEdit.email} onChange={(e)=> onChange(e.target.value, "email")}/>
-                    <input  className={Style.input} type="text" name='lote' placeholder='Lote' value={empresaEdit.lote} onChange={(e)=>onChange(e.target.value, "lote")}/>
                     <select value={empresaEdit.activo} name="activo"  className={Style.select} onChange={(e)=> onChange(e.target.value,"activo")}>
                         <option value="" disabled selected>ESTADO</option>
-                        <option value={1}>activo</option>
-                        <option value={0}>inactivo</option>
+                        <option value={1}>ACTIVO</option>
+                        <option value={0}>INACTIVO</option>
                     </select>
                     <div className={Style.btn}>
                     <button type='submit' name="guardar" onClick={(e)=>{
