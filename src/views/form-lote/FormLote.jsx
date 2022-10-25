@@ -3,11 +3,16 @@ import Back from "../../icon/Vista/retroceder.png";
 import Navbar from "../../components/navegacion/Navbar";
 import Style from "../../css/formEmpresa.module.css";
 import Barra from "../../css/barranav.module.css";
+import Swal from "sweetalert2"
+import Select from "react-select";
 import { useNavigate } from "react-router-dom";
 import { ProductContextLote } from "./arbol_info/ProductContextprovider";
+import { ProductContextEmpresa} from "../form-empresa/arbol_info/ProductContextprovider"
 
 function FormLote() {
   const { createProduct } = useContext(ProductContextLote);
+  const {products} = useContext(ProductContextEmpresa)
+
 
   const initialData = {
     fecha_ingreso: "",
@@ -15,27 +20,76 @@ function FormLote() {
     detalle_producto: "",
     cantidad: "",
     precio_producto: "",
-    id_empresa: "",
     activo: "",
   };
 
-  const [lote, setLote] = useState(initialData);
+  const SelectState = {
+    id_empresa: ""
+  }
 
-  const Navigate = useNavigate();
+  const [lote, setLote] = useState(initialData);
+  const [state,setState] = useState(SelectState)
+
+ 
 
   const onChange = (e) => {
     setLote({
       ...lote,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     });
   };
 
-  const saveLote = () => {
-    console.log(lote);
-    createProduct(lote);
-    setLote(initialData);
-    Navigate("/empresa/lote");
+  const dataChange = (ev,action) => {
+    setState({
+      ...state,
+      [action.name]: ev.value
+    })
+  }
+
+  const empresaSelect = products.map((empresa)=>({
+    label: empresa.nombre_empresa,
+    value: empresa.id
+  }))
+
+  const Navigate = useNavigate();  
+
+  const {
+    fecha_ingreso, 
+    fecha_vencimiento,
+    detalle_producto,
+    cantidad,
+    precio_producto,
+    activo,
+  } = lote
+
+  const {
+    id_empresa
+  } = state
+
+  const saveLote = async () => {
+    if (fecha_ingreso === "" || fecha_vencimiento === "" || detalle_producto === "" || cantidad === "" || precio_producto === "" ||id_empresa === "" || activo === ""){
+        Swal.fire({
+          icon: 'error',
+          title: 'ERROR',
+          text: 'TODOS LOS CAMPO SON REQUERIDOS',
+          timer: '2000',
+        }).then((res)=>console.log(res))
+    }else {
+      const form = document.getElementById('formData')
+
+      const formData = new FormData(form);
+
+      createProduct(formData)
+      Navigate("/empresa/lote");
+    }
   };
+
+  // const saveLote = () => {
+  //   console.log(lote);
+  //   createProduct(lote);
+  //   setLote(initialData);
+  //   Navigate("/empresa/lote");
+  // };
 
   const backTableL = () => {
     Navigate("/empresa/lote");
@@ -55,7 +109,7 @@ function FormLote() {
       <div className={Style.content}>
         <div className={Style.form}>
           <h1 className={Style.text}>REGISTRAR EL LOTE</h1>
-          <form className={Style.formempresa}>
+          <form  id='formData' className={Style.formempresa}>
             <input
               className={Style.input}
               type="date"
@@ -98,11 +152,12 @@ function FormLote() {
                           placeholder="Id de la empresa"
                           onChange={onChange}
                         /> */}
-            <select name="activo" className={Style.input} onChange={onChange}>
-              <option className={Style.letter} value="" defaultValue="">
-                ESTADO
-              </option>
-            </select>
+            <Select
+              name="id_empresa"
+              className={Style.input} 
+              onChange={dataChange}
+              options={empresaSelect}
+            /> 
             <select name="activo" className={Style.select} onChange={onChange}>
               <option value="" defaultValue="">
                 ESTADO

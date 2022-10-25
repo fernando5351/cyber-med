@@ -1,12 +1,15 @@
 import React from "react";
 import ProducContextLote from "../arbol_info/ProductContextprovider";
 import CreateLote from "../FormLote";
+import ProductEmpresa from "../../form-empresa/arbol_info/ProductContextprovider";
 
 const Createlote = () =>{
     return(
         <div>
             <ProducContextLote>
-                <CreateLote/>
+             <ProductEmpresa>
+               <CreateLote/>
+             </ProductEmpresa>
             </ProducContextLote>
         </div>
     )

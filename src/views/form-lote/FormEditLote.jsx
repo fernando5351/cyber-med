@@ -3,6 +3,7 @@ import Back from "../../icon/Vista/retroceder.png";
 import Navbar from "../../components/navegacion/Navbar";
 import Style from "../../css/formEmpresa.module.css";
 import Barra from "../../css/barranav.module.css";
+import Select from  "react-select"
 import { useNavigate } from "react-router-dom";
 import { ProductContextLote } from "./arbol_info/ProductContextprovider";
 
