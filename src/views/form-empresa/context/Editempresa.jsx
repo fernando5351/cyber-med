@@ -1,14 +1,16 @@
 import React from "react";
 import ProductContextEmpresa from "../arbol_info/ProductContextprovider";
 import Edit from "../FormEditEmpresa";
-
+import ProductContext from "../../productos/arbol_info/ProductContextProvider";
 
 const Editempresa = () => {
     return (
-        <div>
-            <ProductContextEmpresa>
-                <Edit/>
-            </ProductContextEmpresa>
+        <div>  
+            <ProductContext> 
+                <ProductContextEmpresa>
+                    <Edit/>
+                </ProductContextEmpresa>
+            </ProductContext>
         </div>
     )
 }
