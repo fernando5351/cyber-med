@@ -11,7 +11,6 @@ const AuthFalse = () => {
   
   return (
     <div className={style.container}>
-
     </div>
   )
 };
