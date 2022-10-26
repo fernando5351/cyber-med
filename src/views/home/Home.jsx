@@ -7,9 +7,6 @@ function Home() {
   return (
     <div className={ContTa.contenedorMT}>
       <Navbar />
-      <div className={ContTa.contenedorBtn}>
-        <Btnhome />
-      </div>
       <div className={ContTa.contenedorTH}>
         <TableHome />
       </div>

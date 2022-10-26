@@ -6,9 +6,11 @@ import Barra from "../../css/barranav.module.css";
 import Select from  "react-select"
 import { useNavigate } from "react-router-dom";
 import { ProductContextLote } from "./arbol_info/ProductContextprovider";
+import {ProductContextEmpresa} from "../form-empresa/arbol_info/ProductContextprovider";
 
 function FormEditLote() {
   const { updateProduct } = useContext(ProductContextLote);
+  const { products} = useContext(ProductContextEmpresa);
 
   const initialData = {
     fecha_ingreso: "",
@@ -16,11 +18,18 @@ function FormEditLote() {
     detalle_producto: "",
     cantidad: "",
     precio_producto: "",
-    id_empresa: "",
     activo: "",
   };
 
+  const SelectState = {
+    id_empresa: ""
+  }
+
+
+
   const Navigate = useNavigate();
+
+  const [state,setState] = useState(SelectState);
 
   const [editLote, setLoteEdit] = useState(initialData);
   useEffect(() => {
