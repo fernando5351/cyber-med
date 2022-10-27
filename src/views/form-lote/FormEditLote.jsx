@@ -171,9 +171,6 @@ function FormEditLote() {
               onChange={dataChange}
               options={empresaSelect}
             />
-              <option className={Style.letter} value="" defaultValue="">
-                ESTADO
-              </option>
             
             <select
               value={editLote.activo}
@@ -181,9 +178,7 @@ function FormEditLote() {
               className={Style.select}
               onChange={(e) => onChange(e.target.value, "activo")}
             >
-              <option value="" defaultValue="">
-                ESTADO
-              </option>
+
               <option value={1}>ACTIVO</option>
               <option value={0}>INACTIVO</option>
             </select>
