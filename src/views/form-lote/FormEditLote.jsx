@@ -164,14 +164,19 @@ function FormEditLote() {
                           placeholder="Id de la empresa"
                           onChange={(e)=> onChange(e.target.value, "id_empresa")}
                         /> */}
-            <Select  
+            {/* <Select  
               className={Style.letter}
               name= "id_empresa"
               placeholder="empresa"
               onChange={dataChange}
               options={empresaSelect}
-            />
-            
+            /> */}
+            <select
+              name="id_empresa"
+              className={Style.input}
+             >
+              <option className={Style.letter}>Id_Empresa</option>          
+            </select>
             <select
               value={editLote.activo}
               name="activo"
