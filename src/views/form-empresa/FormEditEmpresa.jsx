@@ -106,19 +106,19 @@ function FormEditEmpresa() {
                     <input  className={Style.input} type="text" name='nombre_empresa' placeholder='Nombre de la empresa' value={empresaEdit.nombre_empresa} onChange={(e)=> onChange (e.target.value,"nombre_empresa")}/>
                     <input  className={Style.input} type="text" name='direccion' placeholder='Direccion' value={empresaEdit.direccion} onChange={(e) => onChange(e.target.value, "direccion")}/>
                     {/* <input  className={Style.input} type="text" name='id_producto' placeholder='Producto' value={empresaEdit.id_producto} onChange={(e)=> onChange(e.target.value,"id_producto")}/> */}
-                     {/* <Select
+                     <Select
                         className={Style.input}
                         placeholder= "producto"
                         name="id_producto"
                         options={productSelect}
                         onChange={DataChange}
-                     /> */}      
-                     <select
+                     />      
+                     {/* <select
               name="id_empresa"
               className={Style.input}
              >
               <option className={Style.letter}>Id_Empresa</option>          
-            </select>      
+            </select>       */}
                     <input  className={Style.input} type="text" name='telefono' placeholder='Telefono' value={empresaEdit.telefono} onChange={(e)=> onChange(e.target.value, "telefono")} />
                     <input  className={Style.input} type="email" name='email' placeholder='Correo electronico' value={empresaEdit.email} onChange={(e)=> onChange(e.target.value, "email")}/>
                     <select value={empresaEdit.activo} name="activo"  className={Style.select} onChange={(e)=> onChange(e.target.value,"activo")}>

@@ -10,7 +10,7 @@ import { ProductContextEmpresa } from "../form-empresa/arbol_info/ProductContext
 import { ProductContextLote } from "./arbol_info/ProductContextprovider";
 
 function FormLote() {
-  
+
   const { createProduct } = useContext(ProductContextLote);
   const {products} = useContext(ProductContextEmpresa)
 
@@ -156,6 +156,7 @@ function FormLote() {
             <Select
               name="id_empresa"
               className={Style.input} 
+              placeholder="Empresa"
               onChange={dataChange}
               options={empresaSelect}
             /> 
