@@ -112,7 +112,13 @@ function FormEditEmpresa() {
                         name="id_producto"
                         options={productSelect}
                         onChange={DataChange}
-                     />            
+                     />      
+                     {/* <select
+              name="id_empresa"
+              className={Style.input}
+             >
+              <option className={Style.letter}>Id_Empresa</option>          
+            </select>       */}
                     <input  className={Style.input} type="text" name='telefono' placeholder='Telefono' value={empresaEdit.telefono} onChange={(e)=> onChange(e.target.value, "telefono")} />
                     <input  className={Style.input} type="email" name='email' placeholder='Correo electronico' value={empresaEdit.email} onChange={(e)=> onChange(e.target.value, "email")}/>
                     <select value={empresaEdit.activo} name="activo"  className={Style.select} onChange={(e)=> onChange(e.target.value,"activo")}>

@@ -6,10 +6,11 @@ import Barra from "../../css/barranav.module.css";
 import Swal from "sweetalert2"
 import Select from "react-select";
 import { useNavigate } from "react-router-dom";
+import { ProductContextEmpresa } from "../form-empresa/arbol_info/ProductContextprovider";
 import { ProductContextLote } from "./arbol_info/ProductContextprovider";
-import { ProductContextEmpresa} from "../form-empresa/arbol_info/ProductContextprovider"
 
 function FormLote() {
+
   const { createProduct } = useContext(ProductContextLote);
   const {products} = useContext(ProductContextEmpresa)
 
@@ -155,9 +156,16 @@ function FormLote() {
             <Select
               name="id_empresa"
               className={Style.input} 
+              placeholder="Empresa"
               onChange={dataChange}
               options={empresaSelect}
             /> 
+            {/* <select
+              name="id_empresa"
+              className={Style.input}
+             >
+              <option className={Style.letter}>Id_Empresa</option>          
+            </select> */}
             <select name="activo" className={Style.select} onChange={onChange}>
               <option value="" defaultValue="">
                 ESTADO

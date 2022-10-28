@@ -116,6 +116,12 @@ function FormEmpresa() {
                 options={productSelect}
                 onChange={selecData}       
               /> 
+              {/* <select
+              name="id_empresa"
+              className={Style.input}
+             >
+              <option className={Style.letter}>Id_Empresa</option>          
+            </select> */}
             <input
               className={Style.input}
               type="text"
