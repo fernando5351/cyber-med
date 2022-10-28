@@ -3,16 +3,16 @@ import Back from "../../icon/Vista/retroceder.png";
 import Navbar from "../../components/navegacion/Navbar";
 import Style from "../../css/formEmpresa.module.css";
 import Barra from "../../css/barranav.module.css";
-import Select from  "react-select"
+import Select from "react-select"
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import { ProductContextLote } from "./arbol_info/ProductContextprovider";
-import { ProductContextEmpresa} from "../form-empresa/arbol_info/ProductContextprovider";
+import { ProductContextEmpresa } from "../form-empresa/arbol_info/ProductContextprovider";
 
 function FormEditLote() {
   const { updateProduct } = useContext(ProductContextLote);
-  const { products} = useContext(ProductContextEmpresa);
- 
+  const { products } = useContext(ProductContextEmpresa);
+
   const initialData = {
     fecha_ingreso: "",
     fecha_vencimiento: "",
@@ -26,7 +26,7 @@ function FormEditLote() {
     id_empresa: ""
   }
 
-  const [state,setState] = useState(SelectState);
+  const [state, setState] = useState(SelectState);
 
   const [editLote, setLoteEdit] = useState(initialData);
   useEffect(() => {
@@ -41,54 +41,50 @@ function FormEditLote() {
     });
   };
 
-  const dataChange = (ev,action) => {
+  const dataChange = (ev, action) => {
     setState({
       ...state,
-      [action.name]: ev.value
+      [ev.target.name]: ev.value
     })
   }
 
-  const empresaSelect = products.map((empresa)=>({
-    label: empresa.nombre_empresa,
-    value: empresa.id
-  }))
-
-
   const Navigate = useNavigate();
 
- 
-    const {
-      fecha_ingreso, 
-      fecha_vencimiento,
-      detalle_producto,
-      cantidad,
-      precio_producto,
-      activo,
-    } = editLote
 
-    const {
-      id_empresa
-    } = state
+  const {
+    fecha_ingreso,
+    fecha_vencimiento,
+    detalle_producto,
+    cantidad,
+    precio_producto,
+    activo,
+  } = editLote
 
-    
-    const saveLote = async () => {
-      if (fecha_ingreso === "" || fecha_vencimiento === "" || detalle_producto === "" || cantidad === "" || precio_producto === "" ||id_empresa === "" || activo === ""){
-          Swal.fire({
-            icon: 'error',
-            title: 'ERROR',
-            text: 'TODOS LOS CAMPO SON REQUERIDOS',
-            timer: '2000',
-          }).then((res)=>console.log(res))
-      }else {
-        const form = document.getElementById('formData')
-  
-        const formData = new FormData(form);
-  
-        updateProduct(formData)
-        Navigate("/empresa/lote");
-      }
-    };
-  
+  const {
+    id_empresa
+  } = state
+
+
+  const saveLote = async () => {
+    if (fecha_ingreso === "" || fecha_vencimiento === "" || detalle_producto === "" || cantidad === "" || precio_producto === "" || id_empresa === "" || activo === "") {
+      Swal.fire({
+        icon: 'error',
+        title: 'ERROR',
+        text: 'TODOS LOS CAMPO SON REQUERIDOS',
+        timer: '2000',
+      }).then((res) => console.log(res))
+    } else {
+      // const form = document.getElementById('formData')
+
+      // const formData = new FormData(form);
+
+      const array = {...state, ...editLote}
+      console.log(array);
+      updateProduct()
+      Navigate("/empresa/lote");
+    }
+  };
+
 
   // const saveLote = () => {
   //   console.log(editLote);
@@ -115,7 +111,7 @@ function FormEditLote() {
       <div className={Style.content}>
         <div className={Style.form}>
           <h1 className={Style.text}>EDITAR EL LOTE</h1>
-          <form  id="formData" className={Style.formempresa}>
+          <form id="formData" className={Style.formempresa}>
             <input
               className={Style.input}
               type="date"
@@ -164,18 +160,21 @@ function FormEditLote() {
                           placeholder="Id de la empresa"
                           onChange={(e)=> onChange(e.target.value, "id_empresa")}
                         /> */}
-            {/* <Select  
-              className={Style.letter}
-              name= "id_empresa"
-              placeholder="empresa"
-              onChange={dataChange}
-              options={empresaSelect}
-            /> */}
             <select
               name="id_empresa"
               className={Style.input}
-             >
-              <option className={Style.letter}>Id_Empresa</option>          
+              onChange={dataChange}
+            >
+              {/* <option value={editLote.id_empresa} className={Style.letter}>{editLote.nombre_empresa}</option> */}
+              <>
+                {
+                  products.map((empresa) => (
+                    <option value={empresa.id}>{empresa.nombre_empresa}</option>
+                    // label: empresa.nombre_empresa,
+                    // value: empresa.id
+                  ))
+                }
+              </>
             </select>
             <select
               value={editLote.activo}
@@ -183,7 +182,9 @@ function FormEditLote() {
               className={Style.select}
               onChange={(e) => onChange(e.target.value, "activo")}
             >
-
+              <option value="" defaultValue="">
+                ESTADO
+              </option>
               <option value={1}>ACTIVO</option>
               <option value={0}>INACTIVO</option>
             </select>
@@ -193,6 +194,7 @@ function FormEditLote() {
                 className={Style.button}
                 onClick={(e) => {
                   saveLote();
+                  e.preventDefault()
                 }}
               >
                 {" "}

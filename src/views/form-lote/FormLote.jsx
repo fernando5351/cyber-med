@@ -152,18 +152,18 @@ function FormLote() {
                           placeholder="Id de la empresa"
                           onChange={onChange}
                         /> */}
-{/*             <Select
+            <Select
               name="id_empresa"
               className={Style.input} 
               onChange={dataChange}
               options={empresaSelect}
-            />  */}
-            <select
+            /> 
+            {/* <select
               name="id_empresa"
               className={Style.input}
              >
               <option className={Style.letter}>Id_Empresa</option>          
-            </select>
+            </select> */}
             <select name="activo" className={Style.select} onChange={onChange}>
               <option value="" defaultValue="">
                 ESTADO
