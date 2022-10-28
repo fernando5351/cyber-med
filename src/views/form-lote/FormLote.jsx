@@ -10,6 +10,7 @@ import { ProductContextEmpresa } from "../form-empresa/arbol_info/ProductContext
 import { ProductContextLote } from "./arbol_info/ProductContextprovider";
 
 function FormLote() {
+  
   const { createProduct } = useContext(ProductContextLote);
   const {products} = useContext(ProductContextEmpresa)
 

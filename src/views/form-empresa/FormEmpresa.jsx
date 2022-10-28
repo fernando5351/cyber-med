@@ -109,19 +109,19 @@ function FormEmpresa() {
             />
             {/* <input  className={Style.input} type="text" name='id_producto' placeholder='Producto' value={empresaEdit.id_producto} onChange={(e)=> onChange(e.target.value,"id_producto")}/> */}
             
-              {/* <Select
+              <Select
                 name="id_producto"
                 className={Style.input}
                 placeholder="producto"
                 options={productSelect}
                 onChange={selecData}       
-              />  */}
-              <select
+              /> 
+              {/* <select
               name="id_empresa"
               className={Style.input}
              >
               <option className={Style.letter}>Id_Empresa</option>          
-            </select>
+            </select> */}
             <input
               className={Style.input}
               type="text"
