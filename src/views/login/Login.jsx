@@ -37,7 +37,7 @@ function Login() {
         mode: 'cors',
         method: 'POST',
         header: {
-          'Origin': 'http://localhost:3000',//'https://cyber-med.vercel.app/',
+          'Origin': 'https://cyber-med.vercel.app/',
           'X-Requested-With': 'XMLHttpRequest',
           'Content-Type': 'application/json',
           "Accept": 'application/json'
