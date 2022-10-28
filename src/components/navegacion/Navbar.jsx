@@ -7,6 +7,7 @@ function Navbar() {
   const navigate = useNavigate();
 
   const logOut = () => {
+    sessionStorage.clear()
     navigate("/");
   };
   const home = () => {

@@ -37,7 +37,7 @@ function Login() {
         mode: 'cors',
         method: 'POST',
         header: {
-          'Origin': 'https://cyber-med.vercel.app/',
+          'Origin': 'http://localhost:3000',//'https://cyber-med.vercel.app/',
           'X-Requested-With': 'XMLHttpRequest',
           'Content-Type': 'application/json',
           "Accept": 'application/json'
@@ -52,7 +52,7 @@ function Login() {
               icon: 'success',
               title: 'REGISTRO EXITOSO',
               timer: '2000'
-            });
+            }).then( sessionStorage.setItem("auth", "true") )
             setTimeout(() => {
               window.location.href = `${data.url}`
             }, 1000)
@@ -81,9 +81,10 @@ function Login() {
               <img className={styles.mailler} src={mail} alt="" />
               <input
                 onChange={onChange}
-                type="text"
+                type="email"
                 name="user_email"
                 placeholder="Correo"
+                required
                 className={styles.mail}
               />
             </div>
@@ -95,6 +96,7 @@ function Login() {
                 name="user_password"
                 placeholder="Contraseña"
                 className={styles.pass}
+                required
               />
             </div>
             <p></p>

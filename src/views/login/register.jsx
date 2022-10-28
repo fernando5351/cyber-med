@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import register from "../../css/register.module"
+import Style from "../../css/register.module.css"
 
 const Register = () => {
 
@@ -18,7 +18,7 @@ const Register = () => {
             [e.target.name]: e.target.value
         })
       }
-      
+
     return (
         <div>
 
