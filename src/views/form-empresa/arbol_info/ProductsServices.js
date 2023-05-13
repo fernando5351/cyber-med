@@ -2,7 +2,7 @@ import axios from "axios"
 export class ProductService {
 
     //url = "http://localhost:4000";
-    url = "https://lovely-lace-production.up.railway.app"
+    url = "https://cyber-med-production.up.railway.app"
 
     create(empresa){
         return axios.post(`${this.url}/empresa`, empresa).then(res => res.data);

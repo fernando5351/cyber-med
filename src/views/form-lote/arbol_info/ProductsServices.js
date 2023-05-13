@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export class ProductService {
-    url = "https://lovely-lace-production.up.railway.app";
+    url = "https://cyber-med-production.up.railway.app";
 
 
     create(lote) {
